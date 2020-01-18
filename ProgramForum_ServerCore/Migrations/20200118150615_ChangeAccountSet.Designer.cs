@@ -10,8 +10,8 @@ using ProgramForum_ServerCore.Models;
 namespace ProgramForum_ServerCore.Migrations
 {
     [DbContext(typeof(ForumContext))]
-    [Migration("20200118103133_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200118150615_ChangeAccountSet")]
+    partial class ChangeAccountSet
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,25 @@ namespace ProgramForum_ServerCore.Migrations
                 .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
+                });
 
             modelBuilder.Entity("ProgramForum_ServerCore.Models.AccountSet", b =>
                 {
@@ -35,8 +54,12 @@ namespace ProgramForum_ServerCore.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(55)")
+                        .HasColumnType("nchar(55)")
+                        .IsFixedLength(true)
                         .HasMaxLength(55);
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Login")
                         .IsRequired()
@@ -45,13 +68,23 @@ namespace ProgramForum_ServerCore.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(100)")
+                        .HasColumnType("nchar(100)")
                         .HasDefaultValueSql("('NoName')")
+                        .IsFixedLength(true)
                         .HasMaxLength(100);
 
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
 
                     b.Property<int?>("Points")
                         .ValueGeneratedOnAdd()
@@ -62,6 +95,9 @@ namespace ProgramForum_ServerCore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasDefaultValueSql("((0))");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("AccountId");
 

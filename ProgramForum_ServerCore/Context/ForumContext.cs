@@ -1,11 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ProgramForum_ServerCore.Models
 {
-    public partial class ForumContext : DbContext
+    public partial class ForumContext : IdentityDbContext<AccountSet>
     {
+        public ForumContext()
+        {
+        }
+
         public ForumContext(DbContextOptions<ForumContext> options) : base(options)
         {
         }
@@ -19,12 +27,7 @@ namespace ProgramForum_ServerCore.Models
         public virtual DbSet<QuestionSet> QuestionSet { get; set; }
         public virtual DbSet<QuestionTypeSet> QuestionTypeSet { get; set; }
         public virtual DbSet<ThemeSet> ThemeSet { get; set; }
-
-        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-
-        }*/
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AccountSet>(entity =>
@@ -33,13 +36,16 @@ namespace ProgramForum_ServerCore.Models
 
                 entity.Property(e => e.CreateDate).HasColumnType("datetime");
 
-                entity.Property(e => e.Email).HasMaxLength(55);
+                entity.Property(e => e.Email)
+                    .HasMaxLength(55)
+                    .IsFixedLength();
 
                 entity.Property(e => e.Login).IsRequired();
 
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(100)
+                    .IsFixedLength()
                     .HasDefaultValueSql("('NoName')");
 
                 entity.Property(e => e.Password).IsRequired();
@@ -190,6 +196,24 @@ namespace ProgramForum_ServerCore.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ThemeSet_AccountSet");
             });
+
+            modelBuilder.Entity<AccountSet>().Ignore(c => c.Id)
+                .Ignore(c => c.AccessFailedCount)
+                .Ignore(c => c.LockoutEnabled)
+                .Ignore(c => c.TwoFactorEnabled)
+                .Ignore(c => c.LockoutEnabled)
+                .Ignore(c => c.LockoutEnd)
+                .Ignore(c => c.SecurityStamp)
+                .Ignore(c => c.NormalizedEmail)
+                .Ignore(c => c.NormalizedUserName)
+                .Ignore(c => c.ConcurrencyStamp);
+
+            modelBuilder.Ignore<IdentityRole<string>>();
+            modelBuilder.Ignore<IdentityUserLogin<string>>();
+            modelBuilder.Ignore<IdentityUserToken<string>>();
+            modelBuilder.Ignore<IdentityUserRole<string>>();
+            modelBuilder.Ignore<IdentityRoleClaim<string>>();
+            modelBuilder.Ignore<IdentityUserClaim<string>>();
 
             OnModelCreatingPartial(modelBuilder);
         }

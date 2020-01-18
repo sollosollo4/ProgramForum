@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,6 +27,11 @@ namespace ProgramForum_ServerCore
             services.AddDbContext<ForumContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("SQLServerConnectionInfo")));
 
+            services.AddIdentity<AccountSet, IdentityRole>()
+               .AddEntityFrameworkStores<ForumContext>()
+               .AddDefaultTokenProviders();
+
+            services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
@@ -45,13 +51,21 @@ namespace ProgramForum_ServerCore
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+            });          
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }

@@ -16,8 +16,8 @@ namespace ProgramForum_ServerCore.Migrations
                     Login = table.Column<string>(nullable: false),
                     Password = table.Column<string>(nullable: false),
                     AccountType = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(maxLength: 100, nullable: false, defaultValueSql: "('NoName')"),
-                    Email = table.Column<string>(maxLength: 55, nullable: true),
+                    Name = table.Column<string>(fixedLength: true, maxLength: 100, nullable: false, defaultValueSql: "('NoName')"),
+                    Email = table.Column<string>(fixedLength: true, maxLength: 55, nullable: true),
                     CreateDate = table.Column<DateTime>(type: "datetime", nullable: true),
                     Points = table.Column<int>(nullable: true, defaultValueSql: "((0))"),
                     Reputation = table.Column<int>(nullable: true, defaultValueSql: "((0))")

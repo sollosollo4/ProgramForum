@@ -4,287 +4,287 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Forum.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="AccountSet">
-          <Key>
-            <PropertyRef Name="AccountId" />
-          </Key>
-          <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="AccountType" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nchar" MaxLength="100" Nullable="false" />
-          <Property Name="Email" Type="nchar" MaxLength="55" />
-          <Property Name="CreateDate" Type="datetime" />
-          <Property Name="Points" Type="int" />
-          <Property Name="Reputation" Type="int" />
-        </EntityType>
-        <EntityType Name="AnswerSet">
-          <Key>
-            <PropertyRef Name="AnswerId" />
-          </Key>
-          <Property Name="AnswerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AnswerVarible" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="QuestionQuestionId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="CommentorySet">
-          <Key>
-            <PropertyRef Name="CommentoryId" />
-          </Key>
-          <Property Name="CommentoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AuthorId" Type="int" Nullable="false" />
-          <Property Name="CommentoryText" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ThemeId" Type="int" Nullable="false" />
-          <Property Name="CreateDate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ConversationSet">
-          <Key>
-            <PropertyRef Name="ConversationId" />
-          </Key>
-          <Property Name="ConversationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RecipientId" Type="int" Nullable="false" />
-          <Property Name="SenderId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="LanguageSet">
-          <Key>
-            <PropertyRef Name="LanguageId" />
-          </Key>
-          <Property Name="LanguageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="LanguageName" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="LanguageDescription" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="MessageSet">
-          <Key>
-            <PropertyRef Name="MessageId" />
-          </Key>
-          <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MessageText" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Date" Type="datetime" />
-          <Property Name="ConversationId" Type="int" Nullable="false" />
-          <Property Name="SenderId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="QuestionSet">
-          <Key>
-            <PropertyRef Name="QuestionId" />
-          </Key>
-          <Property Name="QuestionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="QuestionText" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="LanguageLanguageId" Type="int" Nullable="false" />
-          <Property Name="QuestionTypeQuestionTypeId" Type="int" Nullable="false" />
-          <Property Name="CorrectOption" Type="int" Nullable="false" />
-          <Property Name="AccountAccountId" Type="int" Nullable="false" />
-          <Property Name="Date" Type="datetime" />
-        </EntityType>
-        <EntityType Name="QuestionTypeSet">
-          <Key>
-            <PropertyRef Name="QuestionTypeId" />
-          </Key>
-          <Property Name="QuestionTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="QuestionTypeText" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ThemeSet">
-          <Key>
-            <PropertyRef Name="ThemeId" />
-          </Key>
-          <Property Name="ThemeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AuthorId" Type="int" Nullable="false" />
-          <Property Name="ThemeName" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ThemeText" Type="nvarchar(max)" />
-          <Property Name="ThemePoints" Type="int" Nullable="false" />
-          <Property Name="CreateDate" Type="datetime" />
-        </EntityType>
-        <Association Name="FK_AccountQuestion">
-          <End Role="AccountSet" Type="Self.AccountSet" Multiplicity="1" />
-          <End Role="QuestionSet" Type="Self.QuestionSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AccountSet">
-              <PropertyRef Name="AccountId" />
-            </Principal>
-            <Dependent Role="QuestionSet">
-              <PropertyRef Name="AccountAccountId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AnswerQuestion">
-          <End Role="QuestionSet" Type="Self.QuestionSet" Multiplicity="1" />
-          <End Role="AnswerSet" Type="Self.AnswerSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="QuestionSet">
-              <PropertyRef Name="QuestionId" />
-            </Principal>
-            <Dependent Role="AnswerSet">
-              <PropertyRef Name="QuestionQuestionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CommentorySet_AccountSet">
-          <End Role="AccountSet" Type="Self.AccountSet" Multiplicity="1" />
-          <End Role="CommentorySet" Type="Self.CommentorySet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AccountSet">
-              <PropertyRef Name="AccountId" />
-            </Principal>
-            <Dependent Role="CommentorySet">
-              <PropertyRef Name="AuthorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CommentorySet_ThemeSet">
-          <End Role="ThemeSet" Type="Self.ThemeSet" Multiplicity="1" />
-          <End Role="CommentorySet" Type="Self.CommentorySet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ThemeSet">
-              <PropertyRef Name="ThemeId" />
-            </Principal>
-            <Dependent Role="CommentorySet">
-              <PropertyRef Name="ThemeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ConversationSet_AccountSet">
-          <End Role="AccountSet" Type="Self.AccountSet" Multiplicity="1" />
-          <End Role="ConversationSet" Type="Self.ConversationSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AccountSet">
-              <PropertyRef Name="AccountId" />
-            </Principal>
-            <Dependent Role="ConversationSet">
-              <PropertyRef Name="RecipientId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ConversationSet_AccountSet1">
-          <End Role="AccountSet" Type="Self.AccountSet" Multiplicity="1" />
-          <End Role="ConversationSet" Type="Self.ConversationSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AccountSet">
-              <PropertyRef Name="AccountId" />
-            </Principal>
-            <Dependent Role="ConversationSet">
-              <PropertyRef Name="SenderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_LanguageQuestion">
-          <End Role="LanguageSet" Type="Self.LanguageSet" Multiplicity="1" />
-          <End Role="QuestionSet" Type="Self.QuestionSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LanguageSet">
-              <PropertyRef Name="LanguageId" />
-            </Principal>
-            <Dependent Role="QuestionSet">
-              <PropertyRef Name="LanguageLanguageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MessageSet_ConversationSet">
-          <End Role="ConversationSet" Type="Self.ConversationSet" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="MessageSet" Type="Self.MessageSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ConversationSet">
-              <PropertyRef Name="ConversationId" />
-            </Principal>
-            <Dependent Role="MessageSet">
-              <PropertyRef Name="ConversationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MessageSet_ConversationSet_Sender">
-          <End Role="AccountSet" Type="Self.AccountSet" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="MessageSet" Type="Self.MessageSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AccountSet">
-              <PropertyRef Name="AccountId" />
-            </Principal>
-            <Dependent Role="MessageSet">
-              <PropertyRef Name="ConversationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_QuestionTypeQuestion">
-          <End Role="QuestionTypeSet" Type="Self.QuestionTypeSet" Multiplicity="1" />
-          <End Role="QuestionSet" Type="Self.QuestionSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="QuestionTypeSet">
-              <PropertyRef Name="QuestionTypeId" />
-            </Principal>
-            <Dependent Role="QuestionSet">
-              <PropertyRef Name="QuestionTypeQuestionTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ThemeSet_AccountSet">
-          <End Role="AccountSet" Type="Self.AccountSet" Multiplicity="1" />
-          <End Role="ThemeSet" Type="Self.ThemeSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AccountSet">
-              <PropertyRef Name="AccountId" />
-            </Principal>
-            <Dependent Role="ThemeSet">
-              <PropertyRef Name="AuthorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="ForumStoreContainer">
-          <EntitySet Name="AccountSet" EntityType="Self.AccountSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AnswerSet" EntityType="Self.AnswerSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CommentorySet" EntityType="Self.CommentorySet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ConversationSet" EntityType="Self.ConversationSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="LanguageSet" EntityType="Self.LanguageSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MessageSet" EntityType="Self.MessageSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="QuestionSet" EntityType="Self.QuestionSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="QuestionTypeSet" EntityType="Self.QuestionTypeSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ThemeSet" EntityType="Self.ThemeSet" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_AccountQuestion" Association="Self.FK_AccountQuestion">
-            <End Role="AccountSet" EntitySet="AccountSet" />
-            <End Role="QuestionSet" EntitySet="QuestionSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AnswerQuestion" Association="Self.FK_AnswerQuestion">
-            <End Role="QuestionSet" EntitySet="QuestionSet" />
-            <End Role="AnswerSet" EntitySet="AnswerSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CommentorySet_AccountSet" Association="Self.FK_CommentorySet_AccountSet">
-            <End Role="AccountSet" EntitySet="AccountSet" />
-            <End Role="CommentorySet" EntitySet="CommentorySet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CommentorySet_ThemeSet" Association="Self.FK_CommentorySet_ThemeSet">
-            <End Role="ThemeSet" EntitySet="ThemeSet" />
-            <End Role="CommentorySet" EntitySet="CommentorySet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ConversationSet_AccountSet" Association="Self.FK_ConversationSet_AccountSet">
-            <End Role="AccountSet" EntitySet="AccountSet" />
-            <End Role="ConversationSet" EntitySet="ConversationSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ConversationSet_AccountSet1" Association="Self.FK_ConversationSet_AccountSet1">
-            <End Role="AccountSet" EntitySet="AccountSet" />
-            <End Role="ConversationSet" EntitySet="ConversationSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LanguageQuestion" Association="Self.FK_LanguageQuestion">
-            <End Role="LanguageSet" EntitySet="LanguageSet" />
-            <End Role="QuestionSet" EntitySet="QuestionSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MessageSet_ConversationSet" Association="Self.FK_MessageSet_ConversationSet">
-            <End Role="ConversationSet" EntitySet="ConversationSet" />
-            <End Role="MessageSet" EntitySet="MessageSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MessageSet_ConversationSet_Sender" Association="Self.FK_MessageSet_ConversationSet_Sender">
-            <End Role="AccountSet" EntitySet="AccountSet" />
-            <End Role="MessageSet" EntitySet="MessageSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_QuestionTypeQuestion" Association="Self.FK_QuestionTypeQuestion">
-            <End Role="QuestionTypeSet" EntitySet="QuestionTypeSet" />
-            <End Role="QuestionSet" EntitySet="QuestionSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ThemeSet_AccountSet" Association="Self.FK_ThemeSet_AccountSet">
-            <End Role="AccountSet" EntitySet="AccountSet" />
-            <End Role="ThemeSet" EntitySet="ThemeSet" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="Forum.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ForumStoreContainer">
+    <EntitySet Name="AccountSet" EntityType="Forum.Store.AccountSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AnswerSet" EntityType="Forum.Store.AnswerSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CommentorySet" EntityType="Forum.Store.CommentorySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ConversationSet" EntityType="Forum.Store.ConversationSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LanguageSet" EntityType="Forum.Store.LanguageSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MessageSet" EntityType="Forum.Store.MessageSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="QuestionSet" EntityType="Forum.Store.QuestionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="QuestionTypeSet" EntityType="Forum.Store.QuestionTypeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ThemeSet" EntityType="Forum.Store.ThemeSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_AccountQuestion" Association="Forum.Store.FK_AccountQuestion">
+      <End Role="AccountSet" EntitySet="AccountSet" />
+      <End Role="QuestionSet" EntitySet="QuestionSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentorySet_AccountSet" Association="Forum.Store.FK_CommentorySet_AccountSet">
+      <End Role="AccountSet" EntitySet="AccountSet" />
+      <End Role="CommentorySet" EntitySet="CommentorySet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConversationSet_AccountSet" Association="Forum.Store.FK_ConversationSet_AccountSet">
+      <End Role="AccountSet" EntitySet="AccountSet" />
+      <End Role="ConversationSet" EntitySet="ConversationSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConversationSet_AccountSet1" Association="Forum.Store.FK_ConversationSet_AccountSet1">
+      <End Role="AccountSet" EntitySet="AccountSet" />
+      <End Role="ConversationSet" EntitySet="ConversationSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessageSet_ConversationSet_Sender" Association="Forum.Store.FK_MessageSet_ConversationSet_Sender">
+      <End Role="AccountSet" EntitySet="AccountSet" />
+      <End Role="MessageSet" EntitySet="MessageSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThemeSet_AccountSet" Association="Forum.Store.FK_ThemeSet_AccountSet">
+      <End Role="AccountSet" EntitySet="AccountSet" />
+      <End Role="ThemeSet" EntitySet="ThemeSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnswerQuestion" Association="Forum.Store.FK_AnswerQuestion">
+      <End Role="QuestionSet" EntitySet="QuestionSet" />
+      <End Role="AnswerSet" EntitySet="AnswerSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentorySet_ThemeSet" Association="Forum.Store.FK_CommentorySet_ThemeSet">
+      <End Role="ThemeSet" EntitySet="ThemeSet" />
+      <End Role="CommentorySet" EntitySet="CommentorySet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessageSet_ConversationSet" Association="Forum.Store.FK_MessageSet_ConversationSet">
+      <End Role="ConversationSet" EntitySet="ConversationSet" />
+      <End Role="MessageSet" EntitySet="MessageSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LanguageQuestion" Association="Forum.Store.FK_LanguageQuestion">
+      <End Role="LanguageSet" EntitySet="LanguageSet" />
+      <End Role="QuestionSet" EntitySet="QuestionSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuestionTypeQuestion" Association="Forum.Store.FK_QuestionTypeQuestion">
+      <End Role="QuestionTypeSet" EntitySet="QuestionTypeSet" />
+      <End Role="QuestionSet" EntitySet="QuestionSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AccountSet">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AccountType" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" Nullable="false" MaxLength="100" />
+    <Property Name="Email" Type="nchar" Nullable="true" MaxLength="55" />
+    <Property Name="CreateDate" Type="datetime" Nullable="true" />
+    <Property Name="Points" Type="int" Nullable="true" />
+    <Property Name="Reputation" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="AnswerSet">
+    <Key>
+      <PropertyRef Name="AnswerId" />
+    </Key>
+    <Property Name="AnswerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnswerVarible" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="QuestionQuestionId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CommentorySet">
+    <Key>
+      <PropertyRef Name="CommentoryId" />
+    </Key>
+    <Property Name="CommentoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AuthorId" Type="int" Nullable="false" />
+    <Property Name="CommentoryText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ThemeId" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConversationSet">
+    <Key>
+      <PropertyRef Name="ConversationId" />
+    </Key>
+    <Property Name="ConversationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RecipientId" Type="int" Nullable="false" />
+    <Property Name="SenderId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LanguageSet">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LanguageName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LanguageDescription" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="MessageSet">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MessageText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="ConversationId" Type="int" Nullable="false" />
+    <Property Name="SenderId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuestionSet">
+    <Key>
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="QuestionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuestionText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LanguageLanguageId" Type="int" Nullable="false" />
+    <Property Name="QuestionTypeQuestionTypeId" Type="int" Nullable="false" />
+    <Property Name="CorrectOption" Type="int" Nullable="false" />
+    <Property Name="AccountAccountId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="QuestionTypeSet">
+    <Key>
+      <PropertyRef Name="QuestionTypeId" />
+    </Key>
+    <Property Name="QuestionTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuestionTypeText" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ThemeSet">
+    <Key>
+      <PropertyRef Name="ThemeId" />
+    </Key>
+    <Property Name="ThemeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AuthorId" Type="int" Nullable="false" />
+    <Property Name="ThemeName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ThemeText" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ThemePoints" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <Association Name="FK_AccountQuestion">
+    <End Role="AccountSet" Type="Forum.Store.AccountSet" Multiplicity="1" />
+    <End Role="QuestionSet" Type="Forum.Store.QuestionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountSet">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="QuestionSet">
+        <PropertyRef Name="AccountAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentorySet_AccountSet">
+    <End Role="AccountSet" Type="Forum.Store.AccountSet" Multiplicity="1" />
+    <End Role="CommentorySet" Type="Forum.Store.CommentorySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountSet">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="CommentorySet">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConversationSet_AccountSet">
+    <End Role="AccountSet" Type="Forum.Store.AccountSet" Multiplicity="1" />
+    <End Role="ConversationSet" Type="Forum.Store.ConversationSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountSet">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="ConversationSet">
+        <PropertyRef Name="RecipientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConversationSet_AccountSet1">
+    <End Role="AccountSet" Type="Forum.Store.AccountSet" Multiplicity="1" />
+    <End Role="ConversationSet" Type="Forum.Store.ConversationSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountSet">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="ConversationSet">
+        <PropertyRef Name="SenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessageSet_ConversationSet_Sender">
+    <End Role="AccountSet" Type="Forum.Store.AccountSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MessageSet" Type="Forum.Store.MessageSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountSet">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="MessageSet">
+        <PropertyRef Name="ConversationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThemeSet_AccountSet">
+    <End Role="AccountSet" Type="Forum.Store.AccountSet" Multiplicity="1" />
+    <End Role="ThemeSet" Type="Forum.Store.ThemeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountSet">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="ThemeSet">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnswerQuestion">
+    <End Role="QuestionSet" Type="Forum.Store.QuestionSet" Multiplicity="1" />
+    <End Role="AnswerSet" Type="Forum.Store.AnswerSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionSet">
+        <PropertyRef Name="QuestionId" />
+      </Principal>
+      <Dependent Role="AnswerSet">
+        <PropertyRef Name="QuestionQuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentorySet_ThemeSet">
+    <End Role="ThemeSet" Type="Forum.Store.ThemeSet" Multiplicity="1" />
+    <End Role="CommentorySet" Type="Forum.Store.CommentorySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThemeSet">
+        <PropertyRef Name="ThemeId" />
+      </Principal>
+      <Dependent Role="CommentorySet">
+        <PropertyRef Name="ThemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessageSet_ConversationSet">
+    <End Role="ConversationSet" Type="Forum.Store.ConversationSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MessageSet" Type="Forum.Store.MessageSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConversationSet">
+        <PropertyRef Name="ConversationId" />
+      </Principal>
+      <Dependent Role="MessageSet">
+        <PropertyRef Name="ConversationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LanguageQuestion">
+    <End Role="LanguageSet" Type="Forum.Store.LanguageSet" Multiplicity="1" />
+    <End Role="QuestionSet" Type="Forum.Store.QuestionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LanguageSet">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="QuestionSet">
+        <PropertyRef Name="LanguageLanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuestionTypeQuestion">
+    <End Role="QuestionTypeSet" Type="Forum.Store.QuestionTypeSet" Multiplicity="1" />
+    <End Role="QuestionSet" Type="Forum.Store.QuestionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionTypeSet">
+        <PropertyRef Name="QuestionTypeId" />
+      </Principal>
+      <Dependent Role="QuestionSet">
+        <PropertyRef Name="QuestionTypeQuestionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Forum" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
@@ -595,104 +595,104 @@
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ForumStoreContainer" CdmEntityContainer="ForumContainer">
-          <EntitySetMapping Name="AccountSet">
-            <EntityTypeMapping TypeName="Forum.AccountSet">
-              <MappingFragment StoreEntitySet="AccountSet">
-                <ScalarProperty Name="Reputation" ColumnName="Reputation" />
-                <ScalarProperty Name="Points" ColumnName="Points" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
-                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AnswerSet">
-            <EntityTypeMapping TypeName="Forum.AnswerSet">
-              <MappingFragment StoreEntitySet="AnswerSet">
-                <ScalarProperty Name="QuestionQuestionId" ColumnName="QuestionQuestionId" />
-                <ScalarProperty Name="AnswerVarible" ColumnName="AnswerVarible" />
-                <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CommentorySet">
-            <EntityTypeMapping TypeName="Forum.CommentorySet">
-              <MappingFragment StoreEntitySet="CommentorySet">
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
-                <ScalarProperty Name="CommentoryText" ColumnName="CommentoryText" />
-                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
-                <ScalarProperty Name="CommentoryId" ColumnName="CommentoryId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ConversationSet">
-            <EntityTypeMapping TypeName="Forum.ConversationSet">
-              <MappingFragment StoreEntitySet="ConversationSet">
-                <ScalarProperty Name="SenderId" ColumnName="SenderId" />
-                <ScalarProperty Name="RecipientId" ColumnName="RecipientId" />
-                <ScalarProperty Name="ConversationId" ColumnName="ConversationId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LanguageSet">
-            <EntityTypeMapping TypeName="Forum.LanguageSet">
-              <MappingFragment StoreEntitySet="LanguageSet">
-                <ScalarProperty Name="LanguageDescription" ColumnName="LanguageDescription" />
-                <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
-                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MessageSet">
-            <EntityTypeMapping TypeName="Forum.MessageSet">
-              <MappingFragment StoreEntitySet="MessageSet">
-                <ScalarProperty Name="SenderId" ColumnName="SenderId" />
-                <ScalarProperty Name="ConversationId" ColumnName="ConversationId" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="MessageText" ColumnName="MessageText" />
-                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="QuestionSet">
-            <EntityTypeMapping TypeName="Forum.QuestionSet">
-              <MappingFragment StoreEntitySet="QuestionSet">
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="AccountAccountId" ColumnName="AccountAccountId" />
-                <ScalarProperty Name="CorrectOption" ColumnName="CorrectOption" />
-                <ScalarProperty Name="QuestionTypeQuestionTypeId" ColumnName="QuestionTypeQuestionTypeId" />
-                <ScalarProperty Name="LanguageLanguageId" ColumnName="LanguageLanguageId" />
-                <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
-                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="QuestionTypeSet">
-            <EntityTypeMapping TypeName="Forum.QuestionTypeSet">
-              <MappingFragment StoreEntitySet="QuestionTypeSet">
-                <ScalarProperty Name="QuestionTypeText" ColumnName="QuestionTypeText" />
-                <ScalarProperty Name="QuestionTypeId" ColumnName="QuestionTypeId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ThemeSet">
-            <EntityTypeMapping TypeName="Forum.ThemeSet">
-              <MappingFragment StoreEntitySet="ThemeSet">
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="ThemePoints" ColumnName="ThemePoints" />
-                <ScalarProperty Name="ThemeText" ColumnName="ThemeText" />
-                <ScalarProperty Name="ThemeName" ColumnName="ThemeName" />
-                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
-                <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
+    <EntitySetMapping Name="AccountSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Forum.AccountSet)">
+        <MappingFragment StoreEntitySet="AccountSet">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="Reputation" ColumnName="Reputation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnswerSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Forum.AnswerSet)">
+        <MappingFragment StoreEntitySet="AnswerSet">
+          <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+          <ScalarProperty Name="AnswerVarible" ColumnName="AnswerVarible" />
+          <ScalarProperty Name="QuestionQuestionId" ColumnName="QuestionQuestionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommentorySet">
+      <EntityTypeMapping TypeName="IsTypeOf(Forum.CommentorySet)">
+        <MappingFragment StoreEntitySet="CommentorySet">
+          <ScalarProperty Name="CommentoryId" ColumnName="CommentoryId" />
+          <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+          <ScalarProperty Name="CommentoryText" ColumnName="CommentoryText" />
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConversationSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Forum.ConversationSet)">
+        <MappingFragment StoreEntitySet="ConversationSet">
+          <ScalarProperty Name="ConversationId" ColumnName="ConversationId" />
+          <ScalarProperty Name="RecipientId" ColumnName="RecipientId" />
+          <ScalarProperty Name="SenderId" ColumnName="SenderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LanguageSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Forum.LanguageSet)">
+        <MappingFragment StoreEntitySet="LanguageSet">
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+          <ScalarProperty Name="LanguageDescription" ColumnName="LanguageDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Forum.MessageSet)">
+        <MappingFragment StoreEntitySet="MessageSet">
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ConversationId" ColumnName="ConversationId" />
+          <ScalarProperty Name="SenderId" ColumnName="SenderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Forum.QuestionSet)">
+        <MappingFragment StoreEntitySet="QuestionSet">
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+          <ScalarProperty Name="LanguageLanguageId" ColumnName="LanguageLanguageId" />
+          <ScalarProperty Name="QuestionTypeQuestionTypeId" ColumnName="QuestionTypeQuestionTypeId" />
+          <ScalarProperty Name="CorrectOption" ColumnName="CorrectOption" />
+          <ScalarProperty Name="AccountAccountId" ColumnName="AccountAccountId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionTypeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Forum.QuestionTypeSet)">
+        <MappingFragment StoreEntitySet="QuestionTypeSet">
+          <ScalarProperty Name="QuestionTypeId" ColumnName="QuestionTypeId" />
+          <ScalarProperty Name="QuestionTypeText" ColumnName="QuestionTypeText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThemeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Forum.ThemeSet)">
+        <MappingFragment StoreEntitySet="ThemeSet">
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+          <ScalarProperty Name="ThemeName" ColumnName="ThemeName" />
+          <ScalarProperty Name="ThemeText" ColumnName="ThemeText" />
+          <ScalarProperty Name="ThemePoints" ColumnName="ThemePoints" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->

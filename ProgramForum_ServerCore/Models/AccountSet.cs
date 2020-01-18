@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 
 namespace ProgramForum_ServerCore.Models
 {
-    public partial class AccountSet
+    public partial class AccountSet : IdentityUser 
     {
         public AccountSet()
         {
@@ -15,12 +16,11 @@ namespace ProgramForum_ServerCore.Models
             ThemeSet = new HashSet<ThemeSet>();
         }
 
-        public int AccountId { get; set; }
+        public int AccountId { get => Convert.ToInt32(base.Id); set => base.Id = value.ToString(); }
         public string Login { get; set; }
         public string Password { get; set; }
         public int AccountType { get; set; }
         public string Name { get; set; }
-        public string Email { get; set; }
         public DateTime? CreateDate { get; set; }
         public int? Points { get; set; }
         public int? Reputation { get; set; }
