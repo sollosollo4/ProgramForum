@@ -23,8 +23,8 @@ namespace ProgramForum_ServerCore
         public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = Configuration.GetConnectionString("SQLServerConnectionInfo");
-            services.AddDbContext<ForumContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<ForumContext>(options => 
+                options.UseSqlServer(Configuration.GetConnectionString("SQLServerConnectionInfo")));
 
             services.AddRazorPages();
         }

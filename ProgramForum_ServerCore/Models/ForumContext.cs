@@ -6,12 +6,7 @@ namespace ProgramForum_ServerCore.Models
 {
     public partial class ForumContext : DbContext
     {
-        public ForumContext()
-        {
-        }
-
-        public ForumContext(DbContextOptions<ForumContext> options)
-            : base(options)
+        public ForumContext(DbContextOptions<ForumContext> options) : base(options)
         {
         }
 
@@ -25,10 +20,10 @@ namespace ProgramForum_ServerCore.Models
         public virtual DbSet<QuestionTypeSet> QuestionTypeSet { get; set; }
         public virtual DbSet<ThemeSet> ThemeSet { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-        }
+        }*/
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
