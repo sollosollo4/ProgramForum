@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{499711E3-E098-4EEF-8277-FF4BE9686705}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProgramForum</RootNamespace>
+    <AssemblyName>ProgramForum</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountSet.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddNeQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNeQuestion.Designer.cs">
+      <DependentUpon>AddNeQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnswerSet.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthForm.Designer.cs">
+      <DependentUpon>AuthForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chat\MessageContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chat\MessageContainer.Designer.cs">
+      <DependentUpon>MessageContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommentorySet.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Content\RandomQuestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Content\RandomQuestion.Designer.cs">
+      <DependentUpon>RandomQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ThemeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Content\ThemeControl.Designer.cs">
+      <DependentUpon>ThemeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Theme\SingleTheme.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Content\Theme\SingleTheme.Designer.cs">
+      <DependentUpon>SingleTheme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConversationSet.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forum.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Forum.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forum.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forum.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Forum.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\ForumDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForumDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageSet.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageSet.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Chat\MessageSendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chat\MessageSendForm.Designer.cs">
+      <DependentUpon>MessageSendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\MyAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Content\MyAccount.Designer.cs">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\QuestionType.cs" />
+    <Compile Include="Panels\QuestionType0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\QuestionType0.Designer.cs">
+      <DependentUpon>QuestionType0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\QuestionType1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\QuestionType1.Designer.cs">
+      <DependentUpon>QuestionType1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\QuestionType3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\QuestionType3.Designer.cs">
+      <DependentUpon>QuestionType3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\QuestionType3Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\QuestionType3Form.Designer.cs">
+      <DependentUpon>QuestionType3Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\SimpleQuestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\SimpleQuestion.Designer.cs">
+      <DependentUpon>SimpleQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionSet.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionTypeSet.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThemeSet.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddNeQuestion.resx">
+      <DependentUpon>AddNeQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthForm.resx">
+      <DependentUpon>AuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat\MessageContainer.resx">
+      <DependentUpon>MessageContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\MyAccount.resx">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\RandomQuestion.resx">
+      <DependentUpon>RandomQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\ThemeControl.resx">
+      <DependentUpon>ThemeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Theme\SingleTheme.resx">
+      <DependentUpon>SingleTheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat\MessageSendForm.resx">
+      <DependentUpon>MessageSendForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.ru.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\QuestionType0.resx">
+      <DependentUpon>QuestionType0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\QuestionType1.resx">
+      <DependentUpon>QuestionType1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\QuestionType3.resx">
+      <DependentUpon>QuestionType3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\QuestionType3Form.resx">
+      <DependentUpon>QuestionType3Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\SimpleQuestion.resx">
+      <DependentUpon>SimpleQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="Forum.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Forum.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Forum.edmx.diagram">
+      <DependentUpon>Forum.edmx</DependentUpon>
+    </None>
+    <None Include="DataSets\ForumDataSet.xsc">
+      <DependentUpon>ForumDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ForumDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ForumDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\ForumDataSet.xss">
+      <DependentUpon>ForumDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Forum.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Forum.Context.cs</LastGenOutput>
+      <DependentUpon>Forum.edmx</DependentUpon>
+    </Content>
+    <Content Include="Forum.edmx.sql" />
+    <Content Include="Forum.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Forum.cs</LastGenOutput>
+      <DependentUpon>Forum.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
