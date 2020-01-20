@@ -15,6 +15,8 @@ namespace ProgramForum.Panels
         private QuestionSet QuestionSet;    // Объект вопроса
         private IQuestionType QuestType;
 
+
+
         public SimpleQuestion(QuestionSet questionSet)
         {
             InitializeComponent();
@@ -25,7 +27,6 @@ namespace ProgramForum.Panels
             QuestType = QuestionTypes.GetQuestionType(QuestionSet);
             var question = QuestType.getUserControl();
             QuestionTypes.SetQuest(question, QuestionSet);
-            
 
             Controls.Add(question);
         }

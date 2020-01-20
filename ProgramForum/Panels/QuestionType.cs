@@ -65,21 +65,53 @@ namespace ProgramForum.Panels
         {
             switch (quest.QuestionTypeSet.QuestionTypeId)
             {
-                case 1:
+                case 1: {
                     var needControlQuestType0 = (QuestionType0)control;
                     needControlQuestType0.questionType.Question = quest;
                     needControlQuestType0.SetTextBox(quest);
                     needControlQuestType0.SetTextBoxReadOnly(true);
                     needControlQuestType0.Anchor = AnchorStyles.Left | AnchorStyles.Right;
                     break;
-                case 2:
+                }
+                case 2: {
                     var needControlQuestType1 = (QuestionType1)control;
                     needControlQuestType1.questionType.Question = quest;
                     needControlQuestType1.SetTextBox(quest);
                     needControlQuestType1.SetTextBoxReadOnly(true);
                     needControlQuestType1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
                     break;
-                    
+                }
+            }
+        }
+
+        public static bool TryToAnswer(SimpleQuestion currentPanel, QuestionSet currentQuestion)
+        {
+            switch (currentQuestion.QuestionTypeSet.QuestionTypeId)
+            {
+                case 1:
+                {
+                    var needControlQuestType0 = currentPanel.Controls.OfType<QuestionType0>().ToList().FirstOrDefault();
+                    if (needControlQuestType0.questionType.RadioButtons[currentQuestion.CorrectOption])
+                        return true;
+                    else
+                        return false;
+                }
+                case 2:
+                {
+                    var needControlQuestType1 = currentPanel.Controls.OfType<QuestionType1>().ToList().FirstOrDefault();
+                    int sum = 0;
+                    for(int i=0; i<needControlQuestType1.questionType.CheckBox.Length; i++)
+                    {
+                        sum += i;
+                    }
+
+                    if (sum == currentQuestion.CorrectOption)
+                        return true;
+                    else
+                        return false;
+                }
+                default:
+                    return false;
             }
         }
     }

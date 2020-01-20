@@ -124,6 +124,8 @@ namespace ProgramForum
                     Anchor = AnchorStyles.Left | AnchorStyles.Right
                 };
 
+                randQuest.ReturnToMain += MainFormToolStripMenuItem_Click;
+
                 Controls.Add(randQuest);
             }
         }

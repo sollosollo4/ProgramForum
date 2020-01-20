@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace ProgramForum
 {
+
     static class Program
     {
         /// <summary>
@@ -13,7 +14,7 @@ namespace ProgramForum
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        { 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
