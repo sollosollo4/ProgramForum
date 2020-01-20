@@ -205,7 +205,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MainMenu.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="MainContent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -273,39 +273,6 @@
   <data name="&gt;&gt;LastThemesLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="MyAccount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="MyAccount.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="MyAccount.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt, style=Bold</value>
-  </data>
-  <data name="MyAccount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>302, 44</value>
-  </data>
-  <data name="MyAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 31</value>
-  </data>
-  <data name="MyAccount.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="MyAccount.Text" xml:space="preserve">
-    <value>Личный кабинет</value>
-  </data>
-  <data name="&gt;&gt;MyAccount.Name" xml:space="preserve">
-    <value>MyAccount</value>
-  </data>
-  <data name="&gt;&gt;MyAccount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MyAccount.Parent" xml:space="preserve">
-    <value>MainContent</value>
-  </data>
-  <data name="&gt;&gt;MyAccount.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="HelloLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -334,7 +301,7 @@
     <value>MainContent</value>
   </data>
   <data name="&gt;&gt;HelloLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="MainContent.Location" type="System.Drawing.Point, System.Drawing">
     <value>220, 91</value>
@@ -358,7 +325,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MainContent.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
+  </data>
+  <data name="MyAccount.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="MyAccount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="MyAccount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 54</value>
+  </data>
+  <data name="MyAccount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 31</value>
+  </data>
+  <data name="MyAccount.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="MyAccount.Text" xml:space="preserve">
+    <value>Личный кабинет</value>
+  </data>
+  <data name="&gt;&gt;MyAccount.Name" xml:space="preserve">
+    <value>MyAccount</value>
+  </data>
+  <data name="&gt;&gt;MyAccount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MyAccount.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MyAccount.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="pictureBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1906,7 +1903,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="LanguageLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6690,6 +6687,9 @@
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>816, 487</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Главная</value>

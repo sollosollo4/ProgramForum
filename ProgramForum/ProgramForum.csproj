@@ -74,14 +74,32 @@
     <Compile Include="AuthForm.Designer.cs">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chat\MessageContainer.cs">
+    <Compile Include="Content\PrivateMessage\Chat\MessageContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Chat\MessageContainer.Designer.cs">
+    <Compile Include="Content\PrivateMessage\Chat\MessageContainer.Designer.cs">
       <DependentUpon>MessageContainer.cs</DependentUpon>
     </Compile>
     <Compile Include="CommentorySet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Content\EveryDayTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Content\EveryDayTest.Designer.cs">
+      <DependentUpon>EveryDayTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PrivateMessageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Content\PrivateMessageControl.Designer.cs">
+      <DependentUpon>PrivateMessageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PrivateMessage\Chat\Chat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Content\PrivateMessage\Chat\Chat.Designer.cs">
+      <DependentUpon>Chat.cs</DependentUpon>
     </Compile>
     <Compile Include="Content\RandomQuestion.cs">
       <SubType>UserControl</SubType>
@@ -136,10 +154,10 @@
     <Compile Include="MessageSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
-    <Compile Include="Chat\MessageSendForm.cs">
+    <Compile Include="Content\PrivateMessage\Chat\MessageSendForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chat\MessageSendForm.Designer.cs">
+    <Compile Include="Content\PrivateMessage\Chat\MessageSendForm.Designer.cs">
       <DependentUpon>MessageSendForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Content\MyAccount.cs">
@@ -196,11 +214,20 @@
     <EmbeddedResource Include="AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chat\MessageContainer.resx">
+    <EmbeddedResource Include="Content\PrivateMessage\Chat\Chat.resx">
+      <DependentUpon>Chat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\PrivateMessage\Chat\MessageContainer.resx">
       <DependentUpon>MessageContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\EveryDayTest.resx">
+      <DependentUpon>EveryDayTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Content\MyAccount.resx">
       <DependentUpon>MyAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\PrivateMessageControl.resx">
+      <DependentUpon>PrivateMessageControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Content\RandomQuestion.resx">
       <DependentUpon>RandomQuestion.cs</DependentUpon>
@@ -214,7 +241,7 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chat\MessageSendForm.resx">
+    <EmbeddedResource Include="Content\PrivateMessage\Chat\MessageSendForm.resx">
       <DependentUpon>MessageSendForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.ru.resx">

@@ -137,7 +137,26 @@ namespace ProgramForum
                 Location = new Point(220, 91),
                 Anchor = AnchorStyles.Left | AnchorStyles.Right
             };
+            myAccount.UpdateLabels();
             Controls.Add(myAccount);
+        }
+
+        private void EveryDayTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MessagesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllContentHidden();
+
+            Content.PrivateMessageControl cpMessages = new Content.PrivateMessageControl()
+            {
+                Location = new Point(220, 91),
+                Anchor = AnchorStyles.Left | AnchorStyles.Right
+            };
+            Controls.Add(cpMessages);
+            cpMessages.LoadMessages(Client);
         }
     }
 }

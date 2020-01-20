@@ -17,10 +17,13 @@ namespace ProgramForum.Content
         {
             Account = client;
             InitializeComponent();
+        }
 
+        public void UpdateLabels()
+        {
             LoginTextBox.Text = Account.Login;
             EmailTextBox.Text = Account.Email;
-            CreateDatelabel.Text += Account.CreateDate;
+            CreateDatelabel.Text = Account.CreateDate.ToString();
         }
 
         private void SaveChanges_Click(object sender, EventArgs e)

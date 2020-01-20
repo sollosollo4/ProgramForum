@@ -1,4 +1,4 @@
-﻿namespace ProgramForum.Chat
+﻿namespace ProgramForum.Content.PrivateMessage.Chat
 {
     partial class MessageContainer
     {
@@ -43,33 +43,34 @@
             // 
             // Date
             // 
-            this.Date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Date.Location = new System.Drawing.Point(358, 1);
+            this.Date.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Date.Location = new System.Drawing.Point(348, 4);
             this.Date.Name = "Date";
-            this.Date.Size = new System.Drawing.Size(43, 64);
+            this.Date.Size = new System.Drawing.Size(52, 64);
             this.Date.TabIndex = 0;
             this.Date.Text = "Date";
             // 
             // Message
             // 
+            this.Message.BackColor = System.Drawing.SystemColors.Info;
             this.Message.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Message.Location = new System.Drawing.Point(67, 4);
             this.Message.Multiline = true;
             this.Message.Name = "Message";
-            this.Message.Size = new System.Drawing.Size(287, 64);
+            this.Message.Size = new System.Drawing.Size(275, 64);
             this.Message.TabIndex = 1;
             // 
             // MessageContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.Message);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.NickName);
             this.Name = "MessageContainer";
-            this.Size = new System.Drawing.Size(403, 71);
+            this.Size = new System.Drawing.Size(403, 75);
             this.ResumeLayout(false);
             this.PerformLayout();
 

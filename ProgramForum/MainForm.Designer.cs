@@ -36,9 +36,10 @@
             this.EveryDayTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MessagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainContent = new System.Windows.Forms.Panel();
+            this.LastThemePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.LastThemesLabel = new System.Windows.Forms.Label();
-            this.MyAccount = new System.Windows.Forms.Button();
             this.HelloLabel = new System.Windows.Forms.Label();
+            this.MyAccount = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LanguageLabel = new System.Windows.Forms.Label();
             this.newQuestionLink = new System.Windows.Forms.LinkLabel();
@@ -46,7 +47,6 @@
             this.AccountsGrid = new System.Windows.Forms.LinkLabel();
             this.ForumNews = new System.Windows.Forms.LinkLabel();
             this.NewAccountsRegistred = new System.Windows.Forms.LinkLabel();
-            this.LastThemePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.MainMenu.SuspendLayout();
             this.MainContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -101,6 +101,7 @@
             this.EveryDayTestToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
             this.EveryDayTestToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.EveryDayTestToolStripMenuItem.Name = "EveryDayTestToolStripMenuItem";
+            this.EveryDayTestToolStripMenuItem.Click += new System.EventHandler(this.EveryDayTestToolStripMenuItem_Click);
             // 
             // MessagesToolStripMenuItem
             // 
@@ -109,34 +110,39 @@
             this.MessagesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
             this.MessagesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.MessagesToolStripMenuItem.Name = "MessagesToolStripMenuItem";
+            this.MessagesToolStripMenuItem.Click += new System.EventHandler(this.MessagesToolStripMenuItem_Click);
             // 
             // MainContent
             // 
             resources.ApplyResources(this.MainContent, "MainContent");
             this.MainContent.Controls.Add(this.LastThemePanel);
             this.MainContent.Controls.Add(this.LastThemesLabel);
-            this.MainContent.Controls.Add(this.MyAccount);
             this.MainContent.Controls.Add(this.HelloLabel);
             this.MainContent.Name = "MainContent";
+            // 
+            // LastThemePanel
+            // 
+            resources.ApplyResources(this.LastThemePanel, "LastThemePanel");
+            this.LastThemePanel.Name = "LastThemePanel";
             // 
             // LastThemesLabel
             // 
             resources.ApplyResources(this.LastThemesLabel, "LastThemesLabel");
             this.LastThemesLabel.Name = "LastThemesLabel";
             // 
-            // MyAccount
-            // 
-            resources.ApplyResources(this.MyAccount, "MyAccount");
-            this.MyAccount.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.MyAccount.FlatAppearance.BorderSize = 0;
-            this.MyAccount.Name = "MyAccount";
-            this.MyAccount.UseVisualStyleBackColor = false;
-            this.MyAccount.Click += new System.EventHandler(this.MyAccount_Click);
-            // 
             // HelloLabel
             // 
             resources.ApplyResources(this.HelloLabel, "HelloLabel");
             this.HelloLabel.Name = "HelloLabel";
+            // 
+            // MyAccount
+            // 
+            this.MyAccount.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.MyAccount.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.MyAccount, "MyAccount");
+            this.MyAccount.Name = "MyAccount";
+            this.MyAccount.UseVisualStyleBackColor = false;
+            this.MyAccount.Click += new System.EventHandler(this.MyAccount_Click);
             // 
             // pictureBox1
             // 
@@ -187,11 +193,6 @@
             this.NewAccountsRegistred.Name = "NewAccountsRegistred";
             this.NewAccountsRegistred.TabStop = true;
             // 
-            // LastThemePanel
-            // 
-            resources.ApplyResources(this.LastThemePanel, "LastThemePanel");
-            this.LastThemePanel.Name = "LastThemePanel";
-            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -199,6 +200,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.MainForumMenu);
             this.Controls.Add(this.LanguageLabel);
+            this.Controls.Add(this.MyAccount);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.MainContent);
             this.Controls.Add(this.MainMenu);

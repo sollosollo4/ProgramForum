@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProgramForum.Chat
+namespace ProgramForum.Content.PrivateMessage.Chat
 {
     public partial class MessageContainer : UserControl
     {

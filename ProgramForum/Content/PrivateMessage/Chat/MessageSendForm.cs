@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProgramForum.Chat
+namespace ProgramForum.Content.PrivateMessage.Chat
 {
     public partial class MessageSendForm : Form
     {
@@ -17,7 +17,7 @@ namespace ProgramForum.Chat
         public AccountSet Recipient;
         public AccountSet Sender;
         
-        public List<Chat.MessageContainer> MessageContainers;
+        public List<MessageContainer> MessageContainers;
 
         /// <summary>
         /// initial = Получатель, sender = Отправитель
@@ -44,6 +44,8 @@ namespace ProgramForum.Chat
                 (x.AccountSet.AccountId == init.AccountId && x.AccountSet1.AccountId == send.AccountId) ||
                 (x.AccountSet.AccountId == send.AccountId && x.AccountSet1.AccountId == init.AccountId)
                 );
+
+
                 if(conversation == null)
                 {
                     ConversationSet newConversation = new ConversationSet()
@@ -83,18 +85,21 @@ namespace ProgramForum.Chat
             if (Message.SenderId == Recipient.AccountId) // Left - сообщения отправителя
             {
                 messageContainer.SetMessage(Recipient, Message);
-                flowLayoutPanel1.Controls.Add(messageContainer);
+                ContainerPMessage.Controls.Add(messageContainer);
             }
             else if(Message.SenderId == Sender.AccountId) // rigth - сообщения получателя
             {
                 messageContainer.SetMessage(Sender, Message);
-                flowLayoutPanel1.Controls.Add(messageContainer);
+                ContainerPMessage.Controls.Add(messageContainer);
             }
         }
 
         private void MessageSendForm_Load(object sender, EventArgs e)
         {
             GetMessages(Recipient, Sender);
+
+            var change = ContainerPMessage.VerticalScroll.Value + ContainerPMessage.VerticalScroll.SmallChange * 100;
+            ContainerPMessage.AutoScrollPosition = new Point(0, change);
         }
 
         private void MessageBox_KeyDown(object sender, KeyEventArgs e)
@@ -117,6 +122,11 @@ namespace ProgramForum.Chat
                         AddNewMessageContainer(message);
                     }
                     MessageBox.Text = "";
+
+                    var change = ContainerPMessage.VerticalScroll.Value + ContainerPMessage.VerticalScroll.SmallChange * 100;
+                    ContainerPMessage.AutoScrollPosition = new Point(0, change);
+
+                    // this code post query in server and get await
                 }
             }
         }

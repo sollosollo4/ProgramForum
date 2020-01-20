@@ -1,6 +1,6 @@
 ﻿namespace ProgramForum.Content
 {
-    partial class ThemeControl
+    partial class PrivateMessageControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,46 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ThemeName = new System.Windows.Forms.Label();
-            this.ThemeText = new System.Windows.Forms.Label();
+            this.pmFlowLoyoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // ThemeName
+            // pmFlowLoyoutPanel
             // 
-            this.ThemeName.AutoSize = true;
-            this.ThemeName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ThemeName.Location = new System.Drawing.Point(3, 0);
-            this.ThemeName.Name = "ThemeName";
-            this.ThemeName.Size = new System.Drawing.Size(0, 22);
-            this.ThemeName.TabIndex = 0;
+            this.pmFlowLoyoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pmFlowLoyoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pmFlowLoyoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.pmFlowLoyoutPanel.Name = "pmFlowLoyoutPanel";
+            this.pmFlowLoyoutPanel.Size = new System.Drawing.Size(452, 347);
+            this.pmFlowLoyoutPanel.TabIndex = 0;
             // 
-            // ThemeText
-            // 
-            this.ThemeText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ThemeText.Location = new System.Drawing.Point(0, 36);
-            this.ThemeText.Name = "ThemeText";
-            this.ThemeText.Size = new System.Drawing.Size(452, 311);
-            this.ThemeText.TabIndex = 1;
-            // 
-            // ThemeControl
+            // PrivateMessageControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.ThemeText);
-            this.Controls.Add(this.ThemeName);
+            this.Controls.Add(this.pmFlowLoyoutPanel);
             this.MinimumSize = new System.Drawing.Size(452, 347);
-            this.Name = "ThemeControl";
+            this.Name = "PrivateMessageControl";
             this.Size = new System.Drawing.Size(452, 347);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label ThemeName;
-        private System.Windows.Forms.Label ThemeText;
+        private System.Windows.Forms.FlowLayoutPanel pmFlowLoyoutPanel;
     }
 }
