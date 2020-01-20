@@ -17,6 +17,9 @@ namespace ProgramForum.Content
         {
             Theme = theme;
             InitializeComponent();
+
+            ThemeName.Text = theme.ThemeName;
+            ThemeText.Text = theme.ThemeText;
         }
     }
 }

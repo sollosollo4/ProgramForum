@@ -31,6 +31,8 @@
             this.ThemeName = new System.Windows.Forms.Label();
             this.ReadTheme = new System.Windows.Forms.Button();
             this.ThemeStartText = new System.Windows.Forms.Label();
+            this.ThemeAuthor = new System.Windows.Forms.Label();
+            this.CommentoryCount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ThemeName
@@ -44,8 +46,9 @@
             // 
             // ReadTheme
             // 
+            this.ReadTheme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ReadTheme.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ReadTheme.Location = new System.Drawing.Point(280, 75);
+            this.ReadTheme.Location = new System.Drawing.Point(314, 75);
             this.ReadTheme.Name = "ReadTheme";
             this.ReadTheme.Size = new System.Drawing.Size(123, 29);
             this.ReadTheme.TabIndex = 1;
@@ -60,15 +63,35 @@
             this.ThemeStartText.Size = new System.Drawing.Size(271, 78);
             this.ThemeStartText.TabIndex = 2;
             // 
+            // ThemeAuthor
+            // 
+            this.ThemeAuthor.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ThemeAuthor.Location = new System.Drawing.Point(350, 4);
+            this.ThemeAuthor.Name = "ThemeAuthor";
+            this.ThemeAuthor.Size = new System.Drawing.Size(87, 68);
+            this.ThemeAuthor.TabIndex = 3;
+            // 
+            // CommentoryCount
+            // 
+            this.CommentoryCount.AutoSize = true;
+            this.CommentoryCount.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CommentoryCount.Location = new System.Drawing.Point(117, 89);
+            this.CommentoryCount.Name = "CommentoryCount";
+            this.CommentoryCount.Size = new System.Drawing.Size(157, 15);
+            this.CommentoryCount.TabIndex = 4;
+            this.CommentoryCount.Text = "Количество комментариев:";
+            // 
             // SingleTheme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.CommentoryCount);
+            this.Controls.Add(this.ThemeAuthor);
             this.Controls.Add(this.ThemeStartText);
             this.Controls.Add(this.ReadTheme);
             this.Controls.Add(this.ThemeName);
             this.Name = "SingleTheme";
-            this.Size = new System.Drawing.Size(406, 107);
+            this.Size = new System.Drawing.Size(440, 107);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,5 +102,7 @@
         private System.Windows.Forms.Label ThemeName;
         private System.Windows.Forms.Button ReadTheme;
         private System.Windows.Forms.Label ThemeStartText;
+        private System.Windows.Forms.Label ThemeAuthor;
+        private System.Windows.Forms.Label CommentoryCount;
     }
 }

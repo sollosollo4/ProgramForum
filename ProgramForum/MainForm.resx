@@ -210,6 +210,57 @@
   <data name="MainContent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="LastThemePanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="LastThemePanel.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LastThemePanel.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="LastThemePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 99</value>
+  </data>
+  <data name="LastThemePanel.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>447, 249</value>
+  </data>
+  <data name="LastThemePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>447, 249</value>
+  </data>
+  <data name="LastThemePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LastThemePanel.Name" xml:space="preserve">
+    <value>LastThemePanel</value>
+  </data>
+  <data name="&gt;&gt;LastThemePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LastThemePanel.Parent" xml:space="preserve">
+    <value>MainContent</value>
+  </data>
+  <data name="&gt;&gt;LastThemePanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LastThemesLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LastThemesLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="LastThemesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 76</value>
+  </data>
+  <data name="LastThemesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 19</value>
+  </data>
+  <data name="LastThemesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="LastThemesLabel.Text" xml:space="preserve">
+    <value>Последние добавленные темы:</value>
+  </data>
   <data name="&gt;&gt;LastThemesLabel.Name" xml:space="preserve">
     <value>LastThemesLabel</value>
   </data>
@@ -220,19 +271,28 @@
     <value>MainContent</value>
   </data>
   <data name="&gt;&gt;LastThemesLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LastThemes.Name" xml:space="preserve">
-    <value>LastThemes</value>
-  </data>
-  <data name="&gt;&gt;LastThemes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LastThemes.Parent" xml:space="preserve">
-    <value>MainContent</value>
-  </data>
-  <data name="&gt;&gt;LastThemes.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="MyAccount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="MyAccount.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="MyAccount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="MyAccount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>302, 44</value>
+  </data>
+  <data name="MyAccount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 31</value>
+  </data>
+  <data name="MyAccount.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="MyAccount.Text" xml:space="preserve">
+    <value>Личный кабинет</value>
   </data>
   <data name="&gt;&gt;MyAccount.Name" xml:space="preserve">
     <value>MyAccount</value>
@@ -245,6 +305,24 @@
   </data>
   <data name="&gt;&gt;MyAccount.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="HelloLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="HelloLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 14.25pt, style=Bold</value>
+  </data>
+  <data name="HelloLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="HelloLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>440, 50</value>
+  </data>
+  <data name="HelloLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="HelloLabel.Text" xml:space="preserve">
+    <value>Добро пожаловать на главную страницу программного форума</value>
   </data>
   <data name="&gt;&gt;HelloLabel.Name" xml:space="preserve">
     <value>HelloLabel</value>
@@ -260,6 +338,9 @@
   </data>
   <data name="MainContent.Location" type="System.Drawing.Point, System.Drawing">
     <value>220, 91</value>
+  </data>
+  <data name="MainContent.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>450, 348</value>
   </data>
   <data name="MainContent.Size" type="System.Drawing.Size, System.Drawing">
     <value>450, 348</value>
@@ -1992,6 +2073,9 @@
   <data name="MainForumMenu.Location" type="System.Drawing.Point, System.Drawing">
     <value>670, 91</value>
   </data>
+  <data name="MainForumMenu.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>128, 348</value>
+  </data>
   <data name="MainForumMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 348</value>
   </data>
@@ -2008,120 +2092,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MainForumMenu.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="HelloLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 14.25pt, style=Bold</value>
-  </data>
-  <data name="HelloLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="HelloLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>440, 50</value>
-  </data>
-  <data name="HelloLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="HelloLabel.Text" xml:space="preserve">
-    <value>Добро пожаловать на главную страницу программного форума</value>
-  </data>
-  <data name="&gt;&gt;HelloLabel.Name" xml:space="preserve">
-    <value>HelloLabel</value>
-  </data>
-  <data name="&gt;&gt;HelloLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;HelloLabel.Parent" xml:space="preserve">
-    <value>MainContent</value>
-  </data>
-  <data name="&gt;&gt;HelloLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="MyAccount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="MyAccount.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="MyAccount.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt, style=Bold</value>
-  </data>
-  <data name="MyAccount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>301, 57</value>
-  </data>
-  <data name="MyAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 31</value>
-  </data>
-  <data name="MyAccount.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="MyAccount.Text" xml:space="preserve">
-    <value>Личный кабинет</value>
-  </data>
-  <data name="&gt;&gt;MyAccount.Name" xml:space="preserve">
-    <value>MyAccount</value>
-  </data>
-  <data name="&gt;&gt;MyAccount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MyAccount.Parent" xml:space="preserve">
-    <value>MainContent</value>
-  </data>
-  <data name="&gt;&gt;MyAccount.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="LastThemes.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LastThemes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 95</value>
-  </data>
-  <data name="LastThemes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 253</value>
-  </data>
-  <data name="LastThemes.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;LastThemes.Name" xml:space="preserve">
-    <value>LastThemes</value>
-  </data>
-  <data name="&gt;&gt;LastThemes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LastThemes.Parent" xml:space="preserve">
-    <value>MainContent</value>
-  </data>
-  <data name="&gt;&gt;LastThemes.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LastThemesLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LastThemesLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt, style=Bold</value>
-  </data>
-  <data name="LastThemesLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 76</value>
-  </data>
-  <data name="LastThemesLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 19</value>
-  </data>
-  <data name="LastThemesLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="LastThemesLabel.Text" xml:space="preserve">
-    <value>Последние добавленные темы:</value>
-  </data>
-  <data name="&gt;&gt;LastThemesLabel.Name" xml:space="preserve">
-    <value>LastThemesLabel</value>
-  </data>
-  <data name="&gt;&gt;LastThemesLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LastThemesLabel.Parent" xml:space="preserve">
-    <value>MainContent</value>
-  </data>
-  <data name="&gt;&gt;LastThemesLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -6717,6 +6687,9 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>816, 487</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Главная</value>

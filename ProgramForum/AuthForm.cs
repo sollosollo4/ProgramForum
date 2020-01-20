@@ -62,8 +62,12 @@ namespace ProgramForum
                 }
             }
 
-            Properties.Settings.Default.Login = login;
-            Properties.Settings.Default.Password = password;
+            if (RememberMeCheckBox.Enabled)
+            {
+                Properties.Settings.Default.Login = login;
+                Properties.Settings.Default.Password = password;
+                Properties.Settings.Default.Save();
+            }
 
             Close();
         }

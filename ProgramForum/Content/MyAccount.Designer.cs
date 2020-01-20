@@ -227,7 +227,6 @@
             this.Controls.Add(this.LoginTextBox);
             this.Name = "MyAccount";
             this.Size = new System.Drawing.Size(452, 347);
-            this.VisibleChanged += new System.EventHandler(this.MyAccount_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

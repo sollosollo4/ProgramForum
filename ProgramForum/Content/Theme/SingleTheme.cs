@@ -18,6 +18,13 @@ namespace ProgramForum.Content.Theme
             InitializeComponent();
             Theme = theme;
 
+            using (ForumContainer container = new ForumContainer())
+            {
+                var account = container.AccountSet.SingleOrDefault(x => x.AccountId == Theme.AuthorId);
+                ThemeAuthor.Text = account.Name.TrimEnd();
+                ThemeAuthor.Text += "\n" + Theme.CreateDate;
+                CommentoryCount.Text += "  " + container.CommentorySet.Where(x => x.ThemeId == Theme.ThemeId).ToList().Count;
+            }
             ThemeName.Text = Theme.ThemeName;
             ThemeStartText.Text = Theme.ThemeText;
         }

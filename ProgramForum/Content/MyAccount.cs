@@ -23,13 +23,6 @@ namespace ProgramForum.Content
             CreateDatelabel.Text += Account.CreateDate;
         }
 
-        private void MyAccount_VisibleChanged(object sender, EventArgs e)
-        {
-            LoginTextBox.Text = Account.Login;
-            EmailTextBox.Text = Account.Email;
-            CreateDatelabel.Text = Account.CreateDate.ToString();
-        }
-
         private void SaveChanges_Click(object sender, EventArgs e)
         {
             if(OldPassword.Text == Account.Password)

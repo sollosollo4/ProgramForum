@@ -23,6 +23,11 @@ namespace ProgramForum
             this.Client = Client;
         }
 
+        private void AllContentLoad()
+        {
+
+        }
+
         private void AllContentHidden()
         {
             foreach (UserControl smplPanel in Controls.OfType<UserControl>())
@@ -58,9 +63,10 @@ namespace ProgramForum
                     {
                         Content.Theme.SingleTheme singleTheme = new Content.Theme.SingleTheme(theme)
                         {
-                            Location = new Point()
+                            Location = new Point(0, 0)
                         };
                         singleTheme.SetClick_ReadTheme(SetClick_ForSingleTheme);
+                        LastThemePanel.Controls.Add(singleTheme);
                     }
                 }
             }
@@ -68,9 +74,11 @@ namespace ProgramForum
 
         private void SetClick_ForSingleTheme(object sender, EventArgs eventArgs)
         {
-            Content.Theme.SingleTheme singleTheme = (Content.Theme.SingleTheme)sender;
+            var childButton = (Button)sender;
             AllContentHidden();
-            Content.ThemeControl newTheme = new Content.ThemeControl(singleTheme.Theme);
+            var theme = (Content.Theme.SingleTheme)childButton.Parent;
+            Content.ThemeControl newTheme = new Content.ThemeControl(theme.Theme) { Location = new Point(220, 91), MinimumSize = new Size(450, 348), MaximumSize = new Size(0,0), Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right };
+            Controls.Add(newTheme);
         }
 
         private void ChooseLanguageStrip_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,17 +97,26 @@ namespace ProgramForum
 
         private void RandomQuestionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AllContentHidden();
             if(Language == null)
             {
                 MessageBox.Show("Вы не выбрали язык! Пожалуйста, выберите язык на синей вкладки левой панели");
                 return;
             }
+
             using (ForumContainer container = new ForumContainer())
             {
+                
                 List<QuestionSet> questionSets = new List<QuestionSet>();
                 questionSets = container.QuestionSet.Where(x => x.LanguageSet.LanguageId == Language.LanguageId).ToList();
                 Random xRandom = new Random();
+
+                if(questionSets.Count == 0)
+                {
+                    MessageBox.Show("В базе данных нет вопросов по теме выбранного вами языка");
+                    return;
+                }
+
+                AllContentHidden();
 
                 Content.RandomQuestion randQuest = new Content.RandomQuestion(questionSets[xRandom.Next(0, questionSets.Count)])
                 {
@@ -114,6 +131,7 @@ namespace ProgramForum
         private void MyAccount_Click(object sender, EventArgs e)
         {
             AllContentHidden();
+
             Content.MyAccount myAccount = new Content.MyAccount(Client)
             {
                 Location = new Point(220, 91),
