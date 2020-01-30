@@ -21,6 +21,12 @@ namespace ProgramForum
         {
             InitializeComponent();
             this.Client = Client;
+
+            if(Client.AccountType == 0)
+            {
+                AdminPanelButton.Visible = false;
+                AdminPanelButton.Enabled = false;
+            }
         }
 
         private void AllContentLoad()
@@ -30,55 +36,38 @@ namespace ProgramForum
 
         private void AllContentHidden()
         {
+            /*
             foreach (UserControl smplPanel in Controls.OfType<UserControl>())
                 smplPanel.Visible = false;
             // Скрываем все панели из Content
 
-            MainContent.Visible = false; // Скрываем Панель Content'а
-
-            if(Controls.OfType<UserControl>().Count() > 10)
-            {
-                foreach (UserControl smplPanel in Controls.OfType<UserControl>())
-                {
+            if(Controls.OfType<UserControl>().Count() > 10) {
+                foreach (UserControl smplPanel in Controls.OfType<UserControl>()) {
                     Controls.Remove(smplPanel);
                 }
-            }
+            }*/
+
+            // удаление всех панелей из Controls 
+            foreach (UserControl smplPanel in Controls.OfType<UserControl>())
+                Controls.Remove(smplPanel);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Panels.MainContent MainContent = new Panels.MainContent(AddNewTheme_Click) { 
+                Location = new Point(220, 91), 
+                Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right
+                };
+            Controls.Add(MainContent);
+
             LanguageLabel.Text = "Язык не выбран.";
 
-            using(ForumContainer container = new ForumContainer())
-            {
+            using(ForumContainer container = new ForumContainer()) {
                 var LanguageList = container.LanguageSet.Select(x => x.LanguageName);
                 languageList = new List<LanguageSet>();
                 languageList = container.LanguageSet.ToList();
                 ChooseLanguageStrip.Items.AddRange(LanguageList.ToArray());
-
-                // ThemeLoading
-                if(container.ThemeSet.Count() > 0)
-                {
-                    foreach (ThemeSet theme in container.ThemeSet.OrderByDescending(t => t.CreateDate)) 
-                    {
-                        Content.Theme.SingleTheme singleTheme = new Content.Theme.SingleTheme(theme)
-                        {
-                            Location = new Point(0, 0)
-                        };
-                        singleTheme.SetClick_ReadTheme(SetClick_ForSingleTheme);
-                        LastThemePanel.Controls.Add(singleTheme);
-                    }
-                }
             }
-        }
-
-        private void SetClick_ForSingleTheme(object sender, EventArgs eventArgs)
-        {
-            var childButton = (Button)sender;
-            AllContentHidden();
-            var theme = (Content.Theme.SingleTheme)childButton.Parent;
-            Content.ThemeControl newTheme = new Content.ThemeControl(theme.Theme) { Location = new Point(220, 91), MinimumSize = new Size(450, 348), MaximumSize = new Size(0,0), Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right };
-            Controls.Add(newTheme);
         }
 
         private void ChooseLanguageStrip_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,7 +81,22 @@ namespace ProgramForum
         private void MainFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AllContentHidden();
-            MainContent.Visible = true;
+            Panels.MainContent MainContent = new Panels.MainContent(AddNewTheme_Click) { 
+                Location = new Point(220, 91),
+                Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right
+            };
+            Controls.Add(MainContent);
+        }
+
+        private void AddNewTheme_Click(object sender, EventArgs e)
+        {
+            AllContentHidden();
+
+            Content.AddNewTheme addNewTheme = new Content.AddNewTheme(Client, MainFormToolStripMenuItem_Click) {
+                Location = new Point(220, 91),
+                Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right
+            };
+            Controls.Add(addNewTheme);
         }
 
         private void RandomQuestionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -105,7 +109,6 @@ namespace ProgramForum
 
             using (ForumContainer container = new ForumContainer())
             {
-                
                 List<QuestionSet> questionSets = new List<QuestionSet>();
                 questionSets = container.QuestionSet.Where(x => x.LanguageSet.LanguageId == Language.LanguageId).ToList();
                 Random xRandom = new Random();
@@ -132,12 +135,11 @@ namespace ProgramForum
 
         private void MyAccount_Click(object sender, EventArgs e)
         {
-            AllContentHidden();
+           AllContentHidden();
 
-            Content.MyAccount myAccount = new Content.MyAccount(Client)
-            {
+            Content.MyAccount myAccount = new Content.MyAccount(Client) {
                 Location = new Point(220, 91),
-                Anchor = AnchorStyles.Left | AnchorStyles.Right
+                Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom
             };
             myAccount.UpdateLabels();
             Controls.Add(myAccount);
@@ -152,13 +154,24 @@ namespace ProgramForum
         {
             AllContentHidden();
 
-            Content.PrivateMessageControl cpMessages = new Content.PrivateMessageControl()
+            Content.PrivateMessage.PrivateMessageControl cpMessages = new Content.PrivateMessage.PrivateMessageControl()
             {
                 Location = new Point(220, 91),
                 Anchor = AnchorStyles.Left | AnchorStyles.Right
             };
             Controls.Add(cpMessages);
             cpMessages.LoadMessages(Client);
+        }
+
+        private void AdminPanelButton_Click(object sender, EventArgs e)
+        {
+            AllContentHidden();
+            Content.Adminnistration.AdministrationPanel administrationPanel = new Content.Adminnistration.AdministrationPanel()
+            {
+                Location = new Point(220, 91),
+                Anchor = AnchorStyles.Left | AnchorStyles.Top
+            };
+            Controls.Add(administrationPanel);
         }
     }
 }

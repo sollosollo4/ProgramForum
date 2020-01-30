@@ -21,9 +21,13 @@ namespace ProgramForum.Content
 
         public void UpdateLabels()
         {
-            LoginTextBox.Text = Account.Login;
+            LoginTextBox.Text = Account.Login.TrimEnd();
             EmailTextBox.Text = Account.Email;
-            CreateDatelabel.Text = Account.CreateDate.ToString();
+            CreateDatelabel.Text = "Дата создания аккаунта: \n" + Account.CreateDate.ToString();
+            AccountPoints.Text = "Накопленные очки: " + Account.Points;
+            AccountReputation.Text = "Репутация: " + Account.Reputation;
+            var Status = Account.AccountType == -1 ? "Админ" : "Пользователь";
+            AccountStatus.Text = "Статус аккаунта: " + Status;
         }
 
         private void SaveChanges_Click(object sender, EventArgs e)

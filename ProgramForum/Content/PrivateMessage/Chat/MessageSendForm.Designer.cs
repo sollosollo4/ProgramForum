@@ -38,7 +38,7 @@
             this.MessageBox.Location = new System.Drawing.Point(0, 402);
             this.MessageBox.Multiline = true;
             this.MessageBox.Name = "MessageBox";
-            this.MessageBox.Size = new System.Drawing.Size(414, 59);
+            this.MessageBox.Size = new System.Drawing.Size(429, 59);
             this.MessageBox.TabIndex = 0;
             this.MessageBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MessageBox_KeyDown);
             // 
@@ -48,17 +48,18 @@
             this.ContainerPMessage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContainerPMessage.Location = new System.Drawing.Point(0, 0);
             this.ContainerPMessage.Name = "ContainerPMessage";
-            this.ContainerPMessage.Size = new System.Drawing.Size(414, 402);
+            this.ContainerPMessage.Size = new System.Drawing.Size(429, 402);
             this.ContainerPMessage.TabIndex = 1;
             // 
             // MessageSendForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 461);
+            this.ClientSize = new System.Drawing.Size(429, 461);
             this.Controls.Add(this.ContainerPMessage);
             this.Controls.Add(this.MessageBox);
-            this.MaximumSize = new System.Drawing.Size(430, 500);
+            this.MaximumSize = new System.Drawing.Size(445, 500);
+            this.MinimumSize = new System.Drawing.Size(445, 500);
             this.Name = "MessageSendForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Личные сообщения";

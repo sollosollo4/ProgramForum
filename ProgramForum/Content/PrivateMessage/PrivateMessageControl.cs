@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProgramForum.Content.PrivateMessage.Chat;
 
-namespace ProgramForum.Content
+namespace ProgramForum.Content.PrivateMessage
 {
     public partial class PrivateMessageControl : UserControl
     {
+        private AccountSet Client;
+
         public PrivateMessageControl()
         {
             InitializeComponent();
@@ -20,6 +22,7 @@ namespace ProgramForum.Content
 
         public void LoadMessages(AccountSet Client)
         {
+            this.Client = Client;
             ForumContainer container = new ForumContainer();
             
             // Где мы получатели
@@ -27,11 +30,11 @@ namespace ProgramForum.Content
             {
                 void handlerClickerChat(object sender, EventArgs args)
                 {
-                    MessageSendForm messageForm = new MessageSendForm(Client, converstation.AccountSet1);
+                    MessageSendForm messageForm = new MessageSendForm(Client, converstation.AccountSet_Sender);
                     messageForm.Show();
                 };
 
-                Chat newChat = new Chat(converstation.AccountSet1.Login, handlerClickerChat); // с кем беседа
+                Chat.Chat newChat = new Chat.Chat(converstation.AccountSet_Sender.Login, handlerClickerChat); // с кем беседа
                 pmFlowLoyoutPanel.Controls.Add(newChat);
             }
 
@@ -40,13 +43,19 @@ namespace ProgramForum.Content
             {
                 void handlerClickerChat(object sender, EventArgs args)
                 {
-                    MessageSendForm messageForm = new MessageSendForm(Client, converstation.AccountSet);
+                    MessageSendForm messageForm = new MessageSendForm(Client, converstation.AccountSet_Recipient);
                     messageForm.Show();
                 };
 
-                Chat newChat = new Chat(converstation.AccountSet.Login, handlerClickerChat); // с кем беседа
+                Chat.Chat newChat = new Chat.Chat(converstation.AccountSet_Recipient.Login, handlerClickerChat); // с кем беседа
                 pmFlowLoyoutPanel.Controls.Add(newChat);
             }
+        }
+
+        private void NewMessage_Click(object sender, EventArgs e)
+        {
+            NewPrivateMessage newPrivateMessage = new NewPrivateMessage(Client, this);
+            newPrivateMessage.ShowDialog();
         }
     }
 }

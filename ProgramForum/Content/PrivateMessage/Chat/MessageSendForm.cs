@@ -41,8 +41,8 @@ namespace ProgramForum.Content.PrivateMessage.Chat
             using(ForumContainer container = new ForumContainer())
             {
                 ConversationSet conversation = container.ConversationSet.SingleOrDefault(x => 
-                (x.AccountSet.AccountId == init.AccountId && x.AccountSet1.AccountId == send.AccountId) ||
-                (x.AccountSet.AccountId == send.AccountId && x.AccountSet1.AccountId == init.AccountId)
+                (x.AccountSet_Recipient.AccountId == init.AccountId && x.AccountSet_Sender.AccountId == send.AccountId) ||
+                (x.AccountSet_Recipient.AccountId == send.AccountId && x.AccountSet_Sender.AccountId == init.AccountId)
                 );
 
 
@@ -104,9 +104,9 @@ namespace ProgramForum.Content.PrivateMessage.Chat
 
         private void MessageBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                if (MessageBox.Text != string.Empty)
+                if (MessageBox.Text != string.Empty || MessageBox.Text.Length < 5)
                 {
                     using (ForumContainer container = new ForumContainer())
                     {
@@ -127,6 +127,11 @@ namespace ProgramForum.Content.PrivateMessage.Chat
                     ContainerPMessage.AutoScrollPosition = new Point(0, change);
 
                     // this code post query in server and get await
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Вы не ввели сообщение, либо оно слишком короткое!");
+                    return;
                 }
             }
         }

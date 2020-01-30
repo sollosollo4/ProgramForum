@@ -53,12 +53,14 @@ namespace ProgramForum
                     else
                     {
                         MessageBox.Show("Вы ввели неверный пароль.\n Будте осторожны, попыток не так много ;)");
+                        return;
                     }
                 }
                 else
                 {
                     MessageBox.Show("Вы явно чем то ошиблись..");
                     Password.Text = "";
+                    return;
                 }
             }
 
@@ -74,13 +76,31 @@ namespace ProgramForum
 
         private void RegistrationButton_Click(object sender, EventArgs e)
         {
-
+            void clickReturn(object send, EventArgs ea)
+            {
+                AuthPanel.Visible = true;
+            }
+            Panels.Registration registrPanel = new Panels.Registration(clickReturn) { Location = new Point(0, 0) };
+            AuthPanel.Visible = false;
+            Controls.Add(registrPanel);
         }
 
         private void RememberMeCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.Remember = RememberMeCheckBox.Checked;
             Properties.Settings.Default.Save();
+        }
+
+        private void AuthForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                AuthorizationButton_Click(sender, e);
+            }
+            else if(e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
         }
     }
 }

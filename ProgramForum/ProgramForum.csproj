@@ -74,6 +74,18 @@
     <Compile Include="AuthForm.Designer.cs">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Content\AddNewTheme.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Content\AddNewTheme.Designer.cs">
+      <DependentUpon>AddNewTheme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Adminnistration\AdministrationPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Content\Adminnistration\AdministrationPanel.Designer.cs">
+      <DependentUpon>AdministrationPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Content\PrivateMessage\Chat\MessageContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,10 +101,16 @@
     <Compile Include="Content\EveryDayTest.Designer.cs">
       <DependentUpon>EveryDayTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Content\PrivateMessageControl.cs">
+    <Compile Include="Content\PrivateMessage\NewPrivateMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\PrivateMessage\NewPrivateMessage.Designer.cs">
+      <DependentUpon>NewPrivateMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PrivateMessage\PrivateMessageControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Content\PrivateMessageControl.Designer.cs">
+    <Compile Include="Content\PrivateMessage\PrivateMessageControl.Designer.cs">
       <DependentUpon>PrivateMessageControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Content\PrivateMessage\Chat\Chat.cs">
@@ -166,6 +184,12 @@
     <Compile Include="Content\MyAccount.Designer.cs">
       <DependentUpon>MyAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\MainContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\MainContent.Designer.cs">
+      <DependentUpon>MainContent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\QuestionType.cs" />
     <Compile Include="Panels\QuestionType0.cs">
       <SubType>UserControl</SubType>
@@ -191,6 +215,12 @@
     <Compile Include="Panels\QuestionType3Form.Designer.cs">
       <DependentUpon>QuestionType3Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\Registration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\SimpleQuestion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -214,6 +244,12 @@
     <EmbeddedResource Include="AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Content\AddNewTheme.resx">
+      <DependentUpon>AddNewTheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Adminnistration\AdministrationPanel.resx">
+      <DependentUpon>AdministrationPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Content\PrivateMessage\Chat\Chat.resx">
       <DependentUpon>Chat.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,7 +262,10 @@
     <EmbeddedResource Include="Content\MyAccount.resx">
       <DependentUpon>MyAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Content\PrivateMessageControl.resx">
+    <EmbeddedResource Include="Content\PrivateMessage\NewPrivateMessage.resx">
+      <DependentUpon>NewPrivateMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\PrivateMessage\PrivateMessageControl.resx">
       <DependentUpon>PrivateMessageControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Content\RandomQuestion.resx">
@@ -247,6 +286,9 @@
     <EmbeddedResource Include="MainForm.ru.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panels\MainContent.resx">
+      <DependentUpon>MainContent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\QuestionType0.resx">
       <DependentUpon>QuestionType0.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\QuestionType3Form.resx">
       <DependentUpon>QuestionType3Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\SimpleQuestion.resx">
       <DependentUpon>SimpleQuestion.cs</DependentUpon>

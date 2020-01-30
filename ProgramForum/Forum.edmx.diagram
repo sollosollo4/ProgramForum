@@ -4,27 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e507b72c031d4b54a803a4731e7ef777" Name="Diagram1" ZoomLevel="69" >
-        <EntityTypeShape EntityType="Forum.AccountSet" Width="1.5" PointX="6.75" PointY="9.625" />
-        <EntityTypeShape EntityType="Forum.AnswerSet" Width="1.5" PointX="11.625" PointY="9.25" />
-        <EntityTypeShape EntityType="Forum.CommentorySet" Width="1.5" PointX="4.625" PointY="8.75" />
-        <EntityTypeShape EntityType="Forum.ConversationSet" Width="1.5" PointX="7.25" PointY="14.125" />
-        <EntityTypeShape EntityType="Forum.LanguageSet" Width="1.5" PointX="11.875" PointY="11.375" />
-        <EntityTypeShape EntityType="Forum.MessageSet" Width="1.5" PointX="4.5" PointY="13.375" />
-        <EntityTypeShape EntityType="Forum.QuestionSet" Width="1.5" PointX="9.25" PointY="10.625" />
-        <EntityTypeShape EntityType="Forum.QuestionTypeSet" Width="1.5" PointX="10.625" PointY="14" />
-        <EntityTypeShape EntityType="Forum.ThemeSet" Width="1.5" PointX="8.75" PointY="7.375" />
+      <Diagram DiagramId="e507b72c031d4b54a803a4731e7ef777" Name="Diagram1" ZoomLevel="57" >
+        <EntityTypeShape EntityType="Forum.AccountSet" Width="2.125" PointX="1" PointY="4.625" />
+        <EntityTypeShape EntityType="Forum.AnswerSet" Width="1.5" PointX="6.625" PointY="9.25" />
+        <EntityTypeShape EntityType="Forum.CommentorySet" Width="1.5" PointX="6.625" PointY="5.75" />
+        <EntityTypeShape EntityType="Forum.ConversationSet" Width="1.5" PointX="4.375" PointY="14.75" />
+        <EntityTypeShape EntityType="Forum.LanguageSet" Width="1.5" PointX="2.125" PointY="13.5" />
+        <EntityTypeShape EntityType="Forum.MessageSet" Width="1.5" PointX="6.625" PointY="14.75" />
+        <EntityTypeShape EntityType="Forum.QuestionSet" Width="1.5" PointX="4.375" PointY="8.625" />
+        <EntityTypeShape EntityType="Forum.QuestionTypeSet" Width="1.5" PointX="2.125" PointY="11.125" />
         <AssociationConnector Association="Forum.FK_AccountQuestion" />
         <AssociationConnector Association="Forum.FK_CommentorySet_AccountSet" />
-        <AssociationConnector Association="Forum.FK_ConversationSet_AccountSet" />
-        <AssociationConnector Association="Forum.FK_ConversationSet_AccountSet1" />
-        <AssociationConnector Association="Forum.FK_MessageSet_ConversationSet_Sender" />
-        <AssociationConnector Association="Forum.FK_ThemeSet_AccountSet" />
+        <AssociationConnector Association="Forum.FK_ConversationSet_AccountSet_Recipient" />
+        <AssociationConnector Association="Forum.FK_ConversationSet_AccountSet_Sender" />
         <AssociationConnector Association="Forum.FK_AnswerQuestion" />
-        <AssociationConnector Association="Forum.FK_CommentorySet_ThemeSet" />
         <AssociationConnector Association="Forum.FK_MessageSet_ConversationSet" />
         <AssociationConnector Association="Forum.FK_LanguageQuestion" />
         <AssociationConnector Association="Forum.FK_QuestionTypeQuestion" />
+        <EntityTypeShape EntityType="Forum.ThemeSet" Width="1.5" PointX="3.875" PointY="4.625" />
+        <AssociationConnector Association="Forum.FK_ThemeSet_AccountSet" />
+        <AssociationConnector Association="Forum.FK_CommentorySet_ThemeSet" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

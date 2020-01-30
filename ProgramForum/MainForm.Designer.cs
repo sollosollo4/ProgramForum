@@ -35,10 +35,6 @@
             this.RandomQuestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EveryDayTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MessagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MainContent = new System.Windows.Forms.Panel();
-            this.LastThemePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.LastThemesLabel = new System.Windows.Forms.Label();
-            this.HelloLabel = new System.Windows.Forms.Label();
             this.MyAccount = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LanguageLabel = new System.Windows.Forms.Label();
@@ -47,8 +43,8 @@
             this.AccountsGrid = new System.Windows.Forms.LinkLabel();
             this.ForumNews = new System.Windows.Forms.LinkLabel();
             this.NewAccountsRegistred = new System.Windows.Forms.LinkLabel();
+            this.AdminPanelButton = new System.Windows.Forms.Button();
             this.MainMenu.SuspendLayout();
-            this.MainContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainForumMenu.SuspendLayout();
             this.SuspendLayout();
@@ -112,29 +108,6 @@
             this.MessagesToolStripMenuItem.Name = "MessagesToolStripMenuItem";
             this.MessagesToolStripMenuItem.Click += new System.EventHandler(this.MessagesToolStripMenuItem_Click);
             // 
-            // MainContent
-            // 
-            resources.ApplyResources(this.MainContent, "MainContent");
-            this.MainContent.Controls.Add(this.LastThemePanel);
-            this.MainContent.Controls.Add(this.LastThemesLabel);
-            this.MainContent.Controls.Add(this.HelloLabel);
-            this.MainContent.Name = "MainContent";
-            // 
-            // LastThemePanel
-            // 
-            resources.ApplyResources(this.LastThemePanel, "LastThemePanel");
-            this.LastThemePanel.Name = "LastThemePanel";
-            // 
-            // LastThemesLabel
-            // 
-            resources.ApplyResources(this.LastThemesLabel, "LastThemesLabel");
-            this.LastThemesLabel.Name = "LastThemesLabel";
-            // 
-            // HelloLabel
-            // 
-            resources.ApplyResources(this.HelloLabel, "HelloLabel");
-            this.HelloLabel.Name = "HelloLabel";
-            // 
             // MyAccount
             // 
             this.MyAccount.BackColor = System.Drawing.Color.DarkSeaGreen;
@@ -193,6 +166,15 @@
             this.NewAccountsRegistred.Name = "NewAccountsRegistred";
             this.NewAccountsRegistred.TabStop = true;
             // 
+            // AdminPanelButton
+            // 
+            this.AdminPanelButton.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.AdminPanelButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.AdminPanelButton, "AdminPanelButton");
+            this.AdminPanelButton.Name = "AdminPanelButton";
+            this.AdminPanelButton.UseVisualStyleBackColor = false;
+            this.AdminPanelButton.Click += new System.EventHandler(this.AdminPanelButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -200,17 +182,15 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.MainForumMenu);
             this.Controls.Add(this.LanguageLabel);
+            this.Controls.Add(this.AdminPanelButton);
             this.Controls.Add(this.MyAccount);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.MainContent);
             this.Controls.Add(this.MainMenu);
             this.MainMenuStrip = this.MainMenu;
             this.Name = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
-            this.MainContent.ResumeLayout(false);
-            this.MainContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MainForumMenu.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -224,7 +204,6 @@
         private System.Windows.Forms.ToolStripMenuItem MainFormToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RandomQuestionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem EveryDayTestToolStripMenuItem;
-        private System.Windows.Forms.Panel MainContent;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LanguageLabel;
         private System.Windows.Forms.ToolStripComboBox ChooseLanguageStrip;
@@ -233,10 +212,8 @@
         private System.Windows.Forms.LinkLabel newQuestionLink;
         private System.Windows.Forms.LinkLabel ForumNews;
         private System.Windows.Forms.LinkLabel NewAccountsRegistred;
-        private System.Windows.Forms.Label HelloLabel;
-        private System.Windows.Forms.Label LastThemesLabel;
         private System.Windows.Forms.Button MyAccount;
         private System.Windows.Forms.LinkLabel AccountsGrid;
-        private System.Windows.Forms.FlowLayoutPanel LastThemePanel;
+        private System.Windows.Forms.Button AdminPanelButton;
     }
 }

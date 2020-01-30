@@ -26,6 +26,7 @@ namespace ProgramForum
         public string ThemeText { get; set; }
         public int ThemePoints { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
+        public bool Visible { get; set; }
     
         public virtual AccountSet AccountSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

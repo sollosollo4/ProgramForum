@@ -24,8 +24,8 @@ namespace ProgramForum
         public int RecipientId { get; set; }
         public int SenderId { get; set; }
     
-        public virtual AccountSet AccountSet { get; set; }
-        public virtual AccountSet AccountSet1 { get; set; }
+        public virtual AccountSet AccountSet_Recipient { get; set; }
+        public virtual AccountSet AccountSet_Sender { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MessageSet> MessageSet { get; set; }
     }

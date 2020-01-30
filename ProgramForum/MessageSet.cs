@@ -20,7 +20,6 @@ namespace ProgramForum
         public int ConversationId { get; set; }
         public int SenderId { get; set; }
     
-        public virtual AccountSet AccountSet { get; set; }
         public virtual ConversationSet ConversationSet { get; set; }
     }
 }
