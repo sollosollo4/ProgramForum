@@ -54,17 +54,17 @@ namespace ProgramForum.Panels
 
             using (ForumContainer container = new ForumContainer())
             {
-                if(container.AccountSet.Select(x => x.Login).Equals(Login.Text)) {
+                if(container.AccountSet.SingleOrDefault(x => x.Login == Login.Text) != null) {
                     MessageBox.Show("Данный логин уже занят. Выберите другой логин для входа на форум.");
                     return;
                 }
 
-                if(container.AccountSet.Select(x => x.Email).Equals(EmailTextBox.Text)) {
+                if(container.AccountSet.SingleOrDefault(x => x.Email == EmailTextBox.Text) != null) {
                     MessageBox.Show("Данный емайл уже занят. Выберите другой емайл.");
                     return;
                 }
 
-                if (container.AccountSet.Select(x => x.PhoneNumber).Equals(TelephoneNumber.Text)) {
+                if (container.AccountSet.SingleOrDefault(x => x.PhoneNumber == TelephoneNumber.Text) != null) {
                     MessageBox.Show("Данный телефонный номер уже занят. Выберите другой телефонный номер.");
                     return;
                 }

@@ -59,19 +59,19 @@
     <Compile Include="AccountSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
-    <Compile Include="AddNeQuestion.cs">
+    <Compile Include="Forms\AddNeQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNeQuestion.Designer.cs">
+    <Compile Include="Forms\AddNeQuestion.Designer.cs">
       <DependentUpon>AddNeQuestion.cs</DependentUpon>
     </Compile>
     <Compile Include="AnswerSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
-    <Compile Include="AuthForm.cs">
+    <Compile Include="Forms\AuthForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AuthForm.Designer.cs">
+    <Compile Include="Forms\AuthForm.Designer.cs">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Content\AddNewTheme.cs">
@@ -163,10 +163,10 @@
     <Compile Include="LanguageSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MessageSet.cs">
@@ -238,10 +238,10 @@
     <Compile Include="ThemeSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddNeQuestion.resx">
+    <EmbeddedResource Include="Forms\AddNeQuestion.resx">
       <DependentUpon>AddNeQuestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AuthForm.resx">
+    <EmbeddedResource Include="Forms\AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Content\AddNewTheme.resx">
@@ -277,13 +277,13 @@
     <EmbeddedResource Include="Content\Theme\SingleTheme.resx">
       <DependentUpon>SingleTheme.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Content\PrivateMessage\Chat\MessageSendForm.resx">
       <DependentUpon>MessageSendForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.ru.resx">
+    <EmbeddedResource Include="Forms\MainForm.ru.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\MainContent.resx">

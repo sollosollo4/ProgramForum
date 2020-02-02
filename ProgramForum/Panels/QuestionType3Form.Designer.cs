@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuestionType3Form));
             this.SelectableWordTextBox1 = new System.Windows.Forms.TextBox();
             this.SelectableWordTextBox2 = new System.Windows.Forms.TextBox();
             this.SelectableWordTextBox3 = new System.Windows.Forms.TextBox();
@@ -157,6 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(637, 418);
             this.Controls.Add(this.EndWorkWithKeysWord);
             this.Controls.Add(this.label1);
@@ -169,10 +171,11 @@
             this.Controls.Add(this.SelectableWordTextBox3);
             this.Controls.Add(this.SelectableWordTextBox2);
             this.Controls.Add(this.SelectableWordTextBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(653, 457);
             this.MinimumSize = new System.Drawing.Size(653, 457);
             this.Name = "QuestionType3Form";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Выбор ключевых слов";
             this.newTextoxesPanel.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -52,13 +52,13 @@ namespace ProgramForum
                     }
                     else
                     {
-                        MessageBox.Show("Вы ввели неверный пароль.\n Будте осторожны, попыток не так много ;)");
+                        MessageBox.Show("Вы ввели неверный пароль.\nБудте осторожны, после трёх неверных попыток входа вход будет заблокирован.");
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Вы явно чем то ошиблись..");
+                    MessageBox.Show("Вы ввели неверные данные для входа. Повторите авторизоваться используя другие данные");
                     Password.Text = "";
                     return;
                 }
@@ -79,7 +79,9 @@ namespace ProgramForum
             void clickReturn(object send, EventArgs ea)
             {
                 AuthPanel.Visible = true;
+                Text = "Авторизация";
             }
+            Text = "Регистрация";
             Panels.Registration registrPanel = new Panels.Registration(clickReturn) { Location = new Point(0, 0) };
             AuthPanel.Visible = false;
             Controls.Add(registrPanel);

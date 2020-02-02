@@ -35,7 +35,7 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(4, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(458, 69);
@@ -45,6 +45,7 @@
             // 
             // SelectableCode
             // 
+            this.SelectableCode.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SelectableCode.Location = new System.Drawing.Point(8, 77);
             this.SelectableCode.Multiline = true;
             this.SelectableCode.Name = "SelectableCode";
@@ -53,7 +54,7 @@
             // 
             // SelectWords
             // 
-            this.SelectWords.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SelectWords.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SelectWords.Location = new System.Drawing.Point(362, 77);
             this.SelectWords.Name = "SelectWords";
             this.SelectWords.Size = new System.Drawing.Size(95, 94);

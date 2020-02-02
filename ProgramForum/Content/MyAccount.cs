@@ -22,23 +22,22 @@ namespace ProgramForum.Content
         public void UpdateLabels()
         {
             LoginTextBox.Text = Account.Login.TrimEnd();
-            EmailTextBox.Text = Account.Email;
+            EmailTextBox.Text = Account.Email.TrimEnd();
             CreateDatelabel.Text = "Дата создания аккаунта: \n" + Account.CreateDate.ToString();
-            AccountPoints.Text = "Накопленные очки: " + Account.Points;
-            AccountReputation.Text = "Репутация: " + Account.Reputation;
+            AccountPoints.Text = "Накопленные очки: " + Convert.ToInt32(Account.Points);
+            AccountReputation.Text = "Репутация: " + Convert.ToInt32(Account.Reputation);
             var Status = Account.AccountType == -1 ? "Админ" : "Пользователь";
             AccountStatus.Text = "Статус аккаунта: " + Status;
         }
 
         private void SaveChanges_Click(object sender, EventArgs e)
         {
-            if(OldPassword.Text == Account.Password)
+            if(OldPasswordTextBox.Text.TrimEnd() == Account.Password.TrimEnd())
             {
                 using(ForumContainer container = new ForumContainer())
                 {
-                    container.AccountSet.SingleOrDefault(x => x.AccountId == Account.AccountId).Password = NewPasswordTextBox.Text;
+                    container.AccountSet.SingleOrDefault(x => x.AccountId == Account.AccountId).Password = NewPasswordTextBox.Text.TrimEnd();
                     container.SaveChanges();
-                    OldPassword.Text = NewPasswordTextBox.Text;
                 }
 
                 MessageBox.Show("Пароль был изменён.");
@@ -46,7 +45,7 @@ namespace ProgramForum.Content
             }
             else
             {
-                MessageBox.Show("Пароль не был изменён. Повторите попытку.");
+                MessageBox.Show("Пароль не был изменён, потому что вы ввели неверный старый пароль. Повторите попытку.");
                 return;
             }
         }
