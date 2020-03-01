@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramForum", "ProgramForum\ProgramForum.csproj", "{499711E3-E098-4EEF-8277-FF4BE9686705}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramForum_ServerCore", "ProgramForum_ServerCore\ProgramForum_ServerCore.csproj", "{60BCEBA2-5DDC-45C9-B78C-1348FC433C0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramForum_ServerCore", "ProgramForum_ServerCore\ProgramForum_ServerCore.csproj", "{60BCEBA2-5DDC-45C9-B78C-1348FC433C0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PF_UnitTests", "PF_UnitTests\PF_UnitTests.csproj", "{7ED198C0-78D7-40EC-9182-2939B71B40DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{60BCEBA2-5DDC-45C9-B78C-1348FC433C0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60BCEBA2-5DDC-45C9-B78C-1348FC433C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60BCEBA2-5DDC-45C9-B78C-1348FC433C0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ED198C0-78D7-40EC-9182-2939B71B40DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ED198C0-78D7-40EC-9182-2939B71B40DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ED198C0-78D7-40EC-9182-2939B71B40DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ED198C0-78D7-40EC-9182-2939B71B40DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
