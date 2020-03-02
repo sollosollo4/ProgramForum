@@ -23,21 +23,20 @@ namespace PF_UnitTests
 
             Assert.AreEqual(error, AllTrue);
         }
-
         [TestMethod]
         public void TestAddNewQuestionMethod() {
             AddNewQuestion addnewquestion = new AddNewQuestion();
 
             Dictionary<StringTypeQuestion, string> exampleMethod1 = new Dictionary<StringTypeQuestion, string>();
             exampleMethod1[StringTypeQuestion.QuestionText] = "Сколько программных модулей использует EntityFramework?";
-            exampleMethod1[StringTypeQuestion.QuestionType] = "0";
+            exampleMethod1[StringTypeQuestion.QuestionType] = "1";
             List<string> answers = new List<string>();
             answers.Add("0");
             answers.Add("2");
             answers.Add("3");
             answers.Add("8");
 
-            var error = addnewquestion.NewQuestion(exampleMethod1, answers);
+            var error = addnewquestion.NewQuestion(exampleMethod1, answers, 1, 1);
 
             Assert.AreEqual(error, true);
         }
