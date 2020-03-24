@@ -28,6 +28,18 @@ namespace ProgramForum.Content
             if (Account.Reputation != null) AccountReputation.Text = "Репутация: " + Convert.ToInt32(Account.Reputation); else AccountReputation.Text = "Репутация: 0";
             var Status = Account.AccountType == -1 ? "Админ" : "Пользователь";
             AccountStatus.Text = "Статус аккаунта: " + Status;
+
+            using(ForumContainer container = new ForumContainer()) {
+
+                foreach (var myQuest in container.QuestionSet.Where(x => x.AccountAccountId == Account.AccountId).ToList()) {
+                    MyQuestionflowLayoutPanel.Controls.Add(new Question.SingleQuestion(myQuest));
+                }
+
+                foreach (var myTheme in container.ThemeSet.Where(x => x.AuthorId == Account.AccountId).ToList()) {
+                    MyThemesflowLayoutPanel.Controls.Add(new Theme.SingleTheme(myTheme));
+                }
+            }
+            
         }
 
         private void SaveChanges_Click(object sender, EventArgs e)

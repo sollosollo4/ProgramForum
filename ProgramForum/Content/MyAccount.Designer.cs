@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.AccountPanel = new System.Windows.Forms.Panel();
+            this.MyQuestionflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SaveAllChanges = new System.Windows.Forms.Button();
             this.SaveChanges = new System.Windows.Forms.Button();
             this.NewPassword = new System.Windows.Forms.Label();
             this.OldPassword = new System.Windows.Forms.Label();
+            this.QuestionListInfoLabel = new System.Windows.Forms.Label();
             this.AccountReputation = new System.Windows.Forms.Label();
             this.AccountStatus = new System.Windows.Forms.Label();
             this.AccountPoints = new System.Windows.Forms.Label();
@@ -44,11 +46,19 @@
             this.OldPasswordTextBox = new System.Windows.Forms.TextBox();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.LoginTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.MyThemesflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.AccountPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // AccountPanel
             // 
+            this.AccountPanel.Controls.Add(this.panel2);
+            this.AccountPanel.Controls.Add(this.panel1);
             this.AccountPanel.Controls.Add(this.SaveAllChanges);
             this.AccountPanel.Controls.Add(this.SaveChanges);
             this.AccountPanel.Controls.Add(this.NewPassword);
@@ -70,6 +80,17 @@
             this.AccountPanel.Size = new System.Drawing.Size(452, 347);
             this.AccountPanel.TabIndex = 6;
             // 
+            // MyQuestionflowLayoutPanel
+            // 
+            this.MyQuestionflowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MyQuestionflowLayoutPanel.AutoScroll = true;
+            this.MyQuestionflowLayoutPanel.Location = new System.Drawing.Point(3, 31);
+            this.MyQuestionflowLayoutPanel.Name = "MyQuestionflowLayoutPanel";
+            this.MyQuestionflowLayoutPanel.Size = new System.Drawing.Size(215, 86);
+            this.MyQuestionflowLayoutPanel.TabIndex = 21;
+            // 
             // SaveAllChanges
             // 
             this.SaveAllChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -83,7 +104,6 @@
             // 
             // SaveChanges
             // 
-            this.SaveChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.SaveChanges.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SaveChanges.Location = new System.Drawing.Point(99, 317);
             this.SaveChanges.Name = "SaveChanges";
@@ -94,7 +114,6 @@
             // 
             // NewPassword
             // 
-            this.NewPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.NewPassword.AutoSize = true;
             this.NewPassword.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NewPassword.Location = new System.Drawing.Point(14, 261);
@@ -105,7 +124,6 @@
             // 
             // OldPassword
             // 
-            this.OldPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.OldPassword.AutoSize = true;
             this.OldPassword.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OldPassword.Location = new System.Drawing.Point(14, 207);
@@ -114,12 +132,21 @@
             this.OldPassword.TabIndex = 8;
             this.OldPassword.Text = "Старый пароль";
             // 
+            // QuestionListInfoLabel
+            // 
+            this.QuestionListInfoLabel.AutoSize = true;
+            this.QuestionListInfoLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.QuestionListInfoLabel.Location = new System.Drawing.Point(3, 9);
+            this.QuestionListInfoLabel.Name = "QuestionListInfoLabel";
+            this.QuestionListInfoLabel.Size = new System.Drawing.Size(120, 19);
+            this.QuestionListInfoLabel.TabIndex = 9;
+            this.QuestionListInfoLabel.Text = "Ваши вопросы:";
+            // 
             // AccountReputation
             // 
-            this.AccountReputation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AccountReputation.AutoSize = true;
             this.AccountReputation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AccountReputation.Location = new System.Drawing.Point(202, 152);
+            this.AccountReputation.Location = new System.Drawing.Point(216, 66);
             this.AccountReputation.Name = "AccountReputation";
             this.AccountReputation.Size = new System.Drawing.Size(91, 19);
             this.AccountReputation.TabIndex = 9;
@@ -127,10 +154,9 @@
             // 
             // AccountStatus
             // 
-            this.AccountStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AccountStatus.AutoSize = true;
             this.AccountStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AccountStatus.Location = new System.Drawing.Point(202, 55);
+            this.AccountStatus.Location = new System.Drawing.Point(216, 33);
             this.AccountStatus.Name = "AccountStatus";
             this.AccountStatus.Size = new System.Drawing.Size(134, 19);
             this.AccountStatus.TabIndex = 10;
@@ -138,10 +164,9 @@
             // 
             // AccountPoints
             // 
-            this.AccountPoints.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AccountPoints.AutoSize = true;
             this.AccountPoints.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AccountPoints.Location = new System.Drawing.Point(202, 1);
+            this.AccountPoints.Location = new System.Drawing.Point(216, 0);
             this.AccountPoints.Name = "AccountPoints";
             this.AccountPoints.Size = new System.Drawing.Size(155, 19);
             this.AccountPoints.TabIndex = 11;
@@ -179,7 +204,6 @@
             // 
             // ChangePassword
             // 
-            this.ChangePassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ChangePassword.AutoSize = true;
             this.ChangePassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChangePassword.Location = new System.Drawing.Point(5, 188);
@@ -190,7 +214,6 @@
             // 
             // NewPasswordTextBox
             // 
-            this.NewPasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.NewPasswordTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NewPasswordTextBox.Location = new System.Drawing.Point(18, 282);
             this.NewPasswordTextBox.Name = "NewPasswordTextBox";
@@ -200,7 +223,6 @@
             // 
             // OldPasswordTextBox
             // 
-            this.OldPasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.OldPasswordTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OldPasswordTextBox.Location = new System.Drawing.Point(18, 229);
             this.OldPasswordTextBox.Name = "OldPasswordTextBox";
@@ -225,6 +247,50 @@
             this.LoginTextBox.Size = new System.Drawing.Size(192, 29);
             this.LoginTextBox.TabIndex = 6;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 19);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Ваши темы:";
+            // 
+            // MyThemesflowLayoutPanel
+            // 
+            this.MyThemesflowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MyThemesflowLayoutPanel.AutoScroll = true;
+            this.MyThemesflowLayoutPanel.Location = new System.Drawing.Point(3, 19);
+            this.MyThemesflowLayoutPanel.Name = "MyThemesflowLayoutPanel";
+            this.MyThemesflowLayoutPanel.Size = new System.Drawing.Size(227, 81);
+            this.MyThemesflowLayoutPanel.TabIndex = 21;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.QuestionListInfoLabel);
+            this.panel1.Controls.Add(this.MyQuestionflowLayoutPanel);
+            this.panel1.Location = new System.Drawing.Point(216, 88);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(233, 119);
+            this.panel1.TabIndex = 22;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.MyThemesflowLayoutPanel);
+            this.panel2.Location = new System.Drawing.Point(216, 210);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(233, 103);
+            this.panel2.TabIndex = 23;
+            // 
             // MyAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +302,10 @@
             this.Size = new System.Drawing.Size(452, 347);
             this.AccountPanel.ResumeLayout(false);
             this.AccountPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -258,5 +328,11 @@
         private System.Windows.Forms.TextBox OldPasswordTextBox;
         private System.Windows.Forms.TextBox EmailTextBox;
         private System.Windows.Forms.TextBox LoginTextBox;
+        private System.Windows.Forms.FlowLayoutPanel MyQuestionflowLayoutPanel;
+        private System.Windows.Forms.Label QuestionListInfoLabel;
+        private System.Windows.Forms.FlowLayoutPanel MyThemesflowLayoutPanel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

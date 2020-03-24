@@ -37,5 +37,7 @@ namespace ProgramForum
         public virtual DbSet<TestSet> TestSet { get; set; }
         public virtual DbSet<ThemeSet> ThemeSet { get; set; }
         public virtual DbSet<ProgramForumConstants> ProgramForumConstants { get; set; }
+        public virtual DbSet<MethodSet> MethodSet { get; set; }
+        public virtual DbSet<TestLinkSet> TestLinkSet { get; set; }
     }
 }

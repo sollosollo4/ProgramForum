@@ -1848,66 +1848,6 @@
   <data name="MainForumMenu.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Right</value>
   </data>
-  <data name="&gt;&gt;AccountsGrid.Name" xml:space="preserve">
-    <value>AccountsGrid</value>
-  </data>
-  <data name="&gt;&gt;AccountsGrid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AccountsGrid.Parent" xml:space="preserve">
-    <value>MainForumMenu</value>
-  </data>
-  <data name="&gt;&gt;AccountsGrid.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ForumNews.Name" xml:space="preserve">
-    <value>ForumNews</value>
-  </data>
-  <data name="&gt;&gt;ForumNews.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ForumNews.Parent" xml:space="preserve">
-    <value>MainForumMenu</value>
-  </data>
-  <data name="&gt;&gt;ForumNews.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;NewAccountsRegistred.Name" xml:space="preserve">
-    <value>NewAccountsRegistred</value>
-  </data>
-  <data name="&gt;&gt;NewAccountsRegistred.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NewAccountsRegistred.Parent" xml:space="preserve">
-    <value>MainForumMenu</value>
-  </data>
-  <data name="&gt;&gt;NewAccountsRegistred.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="MainForumMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>670, 91</value>
-  </data>
-  <data name="MainForumMenu.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>128, 348</value>
-  </data>
-  <data name="MainForumMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 348</value>
-  </data>
-  <data name="MainForumMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;MainForumMenu.Name" xml:space="preserve">
-    <value>MainForumMenu</value>
-  </data>
-  <data name="&gt;&gt;MainForumMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MainForumMenu.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;MainForumMenu.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="AccountsGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -2006,6 +1946,30 @@
   </data>
   <data name="&gt;&gt;NewAccountsRegistred.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="MainForumMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>670, 91</value>
+  </data>
+  <data name="MainForumMenu.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>128, 348</value>
+  </data>
+  <data name="MainForumMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 348</value>
+  </data>
+  <data name="MainForumMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;MainForumMenu.Name" xml:space="preserve">
+    <value>MainForumMenu</value>
+  </data>
+  <data name="&gt;&gt;MainForumMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainForumMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MainForumMenu.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="AdminPanelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>

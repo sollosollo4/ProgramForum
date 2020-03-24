@@ -39,6 +39,9 @@
             // 
             // MainPanel
             // 
+            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MainPanel.Controls.Add(this.AddNewTheme);
             this.MainPanel.Controls.Add(this.LastThemePanel);
             this.MainPanel.Controls.Add(this.LastThemesLabel);
@@ -66,6 +69,9 @@
             // 
             // LastThemePanel
             // 
+            this.LastThemePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LastThemePanel.AutoScroll = true;
             this.LastThemePanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.LastThemePanel.Location = new System.Drawing.Point(0, 97);

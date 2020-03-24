@@ -31,6 +31,10 @@
         <AssociationConnector Association="Forum.FK_ListQuestion_TestSet" />
         <AssociationConnector Association="Forum.FK_QuestionTypeQuestion" />
         <EntityTypeShape EntityType="Forum.ProgramForumConstants" Width="1.5" PointX="10.375" PointY="4.375" />
+        <EntityTypeShape EntityType="Forum.MethodSet" Width="1.5" PointX="18.25" PointY="5.375" />
+        <EntityTypeShape EntityType="Forum.TestLinkSet" Width="1.5" PointX="20.5" PointY="6.25" />
+        <AssociationConnector Association="Forum.FK_TestLinkSet_MethodSet" />
+        <AssociationConnector Association="Forum.FK_TestLinkSet_TestSet" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

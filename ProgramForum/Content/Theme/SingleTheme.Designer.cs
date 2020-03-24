@@ -60,15 +60,15 @@
             this.ThemeStartText.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ThemeStartText.Location = new System.Drawing.Point(3, 26);
             this.ThemeStartText.Name = "ThemeStartText";
-            this.ThemeStartText.Size = new System.Drawing.Size(271, 78);
+            this.ThemeStartText.Size = new System.Drawing.Size(305, 63);
             this.ThemeStartText.TabIndex = 2;
             // 
             // ThemeAuthor
             // 
             this.ThemeAuthor.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ThemeAuthor.Location = new System.Drawing.Point(350, 4);
+            this.ThemeAuthor.Location = new System.Drawing.Point(326, 4);
             this.ThemeAuthor.Name = "ThemeAuthor";
-            this.ThemeAuthor.Size = new System.Drawing.Size(87, 68);
+            this.ThemeAuthor.Size = new System.Drawing.Size(111, 68);
             this.ThemeAuthor.TabIndex = 3;
             // 
             // CommentoryCount

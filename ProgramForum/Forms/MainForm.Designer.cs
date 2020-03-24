@@ -134,6 +134,7 @@
             this.newQuestionLink.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.newQuestionLink.Name = "newQuestionLink";
             this.newQuestionLink.TabStop = true;
+            this.newQuestionLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newQuestionLink_LinkClicked);
             // 
             // MainForumMenu
             // 
@@ -151,6 +152,7 @@
             this.AccountsGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AccountsGrid.Name = "AccountsGrid";
             this.AccountsGrid.TabStop = true;
+            this.AccountsGrid.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AccountsGrid_LinkClicked);
             // 
             // ForumNews
             // 
@@ -158,6 +160,7 @@
             this.ForumNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ForumNews.Name = "ForumNews";
             this.ForumNews.TabStop = true;
+            this.ForumNews.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ForumNews_LinkClicked);
             // 
             // NewAccountsRegistred
             // 
@@ -165,6 +168,7 @@
             this.NewAccountsRegistred.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NewAccountsRegistred.Name = "NewAccountsRegistred";
             this.NewAccountsRegistred.TabStop = true;
+            this.NewAccountsRegistred.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.NewAccountsRegistred_LinkClicked);
             // 
             // AdminPanelButton
             // 

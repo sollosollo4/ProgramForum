@@ -21,7 +21,7 @@ namespace ProgramForum.Content.Theme
             using (ForumContainer container = new ForumContainer())
             {
                 var account = container.AccountSet.SingleOrDefault(x => x.AccountId == Theme.AuthorId);
-                ThemeAuthor.Text = account.Name.TrimEnd();
+                ThemeAuthor.Text = "Автор: " + account.Name.TrimEnd();
                 ThemeAuthor.Text += "\n" + Theme.CreateDate;
                 CommentoryCount.Text += "  " + container.CommentorySet.Where(x => x.ThemeId == Theme.ThemeId).ToList().Count;
             }

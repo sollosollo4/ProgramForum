@@ -12,26 +12,18 @@ namespace ProgramForum
     using System;
     using System.Collections.Generic;
     
-    public partial class TestSet
+    public partial class MethodSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TestSet()
+        public MethodSet()
         {
-            this.ListQuestion = new HashSet<ListQuestion>();
             this.TestLinkSet = new HashSet<TestLinkSet>();
         }
     
-        public int TestId { get; set; }
-        public string TestName { get; set; }
-        public Nullable<System.DateTime> CreateDate { get; set; }
-        public int LanguageId { get; set; }
-        public int AuthorId { get; set; }
-        public string Description { get; set; }
+        public int MethodId { get; set; }
+        public string MethodName { get; set; }
+        public string MethodDescription { get; set; }
     
-        public virtual AccountSet AccountSet { get; set; }
-        public virtual LanguageSet LanguageSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ListQuestion> ListQuestion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TestLinkSet> TestLinkSet { get; set; }
     }

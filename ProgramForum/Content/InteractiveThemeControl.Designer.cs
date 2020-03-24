@@ -1,6 +1,6 @@
 ﻿namespace ProgramForum.Content
 {
-    partial class ThemeControl
+    partial class InteractiveThemeControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.ThemeName = new System.Windows.Forms.Label();
-            this.ThemeText = new System.Windows.Forms.Label();
+            this.ThemeText = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // ThemeName
@@ -39,26 +39,23 @@
             this.ThemeName.Location = new System.Drawing.Point(3, 0);
             this.ThemeName.Name = "ThemeName";
             this.ThemeName.Size = new System.Drawing.Size(0, 22);
-            this.ThemeName.TabIndex = 0;
+            this.ThemeName.TabIndex = 2;
             // 
             // ThemeText
             // 
-            this.ThemeText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.ThemeText.Location = new System.Drawing.Point(0, 36);
             this.ThemeText.Name = "ThemeText";
             this.ThemeText.Size = new System.Drawing.Size(452, 311);
             this.ThemeText.TabIndex = 4;
             // 
-            // ThemeControl
+            // InteractiveThemeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.ThemeText);
             this.Controls.Add(this.ThemeName);
             this.MinimumSize = new System.Drawing.Size(452, 347);
-            this.Name = "ThemeControl";
+            this.Name = "InteractiveThemeControl";
             this.Size = new System.Drawing.Size(452, 347);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -66,8 +63,7 @@
         }
 
         #endregion
-
         private System.Windows.Forms.Label ThemeName;
-        private System.Windows.Forms.Label ThemeText;
+        private System.Windows.Forms.LinkLabel ThemeText;
     }
 }

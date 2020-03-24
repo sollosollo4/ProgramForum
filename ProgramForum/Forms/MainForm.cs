@@ -173,5 +173,45 @@ namespace ProgramForum
             };
             Controls.Add(administrationPanel);
         }
+
+        /// <summary>
+        /// Просмотреть новые вопросы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void newQuestionLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Узнать о новых пользователях
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NewAccountsRegistred_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Новости форума
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ForumNews_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Список пользователей
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AccountsGrid_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

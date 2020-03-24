@@ -59,6 +59,18 @@
     <Compile Include="AccountSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
+    <Compile Include="Content\InteractiveThemeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Content\InteractiveThemeControl.Designer.cs">
+      <DependentUpon>InteractiveThemeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Question\SingleQuestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Content\Question\SingleQuestion.Designer.cs">
+      <DependentUpon>SingleQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdministrationForms\AccountRedactor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +223,9 @@
     <Compile Include="Content\MyAccount.Designer.cs">
       <DependentUpon>MyAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="MethodSet.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
     <Compile Include="Panels\MainContent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -271,12 +286,21 @@
     <Compile Include="QuestionTypeSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
+    <Compile Include="TestLinkSet.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
     <Compile Include="TestSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
     <Compile Include="ThemeSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Content\InteractiveThemeControl.resx">
+      <DependentUpon>InteractiveThemeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Question\SingleQuestion.resx">
+      <DependentUpon>SingleQuestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdministrationForms\AccountRedactor.resx">
       <DependentUpon>AccountRedactor.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,7 +398,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Forum.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Forum.edmx.diagram">
       <DependentUpon>Forum.edmx</DependentUpon>
     </None>
