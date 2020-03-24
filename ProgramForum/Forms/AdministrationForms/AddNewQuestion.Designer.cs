@@ -1,6 +1,6 @@
 ﻿namespace ProgramForum
 {
-    partial class AddNeQuestion
+    partial class AddNewQuestion
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNeQuestion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewQuestion));
             this.button1 = new System.Windows.Forms.Button();
             this.QuestText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();

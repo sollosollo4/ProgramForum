@@ -95,7 +95,7 @@
             this.HelloLabel.Name = "HelloLabel";
             this.HelloLabel.Size = new System.Drawing.Size(440, 50);
             this.HelloLabel.TabIndex = 6;
-            this.HelloLabel.Text = "Добро пожаловать на главную страницу программного форума";
+            this.HelloLabel.Text = "Добро пожаловать на главную страницу программного форума.\r\n";
             // 
             // ThemePanel
             // 

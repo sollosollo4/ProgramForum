@@ -12,29 +12,24 @@ namespace ProgramForum
     using System;
     using System.Collections.Generic;
     
-    public partial class QuestionSet
+    public partial class TestSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public QuestionSet()
+        public TestSet()
         {
-            this.AnswerSet = new HashSet<AnswerSet>();
             this.ListQuestion = new HashSet<ListQuestion>();
         }
     
-        public int QuestionId { get; set; }
-        public string QuestionText { get; set; }
-        public int LanguageLanguageId { get; set; }
-        public int QuestionTypeQuestionTypeId { get; set; }
-        public int CorrectOption { get; set; }
-        public int AccountAccountId { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public int TestId { get; set; }
+        public string TestName { get; set; }
+        public Nullable<System.DateTime> CreateDate { get; set; }
+        public int LanguageId { get; set; }
+        public int AuthorId { get; set; }
+        public string Description { get; set; }
     
         public virtual AccountSet AccountSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AnswerSet> AnswerSet { get; set; }
         public virtual LanguageSet LanguageSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ListQuestion> ListQuestion { get; set; }
-        public virtual QuestionTypeSet QuestionTypeSet { get; set; }
     }
 }

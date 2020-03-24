@@ -30,9 +30,12 @@ namespace ProgramForum
         public virtual DbSet<CommentorySet> CommentorySet { get; set; }
         public virtual DbSet<ConversationSet> ConversationSet { get; set; }
         public virtual DbSet<LanguageSet> LanguageSet { get; set; }
+        public virtual DbSet<ListQuestion> ListQuestion { get; set; }
         public virtual DbSet<MessageSet> MessageSet { get; set; }
         public virtual DbSet<QuestionSet> QuestionSet { get; set; }
         public virtual DbSet<QuestionTypeSet> QuestionTypeSet { get; set; }
+        public virtual DbSet<TestSet> TestSet { get; set; }
         public virtual DbSet<ThemeSet> ThemeSet { get; set; }
+        public virtual DbSet<ProgramForumConstants> ProgramForumConstants { get; set; }
     }
 }

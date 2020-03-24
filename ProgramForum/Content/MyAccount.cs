@@ -22,10 +22,10 @@ namespace ProgramForum.Content
         public void UpdateLabels()
         {
             LoginTextBox.Text = Account.Login.TrimEnd();
-            EmailTextBox.Text = Account.Email.TrimEnd();
-            CreateDatelabel.Text = "Дата создания аккаунта: \n" + Account.CreateDate.ToString();
-            AccountPoints.Text = "Накопленные очки: " + Convert.ToInt32(Account.Points);
-            AccountReputation.Text = "Репутация: " + Convert.ToInt32(Account.Reputation);
+            if (Account.Email != null) EmailTextBox.Text = Account.Email.TrimEnd();
+            if (Account.CreateDate != null) CreateDatelabel.Text = "Дата создания аккаунта: \n" + Account.CreateDate.ToString();
+            if (Account.Points != null) AccountPoints.Text = "Накопленные очки: " + Convert.ToInt32(Account.Points); else AccountPoints.Text = "Накопленные очки: 0";
+            if (Account.Reputation != null) AccountReputation.Text = "Репутация: " + Convert.ToInt32(Account.Reputation); else AccountReputation.Text = "Репутация: 0";
             var Status = Account.AccountType == -1 ? "Админ" : "Пользователь";
             AccountStatus.Text = "Статус аккаунта: " + Status;
         }

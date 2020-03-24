@@ -19,8 +19,9 @@ namespace ProgramForum
         {
             this.QuestionSet = new HashSet<QuestionSet>();
             this.CommentorySet = new HashSet<CommentorySet>();
-            this.ConversationSetRecipient = new HashSet<ConversationSet>();
-            this.ConversationSetSender = new HashSet<ConversationSet>();
+            this.ConversationSet = new HashSet<ConversationSet>();
+            this.ConversationSet1 = new HashSet<ConversationSet>();
+            this.TestSet = new HashSet<TestSet>();
             this.ThemeSet = new HashSet<ThemeSet>();
         }
     
@@ -44,9 +45,11 @@ namespace ProgramForum
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CommentorySet> CommentorySet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ConversationSet> ConversationSetRecipient { get; set; }
+        public virtual ICollection<ConversationSet> ConversationSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ConversationSet> ConversationSetSender { get; set; }
+        public virtual ICollection<ConversationSet> ConversationSet1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TestSet> TestSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ThemeSet> ThemeSet { get; set; }
     }

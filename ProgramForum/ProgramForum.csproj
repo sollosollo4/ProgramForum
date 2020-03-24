@@ -59,14 +59,26 @@
     <Compile Include="AccountSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddNeQuestion.cs">
+    <Compile Include="Forms\AdministrationForms\AccountRedactor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddNeQuestion.Designer.cs">
-      <DependentUpon>AddNeQuestion.cs</DependentUpon>
+    <Compile Include="Forms\AdministrationForms\AccountRedactor.Designer.cs">
+      <DependentUpon>AccountRedactor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdministrationForms\AddNewQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrationForms\AddNewQuestion.Designer.cs">
+      <DependentUpon>AddNewQuestion.cs</DependentUpon>
     </Compile>
     <Compile Include="AnswerSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdministrationForms\Redactor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrationForms\Redactor.Designer.cs">
+      <DependentUpon>Redactor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AuthForm.cs">
       <SubType>Form</SubType>
@@ -140,6 +152,18 @@
     <Compile Include="ConversationSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdministrationForms\QuestionRedactor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrationForms\QuestionRedactor.Designer.cs">
+      <DependentUpon>QuestionRedactor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdministrationForms\ThemeRedactor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrationForms\ThemeRedactor.Designer.cs">
+      <DependentUpon>ThemeRedactor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forum.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,6 +192,9 @@
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListQuestion.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
     <Compile Include="MessageSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
@@ -227,7 +254,16 @@
     <Compile Include="Panels\SimpleQuestion.Designer.cs">
       <DependentUpon>SimpleQuestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\SimpleTheme.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\SimpleTheme.Designer.cs">
+      <DependentUpon>SimpleTheme.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramForumConstants.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
@@ -235,11 +271,23 @@
     <Compile Include="QuestionTypeSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
+    <Compile Include="TestSet.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
     <Compile Include="ThemeSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\AddNeQuestion.resx">
-      <DependentUpon>AddNeQuestion.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AdministrationForms\AccountRedactor.resx">
+      <DependentUpon>AccountRedactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdministrationForms\AddNewQuestion.resx">
+      <DependentUpon>AddNewQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdministrationForms\Redactor.resx">
+      <DependentUpon>Redactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdministrationForms\ThemeRedactor.resx">
+      <DependentUpon>ThemeRedactor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
@@ -286,6 +334,9 @@
     <EmbeddedResource Include="Forms\MainForm.ru.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdministrationForms\QuestionRedactor.resx">
+      <DependentUpon>QuestionRedactor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\MainContent.resx">
       <DependentUpon>MainContent.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\SimpleQuestion.resx">
       <DependentUpon>SimpleQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\SimpleTheme.resx">
+      <DependentUpon>SimpleTheme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

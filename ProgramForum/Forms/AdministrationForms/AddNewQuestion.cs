@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProgramForum
 {
-    public partial class AddNeQuestion : Form
+    public partial class AddNewQuestion : Form
     {
-        public AddNeQuestion()
+        public AddNewQuestion()
         {
             InitializeComponent();
         }

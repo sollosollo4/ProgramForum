@@ -58,6 +58,14 @@
           <Property Name="LanguageName" Type="nvarchar(max)" Nullable="false" />
           <Property Name="LanguageDescription" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="ListQuestion">
+          <Key>
+            <PropertyRef Name="ListQuestionId" />
+          </Key>
+          <Property Name="ListQuestionId" Type="int" Nullable="false" />
+          <Property Name="QuestionId" Type="int" Nullable="false" />
+          <Property Name="TestId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="MessageSet">
           <Key>
             <PropertyRef Name="MessageId" />
@@ -67,6 +75,14 @@
           <Property Name="Date" Type="datetime" />
           <Property Name="ConversationId" Type="int" Nullable="false" />
           <Property Name="SenderId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProgramForumConstants">
+          <Key>
+            <PropertyRef Name="ConstantId" />
+          </Key>
+          <Property Name="ConstantId" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ConstantName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ConstantValue" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="QuestionSet">
           <Key>
@@ -86,6 +102,17 @@
           </Key>
           <Property Name="QuestionTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="QuestionTypeText" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TestSet">
+          <Key>
+            <PropertyRef Name="TestId" />
+          </Key>
+          <Property Name="TestId" Type="int" Nullable="false" />
+          <Property Name="TestName" Type="nvarchar" MaxLength="44" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="AuthorId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="ThemeSet">
           <Key>
@@ -183,6 +210,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ListQuestion_QuestionSet">
+          <End Role="QuestionSet" Type="Self.QuestionSet" Multiplicity="1" />
+          <End Role="ListQuestion" Type="Self.ListQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuestionSet">
+              <PropertyRef Name="QuestionId" />
+            </Principal>
+            <Dependent Role="ListQuestion">
+              <PropertyRef Name="QuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListQuestion_TestSet">
+          <End Role="TestSet" Type="Self.TestSet" Multiplicity="1" />
+          <End Role="ListQuestion" Type="Self.ListQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TestSet">
+              <PropertyRef Name="TestId" />
+            </Principal>
+            <Dependent Role="ListQuestion">
+              <PropertyRef Name="TestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MessageSet_ConversationSet">
           <End Role="ConversationSet" Type="Self.ConversationSet" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -209,6 +260,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TestSet_AccountSet">
+          <End Role="AccountSet" Type="Self.AccountSet" Multiplicity="1" />
+          <End Role="TestSet" Type="Self.TestSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountSet">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="TestSet">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TestSet_LanguageSet">
+          <End Role="LanguageSet" Type="Self.LanguageSet" Multiplicity="1" />
+          <End Role="TestSet" Type="Self.TestSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LanguageSet">
+              <PropertyRef Name="LanguageId" />
+            </Principal>
+            <Dependent Role="TestSet">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ThemeSet_AccountSet">
           <End Role="AccountSet" Type="Self.AccountSet" Multiplicity="1" />
           <End Role="ThemeSet" Type="Self.ThemeSet" Multiplicity="*" />
@@ -227,9 +302,12 @@
           <EntitySet Name="CommentorySet" EntityType="Self.CommentorySet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ConversationSet" EntityType="Self.ConversationSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LanguageSet" EntityType="Self.LanguageSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListQuestion" EntityType="Self.ListQuestion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MessageSet" EntityType="Self.MessageSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProgramForumConstants" EntityType="Self.ProgramForumConstants" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuestionSet" EntityType="Self.QuestionSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuestionTypeSet" EntityType="Self.QuestionTypeSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestSet" EntityType="Self.TestSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThemeSet" EntityType="Self.ThemeSet" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_AccountQuestion" Association="Self.FK_AccountQuestion">
             <End Role="AccountSet" EntitySet="AccountSet" />
@@ -259,6 +337,14 @@
             <End Role="LanguageSet" EntitySet="LanguageSet" />
             <End Role="QuestionSet" EntitySet="QuestionSet" />
           </AssociationSet>
+          <AssociationSet Name="FK_ListQuestion_QuestionSet" Association="Self.FK_ListQuestion_QuestionSet">
+            <End Role="QuestionSet" EntitySet="QuestionSet" />
+            <End Role="ListQuestion" EntitySet="ListQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListQuestion_TestSet" Association="Self.FK_ListQuestion_TestSet">
+            <End Role="TestSet" EntitySet="TestSet" />
+            <End Role="ListQuestion" EntitySet="ListQuestion" />
+          </AssociationSet>
           <AssociationSet Name="FK_MessageSet_ConversationSet" Association="Self.FK_MessageSet_ConversationSet">
             <End Role="ConversationSet" EntitySet="ConversationSet" />
             <End Role="MessageSet" EntitySet="MessageSet" />
@@ -266,6 +352,14 @@
           <AssociationSet Name="FK_QuestionTypeQuestion" Association="Self.FK_QuestionTypeQuestion">
             <End Role="QuestionTypeSet" EntitySet="QuestionTypeSet" />
             <End Role="QuestionSet" EntitySet="QuestionSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TestSet_AccountSet" Association="Self.FK_TestSet_AccountSet">
+            <End Role="AccountSet" EntitySet="AccountSet" />
+            <End Role="TestSet" EntitySet="TestSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TestSet_LanguageSet" Association="Self.FK_TestSet_LanguageSet">
+            <End Role="LanguageSet" EntitySet="LanguageSet" />
+            <End Role="TestSet" EntitySet="TestSet" />
           </AssociationSet>
           <AssociationSet Name="FK_ThemeSet_AccountSet" Association="Self.FK_ThemeSet_AccountSet">
             <End Role="AccountSet" EntitySet="AccountSet" />
@@ -282,9 +376,12 @@
           <EntitySet Name="CommentorySet" EntityType="Forum.CommentorySet" />
           <EntitySet Name="ConversationSet" EntityType="Forum.ConversationSet" />
           <EntitySet Name="LanguageSet" EntityType="Forum.LanguageSet" />
+          <EntitySet Name="ListQuestion" EntityType="Forum.ListQuestion" />
           <EntitySet Name="MessageSet" EntityType="Forum.MessageSet" />
           <EntitySet Name="QuestionSet" EntityType="Forum.QuestionSet" />
           <EntitySet Name="QuestionTypeSet" EntityType="Forum.QuestionTypeSet" />
+          <EntitySet Name="TestSet" EntityType="Forum.TestSet" />
+          <EntitySet Name="ThemeSet" EntityType="Forum.ThemeSet" />
           <AssociationSet Name="FK_AccountQuestion" Association="Forum.FK_AccountQuestion">
             <End Role="AccountSet" EntitySet="AccountSet" />
             <End Role="QuestionSet" EntitySet="QuestionSet" />
@@ -301,9 +398,21 @@
             <End Role="AccountSet" EntitySet="AccountSet" />
             <End Role="ConversationSet" EntitySet="ConversationSet" />
           </AssociationSet>
+          <AssociationSet Name="FK_TestSet_AccountSet" Association="Forum.FK_TestSet_AccountSet">
+            <End Role="AccountSet" EntitySet="AccountSet" />
+            <End Role="TestSet" EntitySet="TestSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThemeSet_AccountSet" Association="Forum.FK_ThemeSet_AccountSet">
+            <End Role="AccountSet" EntitySet="AccountSet" />
+            <End Role="ThemeSet" EntitySet="ThemeSet" />
+          </AssociationSet>
           <AssociationSet Name="FK_AnswerQuestion" Association="Forum.FK_AnswerQuestion">
             <End Role="QuestionSet" EntitySet="QuestionSet" />
             <End Role="AnswerSet" EntitySet="AnswerSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommentorySet_ThemeSet" Association="Forum.FK_CommentorySet_ThemeSet">
+            <End Role="ThemeSet" EntitySet="ThemeSet" />
+            <End Role="CommentorySet" EntitySet="CommentorySet" />
           </AssociationSet>
           <AssociationSet Name="FK_MessageSet_ConversationSet" Association="Forum.FK_MessageSet_ConversationSet">
             <End Role="ConversationSet" EntitySet="ConversationSet" />
@@ -313,19 +422,23 @@
             <End Role="LanguageSet" EntitySet="LanguageSet" />
             <End Role="QuestionSet" EntitySet="QuestionSet" />
           </AssociationSet>
+          <AssociationSet Name="FK_TestSet_LanguageSet" Association="Forum.FK_TestSet_LanguageSet">
+            <End Role="LanguageSet" EntitySet="LanguageSet" />
+            <End Role="TestSet" EntitySet="TestSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListQuestion_QuestionSet" Association="Forum.FK_ListQuestion_QuestionSet">
+            <End Role="QuestionSet" EntitySet="QuestionSet" />
+            <End Role="ListQuestion" EntitySet="ListQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListQuestion_TestSet" Association="Forum.FK_ListQuestion_TestSet">
+            <End Role="TestSet" EntitySet="TestSet" />
+            <End Role="ListQuestion" EntitySet="ListQuestion" />
+          </AssociationSet>
           <AssociationSet Name="FK_QuestionTypeQuestion" Association="Forum.FK_QuestionTypeQuestion">
             <End Role="QuestionTypeSet" EntitySet="QuestionTypeSet" />
             <End Role="QuestionSet" EntitySet="QuestionSet" />
           </AssociationSet>
-          <EntitySet Name="ThemeSet" EntityType="Forum.ThemeSet" />
-          <AssociationSet Name="FK_ThemeSet_AccountSet" Association="Forum.FK_ThemeSet_AccountSet">
-            <End Role="AccountSet" EntitySet="AccountSet" />
-            <End Role="ThemeSet" EntitySet="ThemeSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CommentorySet_ThemeSet" Association="Forum.FK_CommentorySet_ThemeSet">
-            <End Role="ThemeSet" EntitySet="ThemeSet" />
-            <End Role="CommentorySet" EntitySet="CommentorySet" />
-          </AssociationSet>
+          <EntitySet Name="ProgramForumConstants" EntityType="Forum.ProgramForumConstants" />
         </EntityContainer>
         <EntityType Name="AccountSet">
           <Key>
@@ -347,8 +460,9 @@
           <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="QuestionSet" Relationship="Forum.FK_AccountQuestion" FromRole="AccountSet" ToRole="QuestionSet" />
           <NavigationProperty Name="CommentorySet" Relationship="Forum.FK_CommentorySet_AccountSet" FromRole="AccountSet" ToRole="CommentorySet" />
-          <NavigationProperty Name="ConversationSetRecipient" Relationship="Forum.FK_ConversationSet_AccountSet_Recipient" FromRole="AccountSet" ToRole="ConversationSet" />
-          <NavigationProperty Name="ConversationSetSender" Relationship="Forum.FK_ConversationSet_AccountSet_Sender" FromRole="AccountSet" ToRole="ConversationSet" />
+          <NavigationProperty Name="ConversationSet" Relationship="Forum.FK_ConversationSet_AccountSet_Recipient" FromRole="AccountSet" ToRole="ConversationSet" />
+          <NavigationProperty Name="ConversationSet1" Relationship="Forum.FK_ConversationSet_AccountSet_Sender" FromRole="AccountSet" ToRole="ConversationSet" />
+          <NavigationProperty Name="TestSet" Relationship="Forum.FK_TestSet_AccountSet" FromRole="AccountSet" ToRole="TestSet" />
           <NavigationProperty Name="ThemeSet" Relationship="Forum.FK_ThemeSet_AccountSet" FromRole="AccountSet" ToRole="ThemeSet" />
         </EntityType>
         <EntityType Name="AnswerSet">
@@ -391,6 +505,17 @@
           <Property Name="LanguageName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="LanguageDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="QuestionSet" Relationship="Forum.FK_LanguageQuestion" FromRole="LanguageSet" ToRole="QuestionSet" />
+          <NavigationProperty Name="TestSet" Relationship="Forum.FK_TestSet_LanguageSet" FromRole="LanguageSet" ToRole="TestSet" />
+        </EntityType>
+        <EntityType Name="ListQuestion">
+          <Key>
+            <PropertyRef Name="ListQuestionId" />
+          </Key>
+          <Property Name="ListQuestionId" Type="Int32" Nullable="false" />
+          <Property Name="QuestionId" Type="Int32" Nullable="false" />
+          <Property Name="TestId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="QuestionSet" Relationship="Forum.FK_ListQuestion_QuestionSet" FromRole="ListQuestion" ToRole="QuestionSet" />
+          <NavigationProperty Name="TestSet" Relationship="Forum.FK_ListQuestion_TestSet" FromRole="ListQuestion" ToRole="TestSet" />
         </EntityType>
         <EntityType Name="MessageSet">
           <Key>
@@ -417,6 +542,7 @@
           <NavigationProperty Name="AccountSet" Relationship="Forum.FK_AccountQuestion" FromRole="QuestionSet" ToRole="AccountSet" />
           <NavigationProperty Name="AnswerSet" Relationship="Forum.FK_AnswerQuestion" FromRole="QuestionSet" ToRole="AnswerSet" />
           <NavigationProperty Name="LanguageSet" Relationship="Forum.FK_LanguageQuestion" FromRole="QuestionSet" ToRole="LanguageSet" />
+          <NavigationProperty Name="ListQuestion" Relationship="Forum.FK_ListQuestion_QuestionSet" FromRole="QuestionSet" ToRole="ListQuestion" />
           <NavigationProperty Name="QuestionTypeSet" Relationship="Forum.FK_QuestionTypeQuestion" FromRole="QuestionSet" ToRole="QuestionTypeSet" />
         </EntityType>
         <EntityType Name="QuestionTypeSet">
@@ -426,6 +552,34 @@
           <Property Name="QuestionTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="QuestionTypeText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="QuestionSet" Relationship="Forum.FK_QuestionTypeQuestion" FromRole="QuestionTypeSet" ToRole="QuestionSet" />
+        </EntityType>
+        <EntityType Name="TestSet">
+          <Key>
+            <PropertyRef Name="TestId" />
+          </Key>
+          <Property Name="TestId" Type="Int32" Nullable="false" />
+          <Property Name="TestName" Type="String" Nullable="false" MaxLength="44" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="AuthorId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AccountSet" Relationship="Forum.FK_TestSet_AccountSet" FromRole="TestSet" ToRole="AccountSet" />
+          <NavigationProperty Name="LanguageSet" Relationship="Forum.FK_TestSet_LanguageSet" FromRole="TestSet" ToRole="LanguageSet" />
+          <NavigationProperty Name="ListQuestion" Relationship="Forum.FK_ListQuestion_TestSet" FromRole="TestSet" ToRole="ListQuestion" />
+        </EntityType>
+        <EntityType Name="ThemeSet">
+          <Key>
+            <PropertyRef Name="ThemeId" />
+          </Key>
+          <Property Name="ThemeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AuthorId" Type="Int32" Nullable="false" />
+          <Property Name="ThemeName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThemeText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThemePoints" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="AccountSet" Relationship="Forum.FK_ThemeSet_AccountSet" FromRole="ThemeSet" ToRole="AccountSet" />
+          <NavigationProperty Name="CommentorySet" Relationship="Forum.FK_CommentorySet_ThemeSet" FromRole="ThemeSet" ToRole="CommentorySet" />
         </EntityType>
         <Association Name="FK_AccountQuestion">
           <End Type="Forum.AccountSet" Role="AccountSet" Multiplicity="1" />
@@ -475,6 +629,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TestSet_AccountSet">
+          <End Type="Forum.AccountSet" Role="AccountSet" Multiplicity="1" />
+          <End Type="Forum.TestSet" Role="TestSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountSet">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="TestSet">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThemeSet_AccountSet">
+          <End Type="Forum.AccountSet" Role="AccountSet" Multiplicity="1" />
+          <End Type="Forum.ThemeSet" Role="ThemeSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountSet">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="ThemeSet">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_AnswerQuestion">
           <End Type="Forum.QuestionSet" Role="QuestionSet" Multiplicity="1" />
           <End Type="Forum.AnswerSet" Role="AnswerSet" Multiplicity="*" />
@@ -484,6 +662,18 @@
             </Principal>
             <Dependent Role="AnswerSet">
               <PropertyRef Name="QuestionQuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommentorySet_ThemeSet">
+          <End Type="Forum.ThemeSet" Role="ThemeSet" Multiplicity="1" />
+          <End Type="Forum.CommentorySet" Role="CommentorySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ThemeSet">
+              <PropertyRef Name="ThemeId" />
+            </Principal>
+            <Dependent Role="CommentorySet">
+              <PropertyRef Name="ThemeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -513,6 +703,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TestSet_LanguageSet">
+          <End Type="Forum.LanguageSet" Role="LanguageSet" Multiplicity="1" />
+          <End Type="Forum.TestSet" Role="TestSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LanguageSet">
+              <PropertyRef Name="LanguageId" />
+            </Principal>
+            <Dependent Role="TestSet">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListQuestion_QuestionSet">
+          <End Type="Forum.QuestionSet" Role="QuestionSet" Multiplicity="1" />
+          <End Type="Forum.ListQuestion" Role="ListQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuestionSet">
+              <PropertyRef Name="QuestionId" />
+            </Principal>
+            <Dependent Role="ListQuestion">
+              <PropertyRef Name="QuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListQuestion_TestSet">
+          <End Type="Forum.TestSet" Role="TestSet" Multiplicity="1" />
+          <End Type="Forum.ListQuestion" Role="ListQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TestSet">
+              <PropertyRef Name="TestId" />
+            </Principal>
+            <Dependent Role="ListQuestion">
+              <PropertyRef Name="TestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_QuestionTypeQuestion">
           <End Type="Forum.QuestionTypeSet" Role="QuestionTypeSet" Multiplicity="1" />
           <End Type="Forum.QuestionSet" Role="QuestionSet" Multiplicity="*" />
@@ -525,44 +751,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="ThemeSet">
+        <EntityType Name="ProgramForumConstants">
           <Key>
-            <PropertyRef Name="ThemeId" />
+            <PropertyRef Name="ConstantId" />
           </Key>
-          <Property Name="ThemeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AuthorId" Type="Int32" Nullable="false" />
-          <Property Name="ThemeName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ThemeText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ThemePoints" Type="Int32" Nullable="false" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
-          <Property Name="Visible" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="AccountSet" Relationship="Forum.FK_ThemeSet_AccountSet" FromRole="ThemeSet" ToRole="AccountSet" />
-          <NavigationProperty Name="CommentorySet" Relationship="Forum.FK_CommentorySet_ThemeSet" FromRole="ThemeSet" ToRole="CommentorySet" />
+          <Property Name="ConstantId" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ConstantName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ConstantValue" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <Association Name="FK_ThemeSet_AccountSet">
-          <End Type="Forum.AccountSet" Role="AccountSet" Multiplicity="1" />
-          <End Type="Forum.ThemeSet" Role="ThemeSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AccountSet">
-              <PropertyRef Name="AccountId" />
-            </Principal>
-            <Dependent Role="ThemeSet">
-              <PropertyRef Name="AuthorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CommentorySet_ThemeSet">
-          <End Type="Forum.ThemeSet" Role="ThemeSet" Multiplicity="1" />
-          <End Type="Forum.CommentorySet" Role="CommentorySet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ThemeSet">
-              <PropertyRef Name="ThemeId" />
-            </Principal>
-            <Dependent Role="CommentorySet">
-              <PropertyRef Name="ThemeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -627,6 +823,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ListQuestion">
+            <EntityTypeMapping TypeName="Forum.ListQuestion">
+              <MappingFragment StoreEntitySet="ListQuestion">
+                <ScalarProperty Name="TestId" ColumnName="TestId" />
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="ListQuestionId" ColumnName="ListQuestionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="MessageSet">
             <EntityTypeMapping TypeName="Forum.MessageSet">
               <MappingFragment StoreEntitySet="MessageSet">
@@ -659,6 +864,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TestSet">
+            <EntityTypeMapping TypeName="Forum.TestSet">
+              <MappingFragment StoreEntitySet="TestSet">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="TestName" ColumnName="TestName" />
+                <ScalarProperty Name="TestId" ColumnName="TestId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ThemeSet">
             <EntityTypeMapping TypeName="Forum.ThemeSet">
               <MappingFragment StoreEntitySet="ThemeSet">
@@ -669,6 +886,15 @@
                 <ScalarProperty Name="ThemeName" ColumnName="ThemeName" />
                 <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
                 <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProgramForumConstants">
+            <EntityTypeMapping TypeName="Forum.ProgramForumConstants">
+              <MappingFragment StoreEntitySet="ProgramForumConstants">
+                <ScalarProperty Name="ConstantValue" ColumnName="ConstantValue" />
+                <ScalarProperty Name="ConstantName" ColumnName="ConstantName" />
+                <ScalarProperty Name="ConstantId" ColumnName="ConstantId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

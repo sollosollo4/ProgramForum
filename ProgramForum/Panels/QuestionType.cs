@@ -84,6 +84,31 @@ namespace ProgramForum.Panels
             }
         }
 
+        public static void SetQuest(UserControl control, QuestionSet quest, bool readOnly)
+        {
+            switch (quest.QuestionTypeSet.QuestionTypeId)
+            {
+                case 1:
+                {
+                    var needControlQuestType0 = (QuestionType0)control;
+                    needControlQuestType0.questionType.Question = quest;
+                    needControlQuestType0.SetTextBox(quest);
+                    needControlQuestType0.SetTextBoxReadOnly(readOnly);
+                    needControlQuestType0.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+                    break;
+                }
+                case 2:
+                {
+                    var needControlQuestType1 = (QuestionType1)control;
+                    needControlQuestType1.questionType.Question = quest;
+                    needControlQuestType1.SetTextBox(quest);
+                    needControlQuestType1.SetTextBoxReadOnly(readOnly);
+                    needControlQuestType1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+                    break;
+                }
+            }
+        }
+
         public static bool TryToAnswer(SimpleQuestion currentPanel, QuestionSet currentQuestion)
         {
             switch (currentQuestion.QuestionTypeSet.QuestionTypeId)

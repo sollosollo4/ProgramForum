@@ -45,7 +45,7 @@
             // 
             // Login
             // 
-            this.Login.BackColor = System.Drawing.Color.Cornsilk;
+            this.Login.BackColor = System.Drawing.SystemColors.Window;
             this.Login.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Login.Location = new System.Drawing.Point(10, 93);
             this.Login.MaxLength = 55;
@@ -56,7 +56,7 @@
             // 
             // Password
             // 
-            this.Password.BackColor = System.Drawing.Color.Cornsilk;
+            this.Password.BackColor = System.Drawing.SystemColors.Window;
             this.Password.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Password.Location = new System.Drawing.Point(10, 165);
             this.Password.MaxLength = 55;

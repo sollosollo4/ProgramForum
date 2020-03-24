@@ -15,8 +15,6 @@ namespace ProgramForum.Panels
         private QuestionSet QuestionSet;    // Объект вопроса
         private IQuestionType QuestType;
 
-
-
         public SimpleQuestion(QuestionSet questionSet)
         {
             InitializeComponent();

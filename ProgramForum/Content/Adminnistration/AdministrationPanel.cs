@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProgramForum.Forms;
 
 namespace ProgramForum.Content.Adminnistration
 {
@@ -15,6 +16,16 @@ namespace ProgramForum.Content.Adminnistration
         public AdministrationPanel()
         {
             InitializeComponent();
+
+            using (ForumContainer container = new ForumContainer())
+            {
+                var redactThermes = container.ThemeSet.Where(x => x.Visible == false).ToList();
+                if (redactThermes != null)
+                {
+                    RedactorTheme.BackColor = Color.DarkOrange;
+                    RedactorTheme.Text = "Редактор тем(на редакции) " + redactThermes.Count;
+                }
+            }
         }
 
         /// <summary>
@@ -24,7 +35,7 @@ namespace ProgramForum.Content.Adminnistration
         /// <param name="e"></param>
         private void AddNewQuestion_Click(object sender, EventArgs e)
         {
-            AddNeQuestion addNeQuestion = new AddNeQuestion();
+            AddNewQuestion addNeQuestion = new AddNewQuestion();
             addNeQuestion.ShowDialog();
         }
 
@@ -35,7 +46,8 @@ namespace ProgramForum.Content.Adminnistration
         /// <param name="e"></param>
         private void RedactorQuestion_Click(object sender, EventArgs e)
         {
-
+            QuestionRedactor questionRedactor = new QuestionRedactor();
+            questionRedactor.ShowDialog();
         }
 
         /// <summary>
@@ -45,7 +57,8 @@ namespace ProgramForum.Content.Adminnistration
         /// <param name="e"></param>
         private void RedactorUsers_Click(object sender, EventArgs e)
         {
-
+            AccountRedactor accountRedactor = new AccountRedactor();
+            accountRedactor.ShowDialog();
         }
 
         /// <summary>
@@ -55,7 +68,8 @@ namespace ProgramForum.Content.Adminnistration
         /// <param name="e"></param>
         private void RedactorTheme_Click(object sender, EventArgs e)
         {
-
+            ThemeRedactor themeRedactor = new ThemeRedactor();
+            themeRedactor.ShowDialog();
         }
 
         /// <summary>
