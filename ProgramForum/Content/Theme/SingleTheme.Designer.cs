@@ -47,20 +47,23 @@
             // ReadTheme
             // 
             this.ReadTheme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ReadTheme.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ReadTheme.FlatAppearance.BorderSize = 0;
+            this.ReadTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReadTheme.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ReadTheme.Location = new System.Drawing.Point(314, 75);
+            this.ReadTheme.Location = new System.Drawing.Point(293, 75);
             this.ReadTheme.Name = "ReadTheme";
             this.ReadTheme.Size = new System.Drawing.Size(123, 29);
             this.ReadTheme.TabIndex = 1;
             this.ReadTheme.Text = "Читать далее";
-            this.ReadTheme.UseVisualStyleBackColor = true;
+            this.ReadTheme.UseVisualStyleBackColor = false;
             // 
             // ThemeStartText
             // 
             this.ThemeStartText.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ThemeStartText.Location = new System.Drawing.Point(3, 26);
             this.ThemeStartText.Name = "ThemeStartText";
-            this.ThemeStartText.Size = new System.Drawing.Size(305, 63);
+            this.ThemeStartText.Size = new System.Drawing.Size(284, 63);
             this.ThemeStartText.TabIndex = 2;
             // 
             // ThemeAuthor
@@ -68,7 +71,7 @@
             this.ThemeAuthor.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ThemeAuthor.Location = new System.Drawing.Point(326, 4);
             this.ThemeAuthor.Name = "ThemeAuthor";
-            this.ThemeAuthor.Size = new System.Drawing.Size(111, 68);
+            this.ThemeAuthor.Size = new System.Drawing.Size(93, 68);
             this.ThemeAuthor.TabIndex = 3;
             // 
             // CommentoryCount
@@ -91,7 +94,7 @@
             this.Controls.Add(this.ReadTheme);
             this.Controls.Add(this.ThemeName);
             this.Name = "SingleTheme";
-            this.Size = new System.Drawing.Size(440, 107);
+            this.Size = new System.Drawing.Size(419, 107);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -46,7 +46,7 @@
             // 
             this.OpenForRedaction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OpenForRedaction.AutoSize = true;
-            this.OpenForRedaction.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.OpenForRedaction.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.OpenForRedaction.FlatAppearance.BorderSize = 0;
             this.OpenForRedaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenForRedaction.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);

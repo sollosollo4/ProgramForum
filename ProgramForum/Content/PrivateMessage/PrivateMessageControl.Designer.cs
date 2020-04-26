@@ -42,7 +42,7 @@
             // 
             // NewMessage
             // 
-            this.NewMessage.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.NewMessage.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.NewMessage.FlatAppearance.BorderSize = 0;
             this.NewMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NewMessage.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);

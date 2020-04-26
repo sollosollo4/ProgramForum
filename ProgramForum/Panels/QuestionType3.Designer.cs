@@ -54,13 +54,16 @@
             // 
             // SelectWords
             // 
+            this.SelectWords.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.SelectWords.FlatAppearance.BorderSize = 0;
+            this.SelectWords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SelectWords.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SelectWords.Location = new System.Drawing.Point(362, 77);
             this.SelectWords.Name = "SelectWords";
             this.SelectWords.Size = new System.Drawing.Size(95, 94);
             this.SelectWords.TabIndex = 2;
             this.SelectWords.Text = "Выбрать ключ. слова";
-            this.SelectWords.UseVisualStyleBackColor = true;
+            this.SelectWords.UseVisualStyleBackColor = false;
             this.SelectWords.Click += new System.EventHandler(this.SelectWords_Click);
             // 
             // QuestionType3

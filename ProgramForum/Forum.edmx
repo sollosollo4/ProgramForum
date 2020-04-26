@@ -32,6 +32,14 @@
           <Property Name="AnswerVarible" Type="nvarchar(max)" Nullable="false" />
           <Property Name="QuestionQuestionId" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="CodeSet">
+          <Key>
+            <PropertyRef Name="CodeId" />
+          </Key>
+          <Property Name="CodeId" Type="int" Nullable="false" />
+          <Property Name="CodeFileName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BinaryFileData" Type="varbinary(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="CommentorySet">
           <Key>
             <PropertyRef Name="CommentoryId" />
@@ -58,13 +66,18 @@
           <Property Name="LanguageName" Type="nvarchar(max)" Nullable="false" />
           <Property Name="LanguageDescription" Type="nvarchar(max)" />
         </EntityType>
-        <EntityType Name="ListQuestion">
+        <EntityType Name="LessonSet">
           <Key>
-            <PropertyRef Name="ListQuestionId" />
+            <PropertyRef Name="LessonId" />
           </Key>
-          <Property Name="ListQuestionId" Type="int" Nullable="false" />
-          <Property Name="QuestionId" Type="int" Nullable="false" />
-          <Property Name="TestId" Type="int" Nullable="false" />
+          <Property Name="LessonId" Type="int" Nullable="false" />
+          <Property Name="TrainingId" Type="int" Nullable="false" />
+          <Property Name="Position" Type="int" Nullable="false" />
+          <Property Name="LessonName" Type="nvarchar" MaxLength="55" Nullable="false" />
+          <Property Name="LessonText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PictureId" Type="int" />
+          <Property Name="Shape" Type="int" />
+          <Property Name="Color" Type="int" />
         </EntityType>
         <EntityType Name="MessageSet">
           <Key>
@@ -76,14 +89,6 @@
           <Property Name="ConversationId" Type="int" Nullable="false" />
           <Property Name="SenderId" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="MethodSet">
-          <Key>
-            <PropertyRef Name="MethodId" />
-          </Key>
-          <Property Name="MethodId" Type="int" Nullable="false" />
-          <Property Name="MethodName" Type="nvarchar" MaxLength="44" Nullable="false" />
-          <Property Name="MethodDescription" Type="nvarchar(max)" />
-        </EntityType>
         <EntityType Name="ProgramForumConstants">
           <Key>
             <PropertyRef Name="ConstantId" />
@@ -91,6 +96,15 @@
           <Property Name="ConstantId" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="ConstantName" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ConstantValue" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuestionListLessonSet">
+          <Key>
+            <PropertyRef Name="LessonQuestionId" />
+          </Key>
+          <Property Name="LessonQuestionId" Type="int" Nullable="false" />
+          <Property Name="QuestionId" Type="int" Nullable="false" />
+          <Property Name="Position" Type="int" Nullable="false" />
+          <Property Name="LessonId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="QuestionSet">
           <Key>
@@ -111,24 +125,14 @@
           <Property Name="QuestionTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="QuestionTypeText" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
-        <EntityType Name="TestLinkSet">
+        <EntityType Name="Roles">
           <Key>
-            <PropertyRef Name="TestLinkId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="TestLinkId" Type="int" Nullable="false" />
-          <Property Name="TestId" Type="int" Nullable="false" />
-          <Property Name="MethodId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="TestSet">
-          <Key>
-            <PropertyRef Name="TestId" />
-          </Key>
-          <Property Name="TestId" Type="int" Nullable="false" />
-          <Property Name="TestName" Type="nvarchar" MaxLength="44" Nullable="false" />
-          <Property Name="CreateDate" Type="datetime" />
-          <Property Name="LanguageId" Type="int" Nullable="false" />
-          <Property Name="AuthorId" Type="int" Nullable="false" />
-          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Id" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="NormalizedName" Type="nvarchar(max)" />
+          <Property Name="ConcurrencyStamp" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="ThemeSet">
           <Key>
@@ -141,6 +145,34 @@
           <Property Name="ThemePoints" Type="int" Nullable="false" />
           <Property Name="CreateDate" Type="datetime" />
           <Property Name="Visible" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TheoryLessonSet">
+          <Key>
+            <PropertyRef Name="TheoryId" />
+          </Key>
+          <Property Name="TheoryId" Type="int" Nullable="false" />
+          <Property Name="LessonId" Type="int" Nullable="false" />
+          <Property Name="TheoryText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Position" Type="int" Nullable="false" />
+          <Property Name="CodeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TrainingProgressSet">
+          <Key>
+            <PropertyRef Name="TrainingProgressId" />
+          </Key>
+          <Property Name="TrainingProgressId" Type="int" Nullable="false" />
+          <Property Name="TrainingId" Type="int" Nullable="false" />
+          <Property Name="LessonId" Type="int" Nullable="false" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TrainingSet">
+          <Key>
+            <PropertyRef Name="TrainingId" />
+          </Key>
+          <Property Name="TrainingId" Type="int" Nullable="false" />
+          <Property Name="TrainingName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AuthorId" Type="int" Nullable="false" />
+          <Property Name="TrainingDescrition" Type="nvarchar(max)" />
         </EntityType>
         <Association Name="FK_AccountQuestion">
           <End Role="AccountSet" Type="Self.AccountSet" Multiplicity="1" />
@@ -226,27 +258,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ListQuestion_QuestionSet">
-          <End Role="QuestionSet" Type="Self.QuestionSet" Multiplicity="1" />
-          <End Role="ListQuestion" Type="Self.ListQuestion" Multiplicity="*" />
+        <Association Name="FK_LessonSet_TheoryLessonSet">
+          <End Role="TheoryLessonSet" Type="Self.TheoryLessonSet" Multiplicity="1" />
+          <End Role="LessonSet" Type="Self.LessonSet" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="QuestionSet">
-              <PropertyRef Name="QuestionId" />
+            <Principal Role="TheoryLessonSet">
+              <PropertyRef Name="TheoryId" />
             </Principal>
-            <Dependent Role="ListQuestion">
-              <PropertyRef Name="QuestionId" />
+            <Dependent Role="LessonSet">
+              <PropertyRef Name="LessonId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ListQuestion_TestSet">
-          <End Role="TestSet" Type="Self.TestSet" Multiplicity="1" />
-          <End Role="ListQuestion" Type="Self.ListQuestion" Multiplicity="*" />
+        <Association Name="FK_LessonSet_TrainingSet">
+          <End Role="TrainingSet" Type="Self.TrainingSet" Multiplicity="1" />
+          <End Role="LessonSet" Type="Self.LessonSet" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="TestSet">
-              <PropertyRef Name="TestId" />
+            <Principal Role="TrainingSet">
+              <PropertyRef Name="TrainingId" />
             </Principal>
-            <Dependent Role="ListQuestion">
-              <PropertyRef Name="TestId" />
+            <Dependent Role="LessonSet">
+              <PropertyRef Name="TrainingId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -264,6 +296,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_QuestionListLessonSet_LessonSet">
+          <End Role="LessonSet" Type="Self.LessonSet" Multiplicity="1" />
+          <End Role="QuestionListLessonSet" Type="Self.QuestionListLessonSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LessonSet">
+              <PropertyRef Name="LessonId" />
+            </Principal>
+            <Dependent Role="QuestionListLessonSet">
+              <PropertyRef Name="LessonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuestionListLessonSet_QuestionSet">
+          <End Role="QuestionSet" Type="Self.QuestionSet" Multiplicity="1" />
+          <End Role="QuestionListLessonSet" Type="Self.QuestionListLessonSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuestionSet">
+              <PropertyRef Name="QuestionId" />
+            </Principal>
+            <Dependent Role="QuestionListLessonSet">
+              <PropertyRef Name="QuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_QuestionTypeQuestion">
           <End Role="QuestionTypeSet" Type="Self.QuestionTypeSet" Multiplicity="1" />
           <End Role="QuestionSet" Type="Self.QuestionSet" Multiplicity="*" />
@@ -273,54 +329,6 @@
             </Principal>
             <Dependent Role="QuestionSet">
               <PropertyRef Name="QuestionTypeQuestionTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TestLinkSet_MethodSet">
-          <End Role="MethodSet" Type="Self.MethodSet" Multiplicity="1" />
-          <End Role="TestLinkSet" Type="Self.TestLinkSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MethodSet">
-              <PropertyRef Name="MethodId" />
-            </Principal>
-            <Dependent Role="TestLinkSet">
-              <PropertyRef Name="MethodId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TestLinkSet_TestSet">
-          <End Role="TestSet" Type="Self.TestSet" Multiplicity="1" />
-          <End Role="TestLinkSet" Type="Self.TestLinkSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TestSet">
-              <PropertyRef Name="TestId" />
-            </Principal>
-            <Dependent Role="TestLinkSet">
-              <PropertyRef Name="TestId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TestSet_AccountSet">
-          <End Role="AccountSet" Type="Self.AccountSet" Multiplicity="1" />
-          <End Role="TestSet" Type="Self.TestSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AccountSet">
-              <PropertyRef Name="AccountId" />
-            </Principal>
-            <Dependent Role="TestSet">
-              <PropertyRef Name="AuthorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TestSet_LanguageSet">
-          <End Role="LanguageSet" Type="Self.LanguageSet" Multiplicity="1" />
-          <End Role="TestSet" Type="Self.TestSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LanguageSet">
-              <PropertyRef Name="LanguageId" />
-            </Principal>
-            <Dependent Role="TestSet">
-              <PropertyRef Name="LanguageId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -336,21 +344,84 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TheoryLessonSet_CodeSet">
+          <End Role="CodeSet" Type="Self.CodeSet" Multiplicity="1" />
+          <End Role="TheoryLessonSet" Type="Self.TheoryLessonSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodeSet">
+              <PropertyRef Name="CodeId" />
+            </Principal>
+            <Dependent Role="TheoryLessonSet">
+              <PropertyRef Name="CodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingProgressSet_AccountSet">
+          <End Role="AccountSet" Type="Self.AccountSet" Multiplicity="1" />
+          <End Role="TrainingProgressSet" Type="Self.TrainingProgressSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountSet">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="TrainingProgressSet">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingProgressSet_LessonSet">
+          <End Role="LessonSet" Type="Self.LessonSet" Multiplicity="1" />
+          <End Role="TrainingProgressSet" Type="Self.TrainingProgressSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LessonSet">
+              <PropertyRef Name="LessonId" />
+            </Principal>
+            <Dependent Role="TrainingProgressSet">
+              <PropertyRef Name="LessonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingProgressSet_TrainingSet">
+          <End Role="TrainingSet" Type="Self.TrainingSet" Multiplicity="1" />
+          <End Role="TrainingProgressSet" Type="Self.TrainingProgressSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrainingSet">
+              <PropertyRef Name="TrainingId" />
+            </Principal>
+            <Dependent Role="TrainingProgressSet">
+              <PropertyRef Name="TrainingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingSet_AccountSet">
+          <End Role="AccountSet" Type="Self.AccountSet" Multiplicity="1" />
+          <End Role="TrainingSet" Type="Self.TrainingSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountSet">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="TrainingSet">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ForumStoreContainer">
           <EntitySet Name="AccountSet" EntityType="Self.AccountSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnswerSet" EntityType="Self.AnswerSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CodeSet" EntityType="Self.CodeSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CommentorySet" EntityType="Self.CommentorySet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ConversationSet" EntityType="Self.ConversationSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LanguageSet" EntityType="Self.LanguageSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ListQuestion" EntityType="Self.ListQuestion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LessonSet" EntityType="Self.LessonSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MessageSet" EntityType="Self.MessageSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MethodSet" EntityType="Self.MethodSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProgramForumConstants" EntityType="Self.ProgramForumConstants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuestionListLessonSet" EntityType="Self.QuestionListLessonSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuestionSet" EntityType="Self.QuestionSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuestionTypeSet" EntityType="Self.QuestionTypeSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TestLinkSet" EntityType="Self.TestLinkSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TestSet" EntityType="Self.TestSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThemeSet" EntityType="Self.ThemeSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TheoryLessonSet" EntityType="Self.TheoryLessonSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrainingProgressSet" EntityType="Self.TrainingProgressSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrainingSet" EntityType="Self.TrainingSet" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_AccountQuestion" Association="Self.FK_AccountQuestion">
             <End Role="AccountSet" EntitySet="AccountSet" />
             <End Role="QuestionSet" EntitySet="QuestionSet" />
@@ -379,41 +450,53 @@
             <End Role="LanguageSet" EntitySet="LanguageSet" />
             <End Role="QuestionSet" EntitySet="QuestionSet" />
           </AssociationSet>
-          <AssociationSet Name="FK_ListQuestion_QuestionSet" Association="Self.FK_ListQuestion_QuestionSet">
-            <End Role="QuestionSet" EntitySet="QuestionSet" />
-            <End Role="ListQuestion" EntitySet="ListQuestion" />
+          <AssociationSet Name="FK_LessonSet_TheoryLessonSet" Association="Self.FK_LessonSet_TheoryLessonSet">
+            <End Role="TheoryLessonSet" EntitySet="TheoryLessonSet" />
+            <End Role="LessonSet" EntitySet="LessonSet" />
           </AssociationSet>
-          <AssociationSet Name="FK_ListQuestion_TestSet" Association="Self.FK_ListQuestion_TestSet">
-            <End Role="TestSet" EntitySet="TestSet" />
-            <End Role="ListQuestion" EntitySet="ListQuestion" />
+          <AssociationSet Name="FK_LessonSet_TrainingSet" Association="Self.FK_LessonSet_TrainingSet">
+            <End Role="TrainingSet" EntitySet="TrainingSet" />
+            <End Role="LessonSet" EntitySet="LessonSet" />
           </AssociationSet>
           <AssociationSet Name="FK_MessageSet_ConversationSet" Association="Self.FK_MessageSet_ConversationSet">
             <End Role="ConversationSet" EntitySet="ConversationSet" />
             <End Role="MessageSet" EntitySet="MessageSet" />
           </AssociationSet>
+          <AssociationSet Name="FK_QuestionListLessonSet_LessonSet" Association="Self.FK_QuestionListLessonSet_LessonSet">
+            <End Role="LessonSet" EntitySet="LessonSet" />
+            <End Role="QuestionListLessonSet" EntitySet="QuestionListLessonSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionListLessonSet_QuestionSet" Association="Self.FK_QuestionListLessonSet_QuestionSet">
+            <End Role="QuestionSet" EntitySet="QuestionSet" />
+            <End Role="QuestionListLessonSet" EntitySet="QuestionListLessonSet" />
+          </AssociationSet>
           <AssociationSet Name="FK_QuestionTypeQuestion" Association="Self.FK_QuestionTypeQuestion">
             <End Role="QuestionTypeSet" EntitySet="QuestionTypeSet" />
             <End Role="QuestionSet" EntitySet="QuestionSet" />
           </AssociationSet>
-          <AssociationSet Name="FK_TestLinkSet_MethodSet" Association="Self.FK_TestLinkSet_MethodSet">
-            <End Role="MethodSet" EntitySet="MethodSet" />
-            <End Role="TestLinkSet" EntitySet="TestLinkSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TestLinkSet_TestSet" Association="Self.FK_TestLinkSet_TestSet">
-            <End Role="TestSet" EntitySet="TestSet" />
-            <End Role="TestLinkSet" EntitySet="TestLinkSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TestSet_AccountSet" Association="Self.FK_TestSet_AccountSet">
-            <End Role="AccountSet" EntitySet="AccountSet" />
-            <End Role="TestSet" EntitySet="TestSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TestSet_LanguageSet" Association="Self.FK_TestSet_LanguageSet">
-            <End Role="LanguageSet" EntitySet="LanguageSet" />
-            <End Role="TestSet" EntitySet="TestSet" />
-          </AssociationSet>
           <AssociationSet Name="FK_ThemeSet_AccountSet" Association="Self.FK_ThemeSet_AccountSet">
             <End Role="AccountSet" EntitySet="AccountSet" />
             <End Role="ThemeSet" EntitySet="ThemeSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TheoryLessonSet_CodeSet" Association="Self.FK_TheoryLessonSet_CodeSet">
+            <End Role="CodeSet" EntitySet="CodeSet" />
+            <End Role="TheoryLessonSet" EntitySet="TheoryLessonSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrainingProgressSet_AccountSet" Association="Self.FK_TrainingProgressSet_AccountSet">
+            <End Role="AccountSet" EntitySet="AccountSet" />
+            <End Role="TrainingProgressSet" EntitySet="TrainingProgressSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrainingProgressSet_LessonSet" Association="Self.FK_TrainingProgressSet_LessonSet">
+            <End Role="LessonSet" EntitySet="LessonSet" />
+            <End Role="TrainingProgressSet" EntitySet="TrainingProgressSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrainingProgressSet_TrainingSet" Association="Self.FK_TrainingProgressSet_TrainingSet">
+            <End Role="TrainingSet" EntitySet="TrainingSet" />
+            <End Role="TrainingProgressSet" EntitySet="TrainingProgressSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrainingSet_AccountSet" Association="Self.FK_TrainingSet_AccountSet">
+            <End Role="AccountSet" EntitySet="AccountSet" />
+            <End Role="TrainingSet" EntitySet="TrainingSet" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -423,15 +506,21 @@
         <EntityContainer Name="ForumContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AccountSet" EntityType="Forum.AccountSet" />
           <EntitySet Name="AnswerSet" EntityType="Forum.AnswerSet" />
+          <EntitySet Name="CodeSet" EntityType="Forum.CodeSet" />
           <EntitySet Name="CommentorySet" EntityType="Forum.CommentorySet" />
           <EntitySet Name="ConversationSet" EntityType="Forum.ConversationSet" />
           <EntitySet Name="LanguageSet" EntityType="Forum.LanguageSet" />
-          <EntitySet Name="ListQuestion" EntityType="Forum.ListQuestion" />
+          <EntitySet Name="LessonSet" EntityType="Forum.LessonSet" />
           <EntitySet Name="MessageSet" EntityType="Forum.MessageSet" />
+          <EntitySet Name="ProgramForumConstants" EntityType="Forum.ProgramForumConstants" />
+          <EntitySet Name="QuestionListLessonSet" EntityType="Forum.QuestionListLessonSet" />
           <EntitySet Name="QuestionSet" EntityType="Forum.QuestionSet" />
           <EntitySet Name="QuestionTypeSet" EntityType="Forum.QuestionTypeSet" />
-          <EntitySet Name="TestSet" EntityType="Forum.TestSet" />
+          <EntitySet Name="Roles" EntityType="Forum.Roles" />
           <EntitySet Name="ThemeSet" EntityType="Forum.ThemeSet" />
+          <EntitySet Name="TheoryLessonSet" EntityType="Forum.TheoryLessonSet" />
+          <EntitySet Name="TrainingProgressSet" EntityType="Forum.TrainingProgressSet" />
+          <EntitySet Name="TrainingSet" EntityType="Forum.TrainingSet" />
           <AssociationSet Name="FK_AccountQuestion" Association="Forum.FK_AccountQuestion">
             <End Role="AccountSet" EntitySet="AccountSet" />
             <End Role="QuestionSet" EntitySet="QuestionSet" />
@@ -448,17 +537,25 @@
             <End Role="AccountSet" EntitySet="AccountSet" />
             <End Role="ConversationSet" EntitySet="ConversationSet" />
           </AssociationSet>
-          <AssociationSet Name="FK_TestSet_AccountSet" Association="Forum.FK_TestSet_AccountSet">
-            <End Role="AccountSet" EntitySet="AccountSet" />
-            <End Role="TestSet" EntitySet="TestSet" />
-          </AssociationSet>
           <AssociationSet Name="FK_ThemeSet_AccountSet" Association="Forum.FK_ThemeSet_AccountSet">
             <End Role="AccountSet" EntitySet="AccountSet" />
             <End Role="ThemeSet" EntitySet="ThemeSet" />
           </AssociationSet>
+          <AssociationSet Name="FK_TrainingProgressSet_AccountSet" Association="Forum.FK_TrainingProgressSet_AccountSet">
+            <End Role="AccountSet" EntitySet="AccountSet" />
+            <End Role="TrainingProgressSet" EntitySet="TrainingProgressSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrainingSet_AccountSet" Association="Forum.FK_TrainingSet_AccountSet">
+            <End Role="AccountSet" EntitySet="AccountSet" />
+            <End Role="TrainingSet" EntitySet="TrainingSet" />
+          </AssociationSet>
           <AssociationSet Name="FK_AnswerQuestion" Association="Forum.FK_AnswerQuestion">
             <End Role="QuestionSet" EntitySet="QuestionSet" />
             <End Role="AnswerSet" EntitySet="AnswerSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TheoryLessonSet_CodeSet" Association="Forum.FK_TheoryLessonSet_CodeSet">
+            <End Role="CodeSet" EntitySet="CodeSet" />
+            <End Role="TheoryLessonSet" EntitySet="TheoryLessonSet" />
           </AssociationSet>
           <AssociationSet Name="FK_CommentorySet_ThemeSet" Association="Forum.FK_CommentorySet_ThemeSet">
             <End Role="ThemeSet" EntitySet="ThemeSet" />
@@ -472,32 +569,33 @@
             <End Role="LanguageSet" EntitySet="LanguageSet" />
             <End Role="QuestionSet" EntitySet="QuestionSet" />
           </AssociationSet>
-          <AssociationSet Name="FK_TestSet_LanguageSet" Association="Forum.FK_TestSet_LanguageSet">
-            <End Role="LanguageSet" EntitySet="LanguageSet" />
-            <End Role="TestSet" EntitySet="TestSet" />
+          <AssociationSet Name="FK_LessonSet_TheoryLessonSet" Association="Forum.FK_LessonSet_TheoryLessonSet">
+            <End Role="TheoryLessonSet" EntitySet="TheoryLessonSet" />
+            <End Role="LessonSet" EntitySet="LessonSet" />
           </AssociationSet>
-          <AssociationSet Name="FK_ListQuestion_QuestionSet" Association="Forum.FK_ListQuestion_QuestionSet">
+          <AssociationSet Name="FK_LessonSet_TrainingSet" Association="Forum.FK_LessonSet_TrainingSet">
+            <End Role="TrainingSet" EntitySet="TrainingSet" />
+            <End Role="LessonSet" EntitySet="LessonSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionListLessonSet_LessonSet" Association="Forum.FK_QuestionListLessonSet_LessonSet">
+            <End Role="LessonSet" EntitySet="LessonSet" />
+            <End Role="QuestionListLessonSet" EntitySet="QuestionListLessonSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrainingProgressSet_LessonSet" Association="Forum.FK_TrainingProgressSet_LessonSet">
+            <End Role="LessonSet" EntitySet="LessonSet" />
+            <End Role="TrainingProgressSet" EntitySet="TrainingProgressSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionListLessonSet_QuestionSet" Association="Forum.FK_QuestionListLessonSet_QuestionSet">
             <End Role="QuestionSet" EntitySet="QuestionSet" />
-            <End Role="ListQuestion" EntitySet="ListQuestion" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ListQuestion_TestSet" Association="Forum.FK_ListQuestion_TestSet">
-            <End Role="TestSet" EntitySet="TestSet" />
-            <End Role="ListQuestion" EntitySet="ListQuestion" />
+            <End Role="QuestionListLessonSet" EntitySet="QuestionListLessonSet" />
           </AssociationSet>
           <AssociationSet Name="FK_QuestionTypeQuestion" Association="Forum.FK_QuestionTypeQuestion">
             <End Role="QuestionTypeSet" EntitySet="QuestionTypeSet" />
             <End Role="QuestionSet" EntitySet="QuestionSet" />
           </AssociationSet>
-          <EntitySet Name="ProgramForumConstants" EntityType="Forum.ProgramForumConstants" />
-          <EntitySet Name="MethodSet" EntityType="Forum.MethodSet" />
-          <EntitySet Name="TestLinkSet" EntityType="Forum.TestLinkSet" />
-          <AssociationSet Name="FK_TestLinkSet_MethodSet" Association="Forum.FK_TestLinkSet_MethodSet">
-            <End Role="MethodSet" EntitySet="MethodSet" />
-            <End Role="TestLinkSet" EntitySet="TestLinkSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TestLinkSet_TestSet" Association="Forum.FK_TestLinkSet_TestSet">
-            <End Role="TestSet" EntitySet="TestSet" />
-            <End Role="TestLinkSet" EntitySet="TestLinkSet" />
+          <AssociationSet Name="FK_TrainingProgressSet_TrainingSet" Association="Forum.FK_TrainingProgressSet_TrainingSet">
+            <End Role="TrainingSet" EntitySet="TrainingSet" />
+            <End Role="TrainingProgressSet" EntitySet="TrainingProgressSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="AccountSet">
@@ -522,8 +620,9 @@
           <NavigationProperty Name="CommentorySet" Relationship="Forum.FK_CommentorySet_AccountSet" FromRole="AccountSet" ToRole="CommentorySet" />
           <NavigationProperty Name="ConversationSet" Relationship="Forum.FK_ConversationSet_AccountSet_Recipient" FromRole="AccountSet" ToRole="ConversationSet" />
           <NavigationProperty Name="ConversationSet1" Relationship="Forum.FK_ConversationSet_AccountSet_Sender" FromRole="AccountSet" ToRole="ConversationSet" />
-          <NavigationProperty Name="TestSet" Relationship="Forum.FK_TestSet_AccountSet" FromRole="AccountSet" ToRole="TestSet" />
           <NavigationProperty Name="ThemeSet" Relationship="Forum.FK_ThemeSet_AccountSet" FromRole="AccountSet" ToRole="ThemeSet" />
+          <NavigationProperty Name="TrainingProgressSet" Relationship="Forum.FK_TrainingProgressSet_AccountSet" FromRole="AccountSet" ToRole="TrainingProgressSet" />
+          <NavigationProperty Name="TrainingSet" Relationship="Forum.FK_TrainingSet_AccountSet" FromRole="AccountSet" ToRole="TrainingSet" />
         </EntityType>
         <EntityType Name="AnswerSet">
           <Key>
@@ -533,6 +632,15 @@
           <Property Name="AnswerVarible" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="QuestionQuestionId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="QuestionSet" Relationship="Forum.FK_AnswerQuestion" FromRole="AnswerSet" ToRole="QuestionSet" />
+        </EntityType>
+        <EntityType Name="CodeSet">
+          <Key>
+            <PropertyRef Name="CodeId" />
+          </Key>
+          <Property Name="CodeId" Type="Int32" Nullable="false" />
+          <Property Name="CodeFileName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BinaryFileData" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="TheoryLessonSet" Relationship="Forum.FK_TheoryLessonSet_CodeSet" FromRole="CodeSet" ToRole="TheoryLessonSet" />
         </EntityType>
         <EntityType Name="CommentorySet">
           <Key>
@@ -565,17 +673,23 @@
           <Property Name="LanguageName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="LanguageDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="QuestionSet" Relationship="Forum.FK_LanguageQuestion" FromRole="LanguageSet" ToRole="QuestionSet" />
-          <NavigationProperty Name="TestSet" Relationship="Forum.FK_TestSet_LanguageSet" FromRole="LanguageSet" ToRole="TestSet" />
         </EntityType>
-        <EntityType Name="ListQuestion">
+        <EntityType Name="LessonSet">
           <Key>
-            <PropertyRef Name="ListQuestionId" />
+            <PropertyRef Name="LessonId" />
           </Key>
-          <Property Name="ListQuestionId" Type="Int32" Nullable="false" />
-          <Property Name="QuestionId" Type="Int32" Nullable="false" />
-          <Property Name="TestId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="QuestionSet" Relationship="Forum.FK_ListQuestion_QuestionSet" FromRole="ListQuestion" ToRole="QuestionSet" />
-          <NavigationProperty Name="TestSet" Relationship="Forum.FK_ListQuestion_TestSet" FromRole="ListQuestion" ToRole="TestSet" />
+          <Property Name="LessonId" Type="Int32" Nullable="false" />
+          <Property Name="TrainingId" Type="Int32" Nullable="false" />
+          <Property Name="Position" Type="Int32" Nullable="false" />
+          <Property Name="LessonName" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="true" />
+          <Property Name="LessonText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PictureId" Type="Int32" />
+          <Property Name="Shape" Type="Int32" />
+          <Property Name="Color" Type="Int32" />
+          <NavigationProperty Name="TheoryLessonSet" Relationship="Forum.FK_LessonSet_TheoryLessonSet" FromRole="LessonSet" ToRole="TheoryLessonSet" />
+          <NavigationProperty Name="TrainingSet" Relationship="Forum.FK_LessonSet_TrainingSet" FromRole="LessonSet" ToRole="TrainingSet" />
+          <NavigationProperty Name="QuestionListLessonSet" Relationship="Forum.FK_QuestionListLessonSet_LessonSet" FromRole="LessonSet" ToRole="QuestionListLessonSet" />
+          <NavigationProperty Name="TrainingProgressSet" Relationship="Forum.FK_TrainingProgressSet_LessonSet" FromRole="LessonSet" ToRole="TrainingProgressSet" />
         </EntityType>
         <EntityType Name="MessageSet">
           <Key>
@@ -587,6 +701,25 @@
           <Property Name="ConversationId" Type="Int32" Nullable="false" />
           <Property Name="SenderId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ConversationSet" Relationship="Forum.FK_MessageSet_ConversationSet" FromRole="MessageSet" ToRole="ConversationSet" />
+        </EntityType>
+        <EntityType Name="ProgramForumConstants">
+          <Key>
+            <PropertyRef Name="ConstantId" />
+          </Key>
+          <Property Name="ConstantId" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ConstantName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ConstantValue" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="QuestionListLessonSet">
+          <Key>
+            <PropertyRef Name="LessonQuestionId" />
+          </Key>
+          <Property Name="LessonQuestionId" Type="Int32" Nullable="false" />
+          <Property Name="QuestionId" Type="Int32" Nullable="false" />
+          <Property Name="Position" Type="Int32" Nullable="false" />
+          <Property Name="LessonId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LessonSet" Relationship="Forum.FK_QuestionListLessonSet_LessonSet" FromRole="QuestionListLessonSet" ToRole="LessonSet" />
+          <NavigationProperty Name="QuestionSet" Relationship="Forum.FK_QuestionListLessonSet_QuestionSet" FromRole="QuestionListLessonSet" ToRole="QuestionSet" />
         </EntityType>
         <EntityType Name="QuestionSet">
           <Key>
@@ -602,7 +735,7 @@
           <NavigationProperty Name="AccountSet" Relationship="Forum.FK_AccountQuestion" FromRole="QuestionSet" ToRole="AccountSet" />
           <NavigationProperty Name="AnswerSet" Relationship="Forum.FK_AnswerQuestion" FromRole="QuestionSet" ToRole="AnswerSet" />
           <NavigationProperty Name="LanguageSet" Relationship="Forum.FK_LanguageQuestion" FromRole="QuestionSet" ToRole="LanguageSet" />
-          <NavigationProperty Name="ListQuestion" Relationship="Forum.FK_ListQuestion_QuestionSet" FromRole="QuestionSet" ToRole="ListQuestion" />
+          <NavigationProperty Name="QuestionListLessonSet" Relationship="Forum.FK_QuestionListLessonSet_QuestionSet" FromRole="QuestionSet" ToRole="QuestionListLessonSet" />
           <NavigationProperty Name="QuestionTypeSet" Relationship="Forum.FK_QuestionTypeQuestion" FromRole="QuestionSet" ToRole="QuestionTypeSet" />
         </EntityType>
         <EntityType Name="QuestionTypeSet">
@@ -613,20 +746,14 @@
           <Property Name="QuestionTypeText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="QuestionSet" Relationship="Forum.FK_QuestionTypeQuestion" FromRole="QuestionTypeSet" ToRole="QuestionSet" />
         </EntityType>
-        <EntityType Name="TestSet">
+        <EntityType Name="Roles">
           <Key>
-            <PropertyRef Name="TestId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="TestId" Type="Int32" Nullable="false" />
-          <Property Name="TestName" Type="String" Nullable="false" MaxLength="44" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
-          <Property Name="LanguageId" Type="Int32" Nullable="false" />
-          <Property Name="AuthorId" Type="Int32" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="AccountSet" Relationship="Forum.FK_TestSet_AccountSet" FromRole="TestSet" ToRole="AccountSet" />
-          <NavigationProperty Name="LanguageSet" Relationship="Forum.FK_TestSet_LanguageSet" FromRole="TestSet" ToRole="LanguageSet" />
-          <NavigationProperty Name="ListQuestion" Relationship="Forum.FK_ListQuestion_TestSet" FromRole="TestSet" ToRole="ListQuestion" />
-          <NavigationProperty Name="TestLinkSet" Relationship="Forum.FK_TestLinkSet_TestSet" FromRole="TestSet" ToRole="TestLinkSet" />
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NormalizedName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ThemeSet">
           <Key>
@@ -641,6 +768,42 @@
           <Property Name="Visible" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="AccountSet" Relationship="Forum.FK_ThemeSet_AccountSet" FromRole="ThemeSet" ToRole="AccountSet" />
           <NavigationProperty Name="CommentorySet" Relationship="Forum.FK_CommentorySet_ThemeSet" FromRole="ThemeSet" ToRole="CommentorySet" />
+        </EntityType>
+        <EntityType Name="TheoryLessonSet">
+          <Key>
+            <PropertyRef Name="TheoryId" />
+          </Key>
+          <Property Name="TheoryId" Type="Int32" Nullable="false" />
+          <Property Name="LessonId" Type="Int32" Nullable="false" />
+          <Property Name="TheoryText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="Int32" Nullable="false" />
+          <Property Name="CodeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CodeSet" Relationship="Forum.FK_TheoryLessonSet_CodeSet" FromRole="TheoryLessonSet" ToRole="CodeSet" />
+          <NavigationProperty Name="LessonSet" Relationship="Forum.FK_LessonSet_TheoryLessonSet" FromRole="TheoryLessonSet" ToRole="LessonSet" />
+        </EntityType>
+        <EntityType Name="TrainingProgressSet">
+          <Key>
+            <PropertyRef Name="TrainingProgressId" />
+          </Key>
+          <Property Name="TrainingProgressId" Type="Int32" Nullable="false" />
+          <Property Name="TrainingId" Type="Int32" Nullable="false" />
+          <Property Name="LessonId" Type="Int32" Nullable="false" />
+          <Property Name="AccountId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AccountSet" Relationship="Forum.FK_TrainingProgressSet_AccountSet" FromRole="TrainingProgressSet" ToRole="AccountSet" />
+          <NavigationProperty Name="LessonSet" Relationship="Forum.FK_TrainingProgressSet_LessonSet" FromRole="TrainingProgressSet" ToRole="LessonSet" />
+          <NavigationProperty Name="TrainingSet" Relationship="Forum.FK_TrainingProgressSet_TrainingSet" FromRole="TrainingProgressSet" ToRole="TrainingSet" />
+        </EntityType>
+        <EntityType Name="TrainingSet">
+          <Key>
+            <PropertyRef Name="TrainingId" />
+          </Key>
+          <Property Name="TrainingId" Type="Int32" Nullable="false" />
+          <Property Name="TrainingName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AuthorId" Type="Int32" Nullable="false" />
+          <Property Name="TrainingDescrition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AccountSet" Relationship="Forum.FK_TrainingSet_AccountSet" FromRole="TrainingSet" ToRole="AccountSet" />
+          <NavigationProperty Name="LessonSet" Relationship="Forum.FK_LessonSet_TrainingSet" FromRole="TrainingSet" ToRole="LessonSet" />
+          <NavigationProperty Name="TrainingProgressSet" Relationship="Forum.FK_TrainingProgressSet_TrainingSet" FromRole="TrainingSet" ToRole="TrainingProgressSet" />
         </EntityType>
         <Association Name="FK_AccountQuestion">
           <End Type="Forum.AccountSet" Role="AccountSet" Multiplicity="1" />
@@ -690,18 +853,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TestSet_AccountSet">
-          <End Type="Forum.AccountSet" Role="AccountSet" Multiplicity="1" />
-          <End Type="Forum.TestSet" Role="TestSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AccountSet">
-              <PropertyRef Name="AccountId" />
-            </Principal>
-            <Dependent Role="TestSet">
-              <PropertyRef Name="AuthorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ThemeSet_AccountSet">
           <End Type="Forum.AccountSet" Role="AccountSet" Multiplicity="1" />
           <End Type="Forum.ThemeSet" Role="ThemeSet" Multiplicity="*" />
@@ -710,6 +861,30 @@
               <PropertyRef Name="AccountId" />
             </Principal>
             <Dependent Role="ThemeSet">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingProgressSet_AccountSet">
+          <End Type="Forum.AccountSet" Role="AccountSet" Multiplicity="1" />
+          <End Type="Forum.TrainingProgressSet" Role="TrainingProgressSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountSet">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="TrainingProgressSet">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingSet_AccountSet">
+          <End Type="Forum.AccountSet" Role="AccountSet" Multiplicity="1" />
+          <End Type="Forum.TrainingSet" Role="TrainingSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountSet">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="TrainingSet">
               <PropertyRef Name="AuthorId" />
             </Dependent>
           </ReferentialConstraint>
@@ -723,6 +898,18 @@
             </Principal>
             <Dependent Role="AnswerSet">
               <PropertyRef Name="QuestionQuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TheoryLessonSet_CodeSet">
+          <End Type="Forum.CodeSet" Role="CodeSet" Multiplicity="1" />
+          <End Type="Forum.TheoryLessonSet" Role="TheoryLessonSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodeSet">
+              <PropertyRef Name="CodeId" />
+            </Principal>
+            <Dependent Role="TheoryLessonSet">
+              <PropertyRef Name="CodeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -764,39 +951,63 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TestSet_LanguageSet">
-          <End Type="Forum.LanguageSet" Role="LanguageSet" Multiplicity="1" />
-          <End Type="Forum.TestSet" Role="TestSet" Multiplicity="*" />
+        <Association Name="FK_LessonSet_TheoryLessonSet">
+          <End Type="Forum.TheoryLessonSet" Role="TheoryLessonSet" Multiplicity="1" />
+          <End Type="Forum.LessonSet" Role="LessonSet" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="LanguageSet">
-              <PropertyRef Name="LanguageId" />
+            <Principal Role="TheoryLessonSet">
+              <PropertyRef Name="TheoryId" />
             </Principal>
-            <Dependent Role="TestSet">
-              <PropertyRef Name="LanguageId" />
+            <Dependent Role="LessonSet">
+              <PropertyRef Name="LessonId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ListQuestion_QuestionSet">
+        <Association Name="FK_LessonSet_TrainingSet">
+          <End Type="Forum.TrainingSet" Role="TrainingSet" Multiplicity="1" />
+          <End Type="Forum.LessonSet" Role="LessonSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrainingSet">
+              <PropertyRef Name="TrainingId" />
+            </Principal>
+            <Dependent Role="LessonSet">
+              <PropertyRef Name="TrainingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuestionListLessonSet_LessonSet">
+          <End Type="Forum.LessonSet" Role="LessonSet" Multiplicity="1" />
+          <End Type="Forum.QuestionListLessonSet" Role="QuestionListLessonSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LessonSet">
+              <PropertyRef Name="LessonId" />
+            </Principal>
+            <Dependent Role="QuestionListLessonSet">
+              <PropertyRef Name="LessonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingProgressSet_LessonSet">
+          <End Type="Forum.LessonSet" Role="LessonSet" Multiplicity="1" />
+          <End Type="Forum.TrainingProgressSet" Role="TrainingProgressSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LessonSet">
+              <PropertyRef Name="LessonId" />
+            </Principal>
+            <Dependent Role="TrainingProgressSet">
+              <PropertyRef Name="LessonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuestionListLessonSet_QuestionSet">
           <End Type="Forum.QuestionSet" Role="QuestionSet" Multiplicity="1" />
-          <End Type="Forum.ListQuestion" Role="ListQuestion" Multiplicity="*" />
+          <End Type="Forum.QuestionListLessonSet" Role="QuestionListLessonSet" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="QuestionSet">
               <PropertyRef Name="QuestionId" />
             </Principal>
-            <Dependent Role="ListQuestion">
+            <Dependent Role="QuestionListLessonSet">
               <PropertyRef Name="QuestionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ListQuestion_TestSet">
-          <End Type="Forum.TestSet" Role="TestSet" Multiplicity="1" />
-          <End Type="Forum.ListQuestion" Role="ListQuestion" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TestSet">
-              <PropertyRef Name="TestId" />
-            </Principal>
-            <Dependent Role="ListQuestion">
-              <PropertyRef Name="TestId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -812,54 +1023,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="ProgramForumConstants">
-          <Key>
-            <PropertyRef Name="ConstantId" />
-          </Key>
-          <Property Name="ConstantId" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="ConstantName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ConstantValue" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="MethodSet">
-          <Key>
-            <PropertyRef Name="MethodId" />
-          </Key>
-          <Property Name="MethodId" Type="Int32" Nullable="false" />
-          <Property Name="MethodName" Type="String" Nullable="false" MaxLength="44" FixedLength="false" Unicode="true" />
-          <Property Name="MethodDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="TestLinkSet" Relationship="Forum.FK_TestLinkSet_MethodSet" FromRole="MethodSet" ToRole="TestLinkSet" />
-        </EntityType>
-        <EntityType Name="TestLinkSet">
-          <Key>
-            <PropertyRef Name="TestLinkId" />
-          </Key>
-          <Property Name="TestLinkId" Type="Int32" Nullable="false" />
-          <Property Name="TestId" Type="Int32" Nullable="false" />
-          <Property Name="MethodId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="MethodSet" Relationship="Forum.FK_TestLinkSet_MethodSet" FromRole="TestLinkSet" ToRole="MethodSet" />
-          <NavigationProperty Name="TestSet" Relationship="Forum.FK_TestLinkSet_TestSet" FromRole="TestLinkSet" ToRole="TestSet" />
-        </EntityType>
-        <Association Name="FK_TestLinkSet_MethodSet">
-          <End Type="Forum.MethodSet" Role="MethodSet" Multiplicity="1" />
-          <End Type="Forum.TestLinkSet" Role="TestLinkSet" Multiplicity="*" />
+        <Association Name="FK_TrainingProgressSet_TrainingSet">
+          <End Type="Forum.TrainingSet" Role="TrainingSet" Multiplicity="1" />
+          <End Type="Forum.TrainingProgressSet" Role="TrainingProgressSet" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="MethodSet">
-              <PropertyRef Name="MethodId" />
+            <Principal Role="TrainingSet">
+              <PropertyRef Name="TrainingId" />
             </Principal>
-            <Dependent Role="TestLinkSet">
-              <PropertyRef Name="MethodId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TestLinkSet_TestSet">
-          <End Type="Forum.TestSet" Role="TestSet" Multiplicity="1" />
-          <End Type="Forum.TestLinkSet" Role="TestLinkSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TestSet">
-              <PropertyRef Name="TestId" />
-            </Principal>
-            <Dependent Role="TestLinkSet">
-              <PropertyRef Name="TestId" />
+            <Dependent Role="TrainingProgressSet">
+              <PropertyRef Name="TrainingId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -898,6 +1070,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CodeSet">
+            <EntityTypeMapping TypeName="Forum.CodeSet">
+              <MappingFragment StoreEntitySet="CodeSet">
+                <ScalarProperty Name="BinaryFileData" ColumnName="BinaryFileData" />
+                <ScalarProperty Name="CodeFileName" ColumnName="CodeFileName" />
+                <ScalarProperty Name="CodeId" ColumnName="CodeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CommentorySet">
             <EntityTypeMapping TypeName="Forum.CommentorySet">
               <MappingFragment StoreEntitySet="CommentorySet">
@@ -927,12 +1108,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ListQuestion">
-            <EntityTypeMapping TypeName="Forum.ListQuestion">
-              <MappingFragment StoreEntitySet="ListQuestion">
-                <ScalarProperty Name="TestId" ColumnName="TestId" />
-                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
-                <ScalarProperty Name="ListQuestionId" ColumnName="ListQuestionId" />
+          <EntitySetMapping Name="LessonSet">
+            <EntityTypeMapping TypeName="Forum.LessonSet">
+              <MappingFragment StoreEntitySet="LessonSet">
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Shape" ColumnName="Shape" />
+                <ScalarProperty Name="PictureId" ColumnName="PictureId" />
+                <ScalarProperty Name="LessonText" ColumnName="LessonText" />
+                <ScalarProperty Name="LessonName" ColumnName="LessonName" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="TrainingId" ColumnName="TrainingId" />
+                <ScalarProperty Name="LessonId" ColumnName="LessonId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -944,6 +1130,25 @@
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="MessageText" ColumnName="MessageText" />
                 <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProgramForumConstants">
+            <EntityTypeMapping TypeName="Forum.ProgramForumConstants">
+              <MappingFragment StoreEntitySet="ProgramForumConstants">
+                <ScalarProperty Name="ConstantValue" ColumnName="ConstantValue" />
+                <ScalarProperty Name="ConstantName" ColumnName="ConstantName" />
+                <ScalarProperty Name="ConstantId" ColumnName="ConstantId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuestionListLessonSet">
+            <EntityTypeMapping TypeName="Forum.QuestionListLessonSet">
+              <MappingFragment StoreEntitySet="QuestionListLessonSet">
+                <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="LessonQuestionId" ColumnName="LessonQuestionId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -968,15 +1173,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TestSet">
-            <EntityTypeMapping TypeName="Forum.TestSet">
-              <MappingFragment StoreEntitySet="TestSet">
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
-                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="TestName" ColumnName="TestName" />
-                <ScalarProperty Name="TestId" ColumnName="TestId" />
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="Forum.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+                <ScalarProperty Name="NormalizedName" ColumnName="NormalizedName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -993,30 +1196,34 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ProgramForumConstants">
-            <EntityTypeMapping TypeName="Forum.ProgramForumConstants">
-              <MappingFragment StoreEntitySet="ProgramForumConstants">
-                <ScalarProperty Name="ConstantValue" ColumnName="ConstantValue" />
-                <ScalarProperty Name="ConstantName" ColumnName="ConstantName" />
-                <ScalarProperty Name="ConstantId" ColumnName="ConstantId" />
+          <EntitySetMapping Name="TheoryLessonSet">
+            <EntityTypeMapping TypeName="Forum.TheoryLessonSet">
+              <MappingFragment StoreEntitySet="TheoryLessonSet">
+                <ScalarProperty Name="CodeId" ColumnName="CodeId" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="TheoryText" ColumnName="TheoryText" />
+                <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+                <ScalarProperty Name="TheoryId" ColumnName="TheoryId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MethodSet">
-            <EntityTypeMapping TypeName="Forum.MethodSet">
-              <MappingFragment StoreEntitySet="MethodSet">
-                <ScalarProperty Name="MethodDescription" ColumnName="MethodDescription" />
-                <ScalarProperty Name="MethodName" ColumnName="MethodName" />
-                <ScalarProperty Name="MethodId" ColumnName="MethodId" />
+          <EntitySetMapping Name="TrainingProgressSet">
+            <EntityTypeMapping TypeName="Forum.TrainingProgressSet">
+              <MappingFragment StoreEntitySet="TrainingProgressSet">
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+                <ScalarProperty Name="TrainingId" ColumnName="TrainingId" />
+                <ScalarProperty Name="TrainingProgressId" ColumnName="TrainingProgressId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TestLinkSet">
-            <EntityTypeMapping TypeName="Forum.TestLinkSet">
-              <MappingFragment StoreEntitySet="TestLinkSet">
-                <ScalarProperty Name="MethodId" ColumnName="MethodId" />
-                <ScalarProperty Name="TestId" ColumnName="TestId" />
-                <ScalarProperty Name="TestLinkId" ColumnName="TestLinkId" />
+          <EntitySetMapping Name="TrainingSet">
+            <EntityTypeMapping TypeName="Forum.TrainingSet">
+              <MappingFragment StoreEntitySet="TrainingSet">
+                <ScalarProperty Name="TrainingDescrition" ColumnName="TrainingDescrition" />
+                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+                <ScalarProperty Name="TrainingName" ColumnName="TrainingName" />
+                <ScalarProperty Name="TrainingId" ColumnName="TrainingId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

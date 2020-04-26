@@ -75,14 +75,14 @@
             // 
             this.SaveTheme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveTheme.AutoSize = true;
-            this.SaveTheme.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.SaveTheme.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.SaveTheme.FlatAppearance.BorderSize = 0;
             this.SaveTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveTheme.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.SaveTheme.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.SaveTheme.Location = new System.Drawing.Point(673, 498);
+            this.SaveTheme.Location = new System.Drawing.Point(597, 498);
             this.SaveTheme.Name = "SaveTheme";
-            this.SaveTheme.Size = new System.Drawing.Size(119, 29);
+            this.SaveTheme.Size = new System.Drawing.Size(195, 29);
             this.SaveTheme.TabIndex = 14;
             this.SaveTheme.Text = "Сохранить";
             this.SaveTheme.UseVisualStyleBackColor = false;
@@ -92,7 +92,7 @@
             // 
             this.AddToForum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AddToForum.AutoSize = true;
-            this.AddToForum.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.AddToForum.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.AddToForum.FlatAppearance.BorderSize = 0;
             this.AddToForum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddToForum.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);

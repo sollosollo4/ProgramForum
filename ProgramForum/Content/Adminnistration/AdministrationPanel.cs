@@ -20,10 +20,15 @@ namespace ProgramForum.Content.Adminnistration
             using (ForumContainer container = new ForumContainer())
             {
                 var redactThermes = container.ThemeSet.Where(x => x.Visible == false).ToList();
-                if (redactThermes != null)
+                if (redactThermes.Count != 0)
                 {
                     RedactorTheme.BackColor = Color.DarkOrange;
                     RedactorTheme.Text = "Редактор тем(на редакции) " + redactThermes.Count;
+                }
+                else 
+                { 
+                    RedactorTheme.BackColor = Color.MediumSpringGreen;
+                    RedactorTheme.Text = "Редактор тем";
                 }
             }
         }
@@ -73,7 +78,7 @@ namespace ProgramForum.Content.Adminnistration
         }
 
         /// <summary>
-        /// Добавить новый тест
+        /// Добавить новый тест обучения
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -93,13 +98,14 @@ namespace ProgramForum.Content.Adminnistration
         }
 
         /// <summary>
-        /// Выбрать ежедневный тест
+        /// Добавить новое обучение
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SelectEveryDayTest_Click(object sender, EventArgs e)
+        private void AddNewTraining_Click(object sender, EventArgs e)
         {
-
+            Forms.AdministrationForms.AddNewTraining newTraining = new Forms.AdministrationForms.AddNewTraining();
+            newTraining.ShowDialog();
         }
 
         /// <summary>

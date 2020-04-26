@@ -136,7 +136,7 @@
     <value>Times New Roman, 15.75pt, style=Bold</value>
   </data>
   <data name="MainFormToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 40</value>
+    <value>200, 40</value>
   </data>
   <data name="MainFormToolStripMenuItem.Text" xml:space="preserve">
     <value>Главная</value>
@@ -147,8 +147,11 @@
   <data name="ChooseLanguageStrip.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 15.75pt, style=Bold</value>
   </data>
+  <data name="ChooseLanguageStrip.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ChooseLanguageStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 32</value>
+    <value>200, 32</value>
   </data>
   <data name="RandomQuestionToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -157,22 +160,22 @@
     <value>Times New Roman, 15.75pt, style=Bold</value>
   </data>
   <data name="RandomQuestionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 40</value>
+    <value>200, 40</value>
   </data>
   <data name="RandomQuestionToolStripMenuItem.Text" xml:space="preserve">
     <value>Случайный вопрос</value>
   </data>
-  <data name="EveryDayTestToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
+  <data name="GetTrainingToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="EveryDayTestToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="GetTrainingToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 15.75pt, style=Bold</value>
   </data>
-  <data name="EveryDayTestToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 40</value>
+  <data name="GetTrainingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 40</value>
   </data>
-  <data name="EveryDayTestToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ежедневный тест</value>
+  <data name="GetTrainingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Пройти обучение</value>
   </data>
   <data name="MessagesToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -181,7 +184,7 @@
     <value>Times New Roman, 15.75pt, style=Bold</value>
   </data>
   <data name="MessagesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 40</value>
+    <value>200, 40</value>
   </data>
   <data name="MessagesToolStripMenuItem.Text" xml:space="preserve">
     <value>Личные сообщения</value>
@@ -189,8 +192,11 @@
   <data name="MainMenu.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="MainMenu.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
   <data name="MainMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 448</value>
+    <value>227, 360</value>
   </data>
   <data name="MainMenu.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -202,10 +208,10 @@
     <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MainMenu.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;MainMenu.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>0</value>
   </data>
   <data name="MyAccount.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -214,7 +220,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="MyAccount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 54</value>
+    <value>238, 50</value>
   </data>
   <data name="MyAccount.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 31</value>
@@ -235,10 +241,259 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MyAccount.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="LanguageLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LanguageLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 15.75pt, style=Bold</value>
+  </data>
+  <data name="LanguageLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>245, 9</value>
+  </data>
+  <data name="LanguageLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 24</value>
+  </data>
+  <data name="LanguageLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="LanguageLabel.Text" xml:space="preserve">
+    <value>Выбран язык:</value>
+  </data>
+  <data name="&gt;&gt;LanguageLabel.Name" xml:space="preserve">
+    <value>LanguageLabel</value>
+  </data>
+  <data name="&gt;&gt;LanguageLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LanguageLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LanguageLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="newQuestionLink.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="newQuestionLink.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 14.25pt, style=Bold</value>
+  </data>
+  <data name="newQuestionLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="newQuestionLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 74</value>
+  </data>
+  <data name="newQuestionLink.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="newQuestionLink.Text" xml:space="preserve">
+    <value>Просмотреть новые вопросы</value>
+  </data>
+  <data name="newQuestionLink.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;newQuestionLink.Name" xml:space="preserve">
+    <value>newQuestionLink</value>
+  </data>
+  <data name="&gt;&gt;newQuestionLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;newQuestionLink.Parent" xml:space="preserve">
+    <value>MainForumMenu</value>
+  </data>
+  <data name="&gt;&gt;newQuestionLink.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="pictureBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="AccountsGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="AccountsGrid.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 14.25pt, style=Bold</value>
+  </data>
+  <data name="AccountsGrid.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AccountsGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 205</value>
+  </data>
+  <data name="AccountsGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 53</value>
+  </data>
+  <data name="AccountsGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="AccountsGrid.Text" xml:space="preserve">
+    <value>Список пользователей</value>
+  </data>
+  <data name="AccountsGrid.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;AccountsGrid.Name" xml:space="preserve">
+    <value>AccountsGrid</value>
+  </data>
+  <data name="&gt;&gt;AccountsGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AccountsGrid.Parent" xml:space="preserve">
+    <value>MainForumMenu</value>
+  </data>
+  <data name="&gt;&gt;AccountsGrid.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ForumNews.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ForumNews.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 14.25pt, style=Bold</value>
+  </data>
+  <data name="ForumNews.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ForumNews.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 153</value>
+  </data>
+  <data name="ForumNews.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 52</value>
+  </data>
+  <data name="ForumNews.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ForumNews.Text" xml:space="preserve">
+    <value>Новости форума</value>
+  </data>
+  <data name="ForumNews.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;ForumNews.Name" xml:space="preserve">
+    <value>ForumNews</value>
+  </data>
+  <data name="&gt;&gt;ForumNews.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ForumNews.Parent" xml:space="preserve">
+    <value>MainForumMenu</value>
+  </data>
+  <data name="&gt;&gt;ForumNews.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="NewAccountsRegistred.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="NewAccountsRegistred.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 14.25pt, style=Bold</value>
+  </data>
+  <data name="NewAccountsRegistred.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NewAccountsRegistred.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 74</value>
+  </data>
+  <data name="NewAccountsRegistred.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 79</value>
+  </data>
+  <data name="NewAccountsRegistred.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="NewAccountsRegistred.Text" xml:space="preserve">
+    <value>Узнать о новых пользователях</value>
+  </data>
+  <data name="NewAccountsRegistred.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;NewAccountsRegistred.Name" xml:space="preserve">
+    <value>NewAccountsRegistred</value>
+  </data>
+  <data name="&gt;&gt;NewAccountsRegistred.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NewAccountsRegistred.Parent" xml:space="preserve">
+    <value>MainForumMenu</value>
+  </data>
+  <data name="&gt;&gt;NewAccountsRegistred.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="MainForumMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="MainForumMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>702, 0</value>
+  </data>
+  <data name="MainForumMenu.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>128, 348</value>
+  </data>
+  <data name="MainForumMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 459</value>
+  </data>
+  <data name="MainForumMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;MainForumMenu.Name" xml:space="preserve">
+    <value>MainForumMenu</value>
+  </data>
+  <data name="&gt;&gt;MainForumMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainForumMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MainForumMenu.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="AdminPanelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="AdminPanelButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="AdminPanelButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AdminPanelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>387, 50</value>
+  </data>
+  <data name="AdminPanelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 31</value>
+  </data>
+  <data name="AdminPanelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="AdminPanelButton.Text" xml:space="preserve">
+    <value>Панель администратора</value>
+  </data>
+  <data name="&gt;&gt;AdminPanelButton.Name" xml:space="preserve">
+    <value>AdminPanelButton</value>
+  </data>
+  <data name="&gt;&gt;AdminPanelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AdminPanelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AdminPanelButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="MainMenuPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 88</value>
+  </data>
+  <data name="MainMenuPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 360</value>
+  </data>
+  <data name="MainMenuPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;MainMenuPanel.Name" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;MainMenuPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainMenuPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MainMenuPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1762,16 +2017,16 @@
 </value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>567, 0</value>
+    <value>0, 0</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 88</value>
+    <value>232, 85</value>
   </data>
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
     <value>pictureBox1</value>
@@ -1783,226 +2038,85 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>1</value>
   </data>
-  <data name="LanguageLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="pictureBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="LanguageLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 15.75pt, style=Bold</value>
+  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 87</value>
   </data>
-  <data name="LanguageLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 13</value>
+  <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>630, 2</value>
   </data>
-  <data name="LanguageLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 24</value>
+  <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="LanguageLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
+    <value>pictureBox2</value>
   </data>
-  <data name="LanguageLabel.Text" xml:space="preserve">
-    <value>Выбран язык:</value>
+  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LanguageLabel.Name" xml:space="preserve">
-    <value>LanguageLabel</value>
-  </data>
-  <data name="&gt;&gt;LanguageLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LanguageLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;LanguageLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
-  <data name="newQuestionLink.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="pictureBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
-  <data name="newQuestionLink.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt, style=Bold</value>
-  </data>
-  <data name="newQuestionLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 0</value>
-  </data>
-  <data name="newQuestionLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 45</value>
-  </data>
-  <data name="newQuestionLink.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="newQuestionLink.Text" xml:space="preserve">
-    <value>Просмотреть новые вопросы</value>
-  </data>
-  <data name="&gt;&gt;newQuestionLink.Name" xml:space="preserve">
-    <value>newQuestionLink</value>
-  </data>
-  <data name="&gt;&gt;newQuestionLink.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;newQuestionLink.Parent" xml:space="preserve">
-    <value>MainForumMenu</value>
-  </data>
-  <data name="&gt;&gt;newQuestionLink.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="MainForumMenu.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
-  </data>
-  <data name="AccountsGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="AccountsGrid.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt, style=Bold</value>
-  </data>
-  <data name="AccountsGrid.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="pictureBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="AccountsGrid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 132</value>
+  <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 0</value>
   </data>
-  <data name="AccountsGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 45</value>
+  <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>2, 520</value>
   </data>
-  <data name="AccountsGrid.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="pictureBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="AccountsGrid.Text" xml:space="preserve">
-    <value>Список пользователей</value>
+  <data name="&gt;&gt;pictureBox3.Name" xml:space="preserve">
+    <value>pictureBox3</value>
   </data>
-  <data name="&gt;&gt;AccountsGrid.Name" xml:space="preserve">
-    <value>AccountsGrid</value>
+  <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AccountsGrid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AccountsGrid.Parent" xml:space="preserve">
-    <value>MainForumMenu</value>
-  </data>
-  <data name="&gt;&gt;AccountsGrid.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ForumNews.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="ForumNews.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt, style=Bold</value>
-  </data>
-  <data name="ForumNews.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ForumNews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 88</value>
-  </data>
-  <data name="ForumNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 45</value>
-  </data>
-  <data name="ForumNews.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ForumNews.Text" xml:space="preserve">
-    <value>Новости форума</value>
-  </data>
-  <data name="&gt;&gt;ForumNews.Name" xml:space="preserve">
-    <value>ForumNews</value>
-  </data>
-  <data name="&gt;&gt;ForumNews.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ForumNews.Parent" xml:space="preserve">
-    <value>MainForumMenu</value>
-  </data>
-  <data name="&gt;&gt;ForumNews.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="NewAccountsRegistred.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="NewAccountsRegistred.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt, style=Bold</value>
-  </data>
-  <data name="NewAccountsRegistred.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="NewAccountsRegistred.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 44</value>
-  </data>
-  <data name="NewAccountsRegistred.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 45</value>
-  </data>
-  <data name="NewAccountsRegistred.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="NewAccountsRegistred.Text" xml:space="preserve">
-    <value>Узнать о новых пользователях</value>
-  </data>
-  <data name="&gt;&gt;NewAccountsRegistred.Name" xml:space="preserve">
-    <value>NewAccountsRegistred</value>
-  </data>
-  <data name="&gt;&gt;NewAccountsRegistred.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NewAccountsRegistred.Parent" xml:space="preserve">
-    <value>MainForumMenu</value>
-  </data>
-  <data name="&gt;&gt;NewAccountsRegistred.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="MainForumMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>670, 91</value>
-  </data>
-  <data name="MainForumMenu.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>128, 348</value>
-  </data>
-  <data name="MainForumMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 348</value>
-  </data>
-  <data name="MainForumMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;MainForumMenu.Name" xml:space="preserve">
-    <value>MainForumMenu</value>
-  </data>
-  <data name="&gt;&gt;MainForumMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MainForumMenu.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;MainForumMenu.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="AdminPanelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="pictureBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="AdminPanelButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt, style=Bold</value>
-  </data>
-  <data name="AdminPanelButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="pictureBox4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="AdminPanelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>369, 54</value>
+  <data name="pictureBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 42</value>
   </data>
-  <data name="AdminPanelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 31</value>
+  <data name="pictureBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>630, 2</value>
   </data>
-  <data name="AdminPanelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="pictureBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="AdminPanelButton.Text" xml:space="preserve">
-    <value>Панель администратора</value>
+  <data name="&gt;&gt;pictureBox4.Name" xml:space="preserve">
+    <value>pictureBox4</value>
   </data>
-  <data name="&gt;&gt;AdminPanelButton.Name" xml:space="preserve">
-    <value>AdminPanelButton</value>
+  <data name="&gt;&gt;pictureBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AdminPanelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AdminPanelButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pictureBox4.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;AdminPanelButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;pictureBox4.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2010,11 +2124,8 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 448</value>
+    <value>844, 459</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6599,7 +6710,7 @@
 </value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>816, 487</value>
+    <value>860, 498</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -6625,10 +6736,10 @@
   <data name="&gt;&gt;RandomQuestionToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EveryDayTestToolStripMenuItem.Name" xml:space="preserve">
-    <value>EveryDayTestToolStripMenuItem</value>
+  <data name="&gt;&gt;GetTrainingToolStripMenuItem.Name" xml:space="preserve">
+    <value>GetTrainingToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;EveryDayTestToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;GetTrainingToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MessagesToolStripMenuItem.Name" xml:space="preserve">

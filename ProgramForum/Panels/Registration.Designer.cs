@@ -82,7 +82,7 @@
             // 
             // Password
             // 
-            this.Password.BackColor = System.Drawing.Color.Cornsilk;
+            this.Password.BackColor = System.Drawing.SystemColors.Window;
             this.Password.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Password.Location = new System.Drawing.Point(3, 134);
             this.Password.MaxLength = 55;
@@ -93,7 +93,7 @@
             // 
             // Login
             // 
-            this.Login.BackColor = System.Drawing.Color.Cornsilk;
+            this.Login.BackColor = System.Drawing.SystemColors.Window;
             this.Login.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Login.Location = new System.Drawing.Point(3, 78);
             this.Login.MaxLength = 55;
@@ -113,7 +113,7 @@
             // 
             // RePassword
             // 
-            this.RePassword.BackColor = System.Drawing.Color.Cornsilk;
+            this.RePassword.BackColor = System.Drawing.SystemColors.Window;
             this.RePassword.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RePassword.Location = new System.Drawing.Point(3, 190);
             this.RePassword.MaxLength = 55;
@@ -144,7 +144,7 @@
             // 
             // EmailTextBox
             // 
-            this.EmailTextBox.BackColor = System.Drawing.Color.Cornsilk;
+            this.EmailTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.EmailTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EmailTextBox.Location = new System.Drawing.Point(3, 246);
             this.EmailTextBox.MaxLength = 55;
@@ -154,7 +154,7 @@
             // 
             // RegistrationButton
             // 
-            this.RegistrationButton.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.RegistrationButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.RegistrationButton.FlatAppearance.BorderSize = 0;
             this.RegistrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegistrationButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -168,7 +168,7 @@
             // 
             // MyAccount
             // 
-            this.MyAccount.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.MyAccount.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.MyAccount.FlatAppearance.BorderSize = 0;
             this.MyAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MyAccount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
@@ -183,7 +183,7 @@
             // 
             // TelephoneNumber
             // 
-            this.TelephoneNumber.BackColor = System.Drawing.Color.Cornsilk;
+            this.TelephoneNumber.BackColor = System.Drawing.SystemColors.Window;
             this.TelephoneNumber.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TelephoneNumber.Location = new System.Drawing.Point(209, 134);
             this.TelephoneNumber.MaxLength = 12;
@@ -204,7 +204,7 @@
             // 
             // UserName
             // 
-            this.UserName.BackColor = System.Drawing.Color.Cornsilk;
+            this.UserName.BackColor = System.Drawing.SystemColors.Window;
             this.UserName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.UserName.Location = new System.Drawing.Point(209, 190);
             this.UserName.MaxLength = 55;

@@ -27,17 +27,20 @@ namespace ProgramForum
     
         public virtual DbSet<AccountSet> AccountSet { get; set; }
         public virtual DbSet<AnswerSet> AnswerSet { get; set; }
+        public virtual DbSet<CodeSet> CodeSet { get; set; }
         public virtual DbSet<CommentorySet> CommentorySet { get; set; }
         public virtual DbSet<ConversationSet> ConversationSet { get; set; }
         public virtual DbSet<LanguageSet> LanguageSet { get; set; }
-        public virtual DbSet<ListQuestion> ListQuestion { get; set; }
+        public virtual DbSet<LessonSet> LessonSet { get; set; }
         public virtual DbSet<MessageSet> MessageSet { get; set; }
+        public virtual DbSet<ProgramForumConstants> ProgramForumConstants { get; set; }
+        public virtual DbSet<QuestionListLessonSet> QuestionListLessonSet { get; set; }
         public virtual DbSet<QuestionSet> QuestionSet { get; set; }
         public virtual DbSet<QuestionTypeSet> QuestionTypeSet { get; set; }
-        public virtual DbSet<TestSet> TestSet { get; set; }
+        public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<ThemeSet> ThemeSet { get; set; }
-        public virtual DbSet<ProgramForumConstants> ProgramForumConstants { get; set; }
-        public virtual DbSet<MethodSet> MethodSet { get; set; }
-        public virtual DbSet<TestLinkSet> TestLinkSet { get; set; }
+        public virtual DbSet<TheoryLessonSet> TheoryLessonSet { get; set; }
+        public virtual DbSet<TrainingProgressSet> TrainingProgressSet { get; set; }
+        public virtual DbSet<TrainingSet> TrainingSet { get; set; }
     }
 }

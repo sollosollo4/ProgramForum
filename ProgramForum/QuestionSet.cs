@@ -18,7 +18,7 @@ namespace ProgramForum
         public QuestionSet()
         {
             this.AnswerSet = new HashSet<AnswerSet>();
-            this.ListQuestion = new HashSet<ListQuestion>();
+            this.QuestionListLessonSet = new HashSet<QuestionListLessonSet>();
         }
     
         public int QuestionId { get; set; }
@@ -34,7 +34,7 @@ namespace ProgramForum
         public virtual ICollection<AnswerSet> AnswerSet { get; set; }
         public virtual LanguageSet LanguageSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ListQuestion> ListQuestion { get; set; }
+        public virtual ICollection<QuestionListLessonSet> QuestionListLessonSet { get; set; }
         public virtual QuestionTypeSet QuestionTypeSet { get; set; }
     }
 }

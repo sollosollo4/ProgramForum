@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.AddNewNews = new System.Windows.Forms.Button();
             this.ShowThemeList = new System.Windows.Forms.Button();
-            this.SelectEveryDayTest = new System.Windows.Forms.Button();
+            this.AddNewTraining = new System.Windows.Forms.Button();
             this.AddNewTest = new System.Windows.Forms.Button();
             this.AddNewQuestion = new System.Windows.Forms.Button();
             this.AdminPanel.SuspendLayout();
@@ -50,7 +50,7 @@
             this.AdminPanel.Controls.Add(this.label1);
             this.AdminPanel.Controls.Add(this.AddNewNews);
             this.AdminPanel.Controls.Add(this.ShowThemeList);
-            this.AdminPanel.Controls.Add(this.SelectEveryDayTest);
+            this.AdminPanel.Controls.Add(this.AddNewTraining);
             this.AdminPanel.Controls.Add(this.AddNewTest);
             this.AdminPanel.Controls.Add(this.AddNewQuestion);
             this.AdminPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -63,7 +63,7 @@
             // RedactorUsers
             // 
             this.RedactorUsers.AutoSize = true;
-            this.RedactorUsers.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.RedactorUsers.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.RedactorUsers.FlatAppearance.BorderSize = 0;
             this.RedactorUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RedactorUsers.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -78,7 +78,7 @@
             // RedactorQuestion
             // 
             this.RedactorQuestion.AutoSize = true;
-            this.RedactorQuestion.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.RedactorQuestion.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.RedactorQuestion.FlatAppearance.BorderSize = 0;
             this.RedactorQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RedactorQuestion.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -93,7 +93,7 @@
             // RedactorTheme
             // 
             this.RedactorTheme.AutoSize = true;
-            this.RedactorTheme.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.RedactorTheme.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.RedactorTheme.FlatAppearance.BorderSize = 0;
             this.RedactorTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RedactorTheme.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -118,7 +118,7 @@
             // AddNewNews
             // 
             this.AddNewNews.AutoSize = true;
-            this.AddNewNews.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.AddNewNews.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.AddNewNews.FlatAppearance.BorderSize = 0;
             this.AddNewNews.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewNews.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -133,7 +133,7 @@
             // ShowThemeList
             // 
             this.ShowThemeList.AutoSize = true;
-            this.ShowThemeList.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.ShowThemeList.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ShowThemeList.FlatAppearance.BorderSize = 0;
             this.ShowThemeList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShowThemeList.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -145,25 +145,25 @@
             this.ShowThemeList.UseVisualStyleBackColor = false;
             this.ShowThemeList.Click += new System.EventHandler(this.ShowThemeList_Click);
             // 
-            // SelectEveryDayTest
+            // AddNewTraining
             // 
-            this.SelectEveryDayTest.AutoSize = true;
-            this.SelectEveryDayTest.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.SelectEveryDayTest.FlatAppearance.BorderSize = 0;
-            this.SelectEveryDayTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SelectEveryDayTest.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SelectEveryDayTest.Location = new System.Drawing.Point(3, 175);
-            this.SelectEveryDayTest.Name = "SelectEveryDayTest";
-            this.SelectEveryDayTest.Size = new System.Drawing.Size(222, 45);
-            this.SelectEveryDayTest.TabIndex = 13;
-            this.SelectEveryDayTest.Text = "Выбрать ежедневный тест";
-            this.SelectEveryDayTest.UseVisualStyleBackColor = false;
-            this.SelectEveryDayTest.Click += new System.EventHandler(this.SelectEveryDayTest_Click);
+            this.AddNewTraining.AutoSize = true;
+            this.AddNewTraining.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.AddNewTraining.FlatAppearance.BorderSize = 0;
+            this.AddNewTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddNewTraining.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddNewTraining.Location = new System.Drawing.Point(3, 175);
+            this.AddNewTraining.Name = "AddNewTraining";
+            this.AddNewTraining.Size = new System.Drawing.Size(222, 45);
+            this.AddNewTraining.TabIndex = 13;
+            this.AddNewTraining.Text = "Добавить новое обучение";
+            this.AddNewTraining.UseVisualStyleBackColor = false;
+            this.AddNewTraining.Click += new System.EventHandler(this.AddNewTraining_Click);
             // 
             // AddNewTest
             // 
             this.AddNewTest.AutoSize = true;
-            this.AddNewTest.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.AddNewTest.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.AddNewTest.FlatAppearance.BorderSize = 0;
             this.AddNewTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewTest.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -171,14 +171,14 @@
             this.AddNewTest.Name = "AddNewTest";
             this.AddNewTest.Size = new System.Drawing.Size(222, 46);
             this.AddNewTest.TabIndex = 13;
-            this.AddNewTest.Text = "Добавить новый тест";
+            this.AddNewTest.Text = "Добавить новый тест обучения";
             this.AddNewTest.UseVisualStyleBackColor = false;
             this.AddNewTest.Click += new System.EventHandler(this.AddNewTest_Click);
             // 
             // AddNewQuestion
             // 
             this.AddNewQuestion.AutoSize = true;
-            this.AddNewQuestion.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.AddNewQuestion.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.AddNewQuestion.FlatAppearance.BorderSize = 0;
             this.AddNewQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewQuestion.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -213,7 +213,7 @@
         private System.Windows.Forms.Button RedactorQuestion;
         private System.Windows.Forms.Button RedactorTheme;
         private System.Windows.Forms.Button ShowThemeList;
-        private System.Windows.Forms.Button SelectEveryDayTest;
+        private System.Windows.Forms.Button AddNewTraining;
         private System.Windows.Forms.Button RedactorUsers;
         private System.Windows.Forms.Button AddNewNews;
     }

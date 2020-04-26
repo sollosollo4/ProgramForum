@@ -18,7 +18,6 @@ namespace ProgramForum
         public LanguageSet()
         {
             this.QuestionSet = new HashSet<QuestionSet>();
-            this.TestSet = new HashSet<TestSet>();
         }
     
         public int LanguageId { get; set; }
@@ -27,7 +26,5 @@ namespace ProgramForum
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QuestionSet> QuestionSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TestSet> TestSet { get; set; }
     }
 }

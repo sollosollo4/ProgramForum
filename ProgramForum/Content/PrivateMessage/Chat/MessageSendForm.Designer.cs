@@ -45,6 +45,7 @@
             // ContainerPMessage
             // 
             this.ContainerPMessage.AutoScroll = true;
+            this.ContainerPMessage.BackColor = System.Drawing.SystemColors.Window;
             this.ContainerPMessage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContainerPMessage.Location = new System.Drawing.Point(0, 0);
             this.ContainerPMessage.Name = "ContainerPMessage";

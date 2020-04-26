@@ -51,13 +51,16 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(16, 274);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 39);
             this.button1.TabIndex = 0;
             this.button1.Text = "Добавить вопрос";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // QuestText
@@ -150,7 +153,7 @@
             // 
             this.languageSetTableAdapter.ClearBeforeFill = true;
             // 
-            // AddNeQuestion
+            // AddNewQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -166,7 +169,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(904, 364);
             this.MinimumSize = new System.Drawing.Size(904, 364);
-            this.Name = "AddNeQuestion";
+            this.Name = "AddNewQuestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление нового вопроса";
             this.Load += new System.EventHandler(this.AddNeQuestion_Load);

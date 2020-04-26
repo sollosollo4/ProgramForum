@@ -38,6 +38,7 @@
             // 
             // NewThemePanel
             // 
+            this.NewThemePanel.BackColor = System.Drawing.SystemColors.Window;
             this.NewThemePanel.Controls.Add(this.SendOnDatebase);
             this.NewThemePanel.Controls.Add(this.ThemeText);
             this.NewThemePanel.Controls.Add(this.Label1);
@@ -53,7 +54,7 @@
             // 
             this.SendOnDatebase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SendOnDatebase.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.SendOnDatebase.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.SendOnDatebase.FlatAppearance.BorderSize = 0;
             this.SendOnDatebase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SendOnDatebase.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

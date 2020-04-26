@@ -42,6 +42,7 @@
             this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainPanel.BackColor = System.Drawing.SystemColors.Window;
             this.MainPanel.Controls.Add(this.AddNewTheme);
             this.MainPanel.Controls.Add(this.LastThemePanel);
             this.MainPanel.Controls.Add(this.LastThemesLabel);
@@ -55,12 +56,12 @@
             // AddNewTheme
             // 
             this.AddNewTheme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddNewTheme.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.AddNewTheme.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.AddNewTheme.FlatAppearance.BorderSize = 0;
             this.AddNewTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewTheme.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.AddNewTheme.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.AddNewTheme.Location = new System.Drawing.Point(343, 60);
+            this.AddNewTheme.Location = new System.Drawing.Point(337, 60);
             this.AddNewTheme.Name = "AddNewTheme";
             this.AddNewTheme.Size = new System.Drawing.Size(103, 31);
             this.AddNewTheme.TabIndex = 9;
@@ -73,7 +74,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LastThemePanel.AutoScroll = true;
-            this.LastThemePanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.LastThemePanel.BackColor = System.Drawing.SystemColors.Window;
             this.LastThemePanel.Location = new System.Drawing.Point(0, 97);
             this.LastThemePanel.MinimumSize = new System.Drawing.Size(447, 249);
             this.LastThemePanel.Name = "LastThemePanel";
@@ -85,7 +86,7 @@
             this.LastThemesLabel.AutoSize = true;
             this.LastThemesLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.LastThemesLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LastThemesLabel.Location = new System.Drawing.Point(10, 74);
+            this.LastThemesLabel.Location = new System.Drawing.Point(3, 75);
             this.LastThemesLabel.Name = "LastThemesLabel";
             this.LastThemesLabel.Size = new System.Drawing.Size(237, 19);
             this.LastThemesLabel.TabIndex = 7;
@@ -97,7 +98,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.HelloLabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.HelloLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.HelloLabel.Location = new System.Drawing.Point(6, 2);
+            this.HelloLabel.Location = new System.Drawing.Point(0, 2);
             this.HelloLabel.Name = "HelloLabel";
             this.HelloLabel.Size = new System.Drawing.Size(440, 50);
             this.HelloLabel.TabIndex = 6;

@@ -36,10 +36,12 @@ namespace ProgramForum.Content
                 }
 
                 foreach (var myTheme in container.ThemeSet.Where(x => x.AuthorId == Account.AccountId).ToList()) {
-                    MyThemesflowLayoutPanel.Controls.Add(new Theme.SingleTheme(myTheme));
+                    Theme.SingleTheme snglTheme = new Theme.SingleTheme(myTheme);
+                    //snglTheme.SetClick_ReadTheme(SetClick_ForSingleTheme);
+                    MyThemesflowLayoutPanel.Controls.Add(snglTheme);
+
                 }
             }
-            
         }
 
         private void SaveChanges_Click(object sender, EventArgs e)

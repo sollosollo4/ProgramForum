@@ -47,30 +47,32 @@
             // 
             this.Login.BackColor = System.Drawing.SystemColors.Window;
             this.Login.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Login.Location = new System.Drawing.Point(10, 93);
+            this.Login.Location = new System.Drawing.Point(145, 122);
             this.Login.MaxLength = 55;
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(200, 29);
+            this.Login.Size = new System.Drawing.Size(254, 29);
             this.Login.TabIndex = 0;
+            this.Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AuthForm_KeyDown);
             // 
             // Password
             // 
             this.Password.BackColor = System.Drawing.SystemColors.Window;
             this.Password.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Password.Location = new System.Drawing.Point(10, 165);
+            this.Password.Location = new System.Drawing.Point(145, 194);
             this.Password.MaxLength = 55;
             this.Password.Name = "Password";
             this.Password.PasswordChar = '*';
-            this.Password.Size = new System.Drawing.Size(200, 29);
+            this.Password.Size = new System.Drawing.Size(254, 29);
             this.Password.TabIndex = 1;
+            this.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AuthForm_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(10, 69);
+            this.label1.Location = new System.Drawing.Point(241, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 21);
             this.label1.TabIndex = 6;
@@ -78,7 +80,7 @@
             // 
             // AuthorizationButton
             // 
-            this.AuthorizationButton.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.AuthorizationButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.AuthorizationButton.FlatAppearance.BorderSize = 0;
             this.AuthorizationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AuthorizationButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -94,7 +96,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(10, 141);
+            this.label2.Location = new System.Drawing.Point(242, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 21);
             this.label2.TabIndex = 6;
@@ -104,7 +106,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(330, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(237, 85);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -113,7 +115,7 @@
             // 
             // RegistrationButton
             // 
-            this.RegistrationButton.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.RegistrationButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.RegistrationButton.FlatAppearance.BorderSize = 0;
             this.RegistrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegistrationButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -129,7 +131,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(6, 9);
+            this.label3.Location = new System.Drawing.Point(358, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(197, 24);
             this.label3.TabIndex = 5;
@@ -139,7 +141,7 @@
             // 
             this.RememberMeCheckBox.AutoSize = true;
             this.RememberMeCheckBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RememberMeCheckBox.Location = new System.Drawing.Point(10, 213);
+            this.RememberMeCheckBox.Location = new System.Drawing.Point(196, 229);
             this.RememberMeCheckBox.Name = "RememberMeCheckBox";
             this.RememberMeCheckBox.Size = new System.Drawing.Size(172, 26);
             this.RememberMeCheckBox.TabIndex = 2;

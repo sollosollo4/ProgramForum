@@ -21,8 +21,9 @@ namespace ProgramForum
             this.CommentorySet = new HashSet<CommentorySet>();
             this.ConversationSet = new HashSet<ConversationSet>();
             this.ConversationSet1 = new HashSet<ConversationSet>();
-            this.TestSet = new HashSet<TestSet>();
             this.ThemeSet = new HashSet<ThemeSet>();
+            this.TrainingProgressSet = new HashSet<TrainingProgressSet>();
+            this.TrainingSet = new HashSet<TrainingSet>();
         }
     
         public int AccountId { get; set; }
@@ -49,8 +50,10 @@ namespace ProgramForum
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConversationSet> ConversationSet1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TestSet> TestSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ThemeSet> ThemeSet { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TrainingProgressSet> TrainingProgressSet { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TrainingSet> TrainingSet { get; set; }
     }
 }

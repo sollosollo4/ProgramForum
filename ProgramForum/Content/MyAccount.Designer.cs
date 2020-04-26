@@ -29,12 +29,16 @@
         private void InitializeComponent()
         {
             this.AccountPanel = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.MyThemesflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.QuestionListInfoLabel = new System.Windows.Forms.Label();
             this.MyQuestionflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SaveAllChanges = new System.Windows.Forms.Button();
             this.SaveChanges = new System.Windows.Forms.Button();
             this.NewPassword = new System.Windows.Forms.Label();
             this.OldPassword = new System.Windows.Forms.Label();
-            this.QuestionListInfoLabel = new System.Windows.Forms.Label();
             this.AccountReputation = new System.Windows.Forms.Label();
             this.AccountStatus = new System.Windows.Forms.Label();
             this.AccountPoints = new System.Windows.Forms.Label();
@@ -46,13 +50,9 @@
             this.OldPasswordTextBox = new System.Windows.Forms.TextBox();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.LoginTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.MyThemesflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.AccountPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AccountPanel
@@ -80,6 +80,60 @@
             this.AccountPanel.Size = new System.Drawing.Size(452, 347);
             this.AccountPanel.TabIndex = 6;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.MyThemesflowLayoutPanel);
+            this.panel2.Location = new System.Drawing.Point(216, 210);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(233, 103);
+            this.panel2.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 19);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Ваши темы:";
+            // 
+            // MyThemesflowLayoutPanel
+            // 
+            this.MyThemesflowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MyThemesflowLayoutPanel.AutoScroll = true;
+            this.MyThemesflowLayoutPanel.Location = new System.Drawing.Point(3, 19);
+            this.MyThemesflowLayoutPanel.Name = "MyThemesflowLayoutPanel";
+            this.MyThemesflowLayoutPanel.Size = new System.Drawing.Size(227, 81);
+            this.MyThemesflowLayoutPanel.TabIndex = 21;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.QuestionListInfoLabel);
+            this.panel1.Controls.Add(this.MyQuestionflowLayoutPanel);
+            this.panel1.Location = new System.Drawing.Point(216, 88);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(233, 119);
+            this.panel1.TabIndex = 22;
+            // 
+            // QuestionListInfoLabel
+            // 
+            this.QuestionListInfoLabel.AutoSize = true;
+            this.QuestionListInfoLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.QuestionListInfoLabel.Location = new System.Drawing.Point(3, 9);
+            this.QuestionListInfoLabel.Name = "QuestionListInfoLabel";
+            this.QuestionListInfoLabel.Size = new System.Drawing.Size(120, 19);
+            this.QuestionListInfoLabel.TabIndex = 9;
+            this.QuestionListInfoLabel.Text = "Ваши вопросы:";
+            // 
             // MyQuestionflowLayoutPanel
             // 
             this.MyQuestionflowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -94,23 +148,29 @@
             // SaveAllChanges
             // 
             this.SaveAllChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveAllChanges.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.SaveAllChanges.FlatAppearance.BorderSize = 0;
+            this.SaveAllChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveAllChanges.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveAllChanges.Location = new System.Drawing.Point(272, 316);
+            this.SaveAllChanges.Location = new System.Drawing.Point(270, 316);
             this.SaveAllChanges.Name = "SaveAllChanges";
             this.SaveAllChanges.Size = new System.Drawing.Size(179, 29);
             this.SaveAllChanges.TabIndex = 20;
             this.SaveAllChanges.Text = "Сохранить изменения";
-            this.SaveAllChanges.UseVisualStyleBackColor = true;
+            this.SaveAllChanges.UseVisualStyleBackColor = false;
             // 
             // SaveChanges
             // 
+            this.SaveChanges.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.SaveChanges.FlatAppearance.BorderSize = 0;
+            this.SaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveChanges.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SaveChanges.Location = new System.Drawing.Point(99, 317);
             this.SaveChanges.Name = "SaveChanges";
             this.SaveChanges.Size = new System.Drawing.Size(111, 28);
             this.SaveChanges.TabIndex = 19;
             this.SaveChanges.Text = "Сохранить";
-            this.SaveChanges.UseVisualStyleBackColor = true;
+            this.SaveChanges.UseVisualStyleBackColor = false;
             // 
             // NewPassword
             // 
@@ -131,16 +191,6 @@
             this.OldPassword.Size = new System.Drawing.Size(114, 18);
             this.OldPassword.TabIndex = 8;
             this.OldPassword.Text = "Старый пароль";
-            // 
-            // QuestionListInfoLabel
-            // 
-            this.QuestionListInfoLabel.AutoSize = true;
-            this.QuestionListInfoLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.QuestionListInfoLabel.Location = new System.Drawing.Point(3, 9);
-            this.QuestionListInfoLabel.Name = "QuestionListInfoLabel";
-            this.QuestionListInfoLabel.Size = new System.Drawing.Size(120, 19);
-            this.QuestionListInfoLabel.TabIndex = 9;
-            this.QuestionListInfoLabel.Text = "Ваши вопросы:";
             // 
             // AccountReputation
             // 
@@ -247,50 +297,6 @@
             this.LoginTextBox.Size = new System.Drawing.Size(192, 29);
             this.LoginTextBox.TabIndex = 6;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 19);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Ваши темы:";
-            // 
-            // MyThemesflowLayoutPanel
-            // 
-            this.MyThemesflowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.MyThemesflowLayoutPanel.AutoScroll = true;
-            this.MyThemesflowLayoutPanel.Location = new System.Drawing.Point(3, 19);
-            this.MyThemesflowLayoutPanel.Name = "MyThemesflowLayoutPanel";
-            this.MyThemesflowLayoutPanel.Size = new System.Drawing.Size(227, 81);
-            this.MyThemesflowLayoutPanel.TabIndex = 21;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.QuestionListInfoLabel);
-            this.panel1.Controls.Add(this.MyQuestionflowLayoutPanel);
-            this.panel1.Location = new System.Drawing.Point(216, 88);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(233, 119);
-            this.panel1.TabIndex = 22;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.MyThemesflowLayoutPanel);
-            this.panel2.Location = new System.Drawing.Point(216, 210);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(233, 103);
-            this.panel2.TabIndex = 23;
-            // 
             // MyAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,10 +308,10 @@
             this.Size = new System.Drawing.Size(452, 347);
             this.AccountPanel.ResumeLayout(false);
             this.AccountPanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

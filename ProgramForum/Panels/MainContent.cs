@@ -43,7 +43,12 @@ namespace ProgramForum.Panels
         {
             var childButton = (Button)sender;
             var theme = (Content.Theme.SingleTheme)childButton.Parent;
-            Content.ThemeControl newTheme = new Content.ThemeControl(theme.Theme) { Name = "VisibleTheme", Dock = DockStyle.Fill };
+            Content.ThemeControl newTheme = new Content.ThemeControl(theme.Theme) 
+            { 
+                Name = "VisibleTheme",
+                //Anchor = AnchorStyles.Top | AnchorStyles.Right 
+                Dock = DockStyle.Fill 
+            };
             MainPanel.Visible = false;
             ThemePanel.Controls.Add(newTheme);
         }

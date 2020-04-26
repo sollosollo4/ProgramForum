@@ -38,13 +38,16 @@
             // SaveChanges
             // 
             this.SaveChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SaveChanges.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.SaveChanges.FlatAppearance.BorderSize = 0;
+            this.SaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveChanges.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SaveChanges.Location = new System.Drawing.Point(12, 370);
             this.SaveChanges.Name = "SaveChanges";
             this.SaveChanges.Size = new System.Drawing.Size(195, 39);
             this.SaveChanges.TabIndex = 1;
             this.SaveChanges.Text = "Сохранить изменения";
-            this.SaveChanges.UseVisualStyleBackColor = true;
+            this.SaveChanges.UseVisualStyleBackColor = false;
             this.SaveChanges.Click += new System.EventHandler(this.SaveChanges_Click);
             // 
             // label1

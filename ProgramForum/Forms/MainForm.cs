@@ -50,12 +50,18 @@ namespace ProgramForum
             // удаление всех панелей из Controls 
             foreach (UserControl smplPanel in Controls.OfType<UserControl>())
                 Controls.Remove(smplPanel);
+
+            Size = MinimumSize;
+            var screen = Screen.FromControl(this);
+            Top = screen.Bounds.Height / 2 - Height / 2;
+            Left = screen.Bounds.Width / 2 - Width / 2;
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             Panels.MainContent MainContent = new Panels.MainContent(AddNewTheme_Click) { 
-                Location = new Point(220, 91), 
+                Location = new Point(238, 91), 
                 Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right
                 };
             Controls.Add(MainContent);
@@ -82,7 +88,7 @@ namespace ProgramForum
         {
             AllContentHidden();
             Panels.MainContent MainContent = new Panels.MainContent(AddNewTheme_Click) { 
-                Location = new Point(220, 91),
+                Location = new Point(238, 92),
                 Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right
             };
             Controls.Add(MainContent);
@@ -93,7 +99,7 @@ namespace ProgramForum
             AllContentHidden();
 
             Content.AddNewTheme addNewTheme = new Content.AddNewTheme(Client, MainFormToolStripMenuItem_Click) {
-                Location = new Point(220, 91),
+                Location = new Point(238, 92),
                 Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right
             };
             Controls.Add(addNewTheme);
@@ -123,8 +129,8 @@ namespace ProgramForum
 
                 Content.RandomQuestion randQuest = new Content.RandomQuestion(questionSets[xRandom.Next(0, questionSets.Count)])
                 {
-                    Location = new Point(220, 91),
-                    Anchor = AnchorStyles.Left | AnchorStyles.Right
+                    Location = new Point(238, 92),
+                    Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right
                 };
 
                 randQuest.ReturnToMain += MainFormToolStripMenuItem_Click;
@@ -133,21 +139,25 @@ namespace ProgramForum
             }
         }
 
+        private void GetTrainingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Language == null)
+            {
+                MessageBox.Show("Вы не выбрали язык! Пожалуйста, выберите язык на синей вкладке левой панели меню");
+                return;
+            }
+        }
+
         private void MyAccount_Click(object sender, EventArgs e)
         {
            AllContentHidden();
 
             Content.MyAccount myAccount = new Content.MyAccount(Client) {
-                Location = new Point(220, 91),
+                Location = new Point(238, 92),
                 Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom
             };
             myAccount.UpdateLabels();
             Controls.Add(myAccount);
-        }
-
-        private void EveryDayTestToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void MessagesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -156,7 +166,7 @@ namespace ProgramForum
 
             Content.PrivateMessage.PrivateMessageControl cpMessages = new Content.PrivateMessage.PrivateMessageControl()
             {
-                Location = new Point(220, 91),
+                Location = new Point(238, 92),
                 Anchor = AnchorStyles.Left | AnchorStyles.Right
             };
             Controls.Add(cpMessages);
@@ -168,7 +178,7 @@ namespace ProgramForum
             AllContentHidden();
             Content.Adminnistration.AdministrationPanel administrationPanel = new Content.Adminnistration.AdministrationPanel()
             {
-                Location = new Point(220, 91),
+                Location = new Point(238, 92),
                 Anchor = AnchorStyles.Left | AnchorStyles.Top
             };
             Controls.Add(administrationPanel);
