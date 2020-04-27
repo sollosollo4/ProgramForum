@@ -33,11 +33,16 @@
             this.ChooseLanguageStrip = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AddTrainingToDb = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.TestTrainingPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.BlackLine4 = new System.Windows.Forms.PictureBox();
+            this.BlackLine3 = new System.Windows.Forms.PictureBox();
+            this.BlackLine2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.SaveChanges = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.BlackLine5 = new System.Windows.Forms.PictureBox();
             this.LessonName = new System.Windows.Forms.TextBox();
             this.SelectedElementPanel = new System.Windows.Forms.Panel();
             this.LessonConentLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -51,26 +56,21 @@
             this.Element2 = new System.Windows.Forms.Button();
             this.Element1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.BlackLine1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.StripMenuItemDeleteElement = new System.Windows.Forms.ToolStripMenuItem();
-            this.BlackLine4 = new System.Windows.Forms.PictureBox();
-            this.BlackLine3 = new System.Windows.Forms.PictureBox();
-            this.BlackLine2 = new System.Windows.Forms.PictureBox();
-            this.BlackLine5 = new System.Windows.Forms.PictureBox();
-            this.BlackLine1 = new System.Windows.Forms.PictureBox();
-            this.AddTrainingToDb = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.MainPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BlackLine4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlackLine3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlackLine2)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BlackLine5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlackLine1)).BeginInit();
+            this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // ChooseLanguageStrip
@@ -105,6 +105,22 @@
             this.panel1.Size = new System.Drawing.Size(1264, 52);
             this.panel1.TabIndex = 13;
             // 
+            // AddTrainingToDb
+            // 
+            this.AddTrainingToDb.AutoSize = true;
+            this.AddTrainingToDb.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.AddTrainingToDb.FlatAppearance.BorderSize = 0;
+            this.AddTrainingToDb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddTrainingToDb.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddTrainingToDb.Location = new System.Drawing.Point(957, 10);
+            this.AddTrainingToDb.Name = "AddTrainingToDb";
+            this.AddTrainingToDb.Size = new System.Drawing.Size(295, 31);
+            this.AddTrainingToDb.TabIndex = 30;
+            this.AddTrainingToDb.Text = "Добавить обучение в базу данных";
+            this.AddTrainingToDb.UseVisualStyleBackColor = false;
+            this.AddTrainingToDb.Visible = false;
+            this.AddTrainingToDb.Click += new System.EventHandler(this.AddTrainingToDb_Click);
+            // 
             // MainPanel
             // 
             this.MainPanel.Controls.Add(this.TestTrainingPanel);
@@ -125,6 +141,39 @@
             this.TestTrainingPanel.Name = "TestTrainingPanel";
             this.TestTrainingPanel.Size = new System.Drawing.Size(412, 837);
             this.TestTrainingPanel.TabIndex = 21;
+            // 
+            // BlackLine4
+            // 
+            this.BlackLine4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlackLine4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BlackLine4.Location = new System.Drawing.Point(424, 285);
+            this.BlackLine4.Name = "BlackLine4";
+            this.BlackLine4.Size = new System.Drawing.Size(1000, 2);
+            this.BlackLine4.TabIndex = 23;
+            this.BlackLine4.TabStop = false;
+            // 
+            // BlackLine3
+            // 
+            this.BlackLine3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlackLine3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BlackLine3.Location = new System.Drawing.Point(424, 105);
+            this.BlackLine3.Name = "BlackLine3";
+            this.BlackLine3.Size = new System.Drawing.Size(1000, 2);
+            this.BlackLine3.TabIndex = 21;
+            this.BlackLine3.TabStop = false;
+            // 
+            // BlackLine2
+            // 
+            this.BlackLine2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlackLine2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BlackLine2.Location = new System.Drawing.Point(424, 5);
+            this.BlackLine2.Name = "BlackLine2";
+            this.BlackLine2.Size = new System.Drawing.Size(2, 1280);
+            this.BlackLine2.TabIndex = 20;
+            this.BlackLine2.TabStop = false;
             // 
             // panel2
             // 
@@ -176,6 +225,17 @@
             this.label7.Size = new System.Drawing.Size(99, 21);
             this.label7.TabIndex = 29;
             this.label7.Text = "Имя урока:";
+            // 
+            // BlackLine5
+            // 
+            this.BlackLine5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlackLine5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BlackLine5.Location = new System.Drawing.Point(188, 72);
+            this.BlackLine5.Name = "BlackLine5";
+            this.BlackLine5.Size = new System.Drawing.Size(2, 180);
+            this.BlackLine5.TabIndex = 22;
+            this.BlackLine5.TabStop = false;
             // 
             // LessonName
             // 
@@ -330,6 +390,17 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Выбранный элемент:";
             // 
+            // BlackLine1
+            // 
+            this.BlackLine1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlackLine1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BlackLine1.Location = new System.Drawing.Point(-1, 3);
+            this.BlackLine1.Name = "BlackLine1";
+            this.BlackLine1.Size = new System.Drawing.Size(1271, 2);
+            this.BlackLine1.TabIndex = 14;
+            this.BlackLine1.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -354,85 +425,15 @@
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StripMenuItemDeleteElement});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(119, 26);
+            this.contextMenuStrip.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip_Opening);
             // 
             // StripMenuItemDeleteElement
             // 
             this.StripMenuItemDeleteElement.Name = "StripMenuItemDeleteElement";
-            this.StripMenuItemDeleteElement.Size = new System.Drawing.Size(118, 22);
+            this.StripMenuItemDeleteElement.Size = new System.Drawing.Size(180, 22);
             this.StripMenuItemDeleteElement.Text = "Удалить";
             this.StripMenuItemDeleteElement.Click += new System.EventHandler(this.StripMenuItemDeleteElement_Click);
-            // 
-            // BlackLine4
-            // 
-            this.BlackLine4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlackLine4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BlackLine4.Location = new System.Drawing.Point(424, 285);
-            this.BlackLine4.Name = "BlackLine4";
-            this.BlackLine4.Size = new System.Drawing.Size(1000, 2);
-            this.BlackLine4.TabIndex = 23;
-            this.BlackLine4.TabStop = false;
-            // 
-            // BlackLine3
-            // 
-            this.BlackLine3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlackLine3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BlackLine3.Location = new System.Drawing.Point(424, 105);
-            this.BlackLine3.Name = "BlackLine3";
-            this.BlackLine3.Size = new System.Drawing.Size(1000, 2);
-            this.BlackLine3.TabIndex = 21;
-            this.BlackLine3.TabStop = false;
-            // 
-            // BlackLine2
-            // 
-            this.BlackLine2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlackLine2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BlackLine2.Location = new System.Drawing.Point(424, 5);
-            this.BlackLine2.Name = "BlackLine2";
-            this.BlackLine2.Size = new System.Drawing.Size(2, 1280);
-            this.BlackLine2.TabIndex = 20;
-            this.BlackLine2.TabStop = false;
-            // 
-            // BlackLine5
-            // 
-            this.BlackLine5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlackLine5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BlackLine5.Location = new System.Drawing.Point(188, 72);
-            this.BlackLine5.Name = "BlackLine5";
-            this.BlackLine5.Size = new System.Drawing.Size(2, 180);
-            this.BlackLine5.TabIndex = 22;
-            this.BlackLine5.TabStop = false;
-            // 
-            // BlackLine1
-            // 
-            this.BlackLine1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlackLine1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BlackLine1.Location = new System.Drawing.Point(-1, 3);
-            this.BlackLine1.Name = "BlackLine1";
-            this.BlackLine1.Size = new System.Drawing.Size(1271, 2);
-            this.BlackLine1.TabIndex = 14;
-            this.BlackLine1.TabStop = false;
-            // 
-            // AddTrainingToDb
-            // 
-            this.AddTrainingToDb.AutoSize = true;
-            this.AddTrainingToDb.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.AddTrainingToDb.FlatAppearance.BorderSize = 0;
-            this.AddTrainingToDb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddTrainingToDb.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddTrainingToDb.Location = new System.Drawing.Point(957, 10);
-            this.AddTrainingToDb.Name = "AddTrainingToDb";
-            this.AddTrainingToDb.Size = new System.Drawing.Size(295, 31);
-            this.AddTrainingToDb.TabIndex = 30;
-            this.AddTrainingToDb.Text = "Добавить обучение в базу данных";
-            this.AddTrainingToDb.UseVisualStyleBackColor = false;
-            this.AddTrainingToDb.Visible = false;
-            this.AddTrainingToDb.Click += new System.EventHandler(this.AddTrainingToDb_Click);
             // 
             // AddNewTraining
             // 
@@ -456,14 +457,14 @@
             this.panel1.PerformLayout();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.contextMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BlackLine4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlackLine3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlackLine2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BlackLine5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlackLine1)).EndInit();
+            this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

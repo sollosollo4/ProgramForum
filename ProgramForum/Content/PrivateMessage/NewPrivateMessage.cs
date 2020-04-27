@@ -16,6 +16,8 @@ namespace ProgramForum.Content.PrivateMessage
         AccountSet Client;
         FlowLayoutPanel pmFlowLoyoutPanel;
         UserNameLogin selectedUser;
+
+        bool ReadySearch;
         public NewPrivateMessage(AccountSet Client, Control fromControl)
         {
             this.Client = Client;
@@ -25,6 +27,9 @@ namespace ProgramForum.Content.PrivateMessage
 
         private void InitialSenderComboBox_TextChanged(object sender, EventArgs e)
         {
+            if (ReadySearch)
+                return;
+
             var getText = InitialSenderComboBox.Text;
 
             if (getText.Length < 3)
@@ -43,9 +48,15 @@ namespace ProgramForum.Content.PrivateMessage
                     InitialSenderComboBox.Items.Add(user.getName());
                 }
             }
+            InitialSenderComboBox.SelectionStart = InitialSenderComboBox.Text.Length;
         }
 
-        private void InitialSenderComboBox_SelectedIndexChanged(object sender, EventArgs e) => selectedUser = UserNameLogin.Find(InitialSenderComboBox.Text);
+        private void InitialSenderComboBox_SelectedIndexChanged(object sender, EventArgs e) 
+        { 
+            selectedUser = UserNameLogin.Find(InitialSenderComboBox.Text);
+            ReadySearch = true;
+            InitialSenderComboBox.SelectedItem = selectedUser.Login;
+        }
 
         private void SendMessageButton_Click(object sender, EventArgs e)
         {
@@ -120,6 +131,11 @@ namespace ProgramForum.Content.PrivateMessage
             }
 
             public static void SetFindest(List<UserNameLogin> userNameLogins) => findest.AddRange(userNameLogins);
+        }
+
+        private void InitialSenderComboBox_Click(object sender, EventArgs e)
+        {
+            ReadySearch = false;
         }
     }
 }

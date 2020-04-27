@@ -18,6 +18,7 @@ namespace ProgramForum
         public LessonSet()
         {
             this.QuestionListLessonSet = new HashSet<QuestionListLessonSet>();
+            this.TheoryLessonSet = new HashSet<TheoryLessonSet>();
             this.TrainingProgressSet = new HashSet<TrainingProgressSet>();
         }
     
@@ -30,10 +31,11 @@ namespace ProgramForum
         public Nullable<int> Shape { get; set; }
         public Nullable<int> Color { get; set; }
     
-        public virtual TheoryLessonSet TheoryLessonSet { get; set; }
         public virtual TrainingSet TrainingSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QuestionListLessonSet> QuestionListLessonSet { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TheoryLessonSet> TheoryLessonSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TrainingProgressSet> TrainingProgressSet { get; set; }
     }

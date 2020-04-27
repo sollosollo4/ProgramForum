@@ -59,6 +59,7 @@
             this.InitialSenderComboBox.TabIndex = 8;
             this.InitialSenderComboBox.SelectedIndexChanged += new System.EventHandler(this.InitialSenderComboBox_SelectedIndexChanged);
             this.InitialSenderComboBox.TextChanged += new System.EventHandler(this.InitialSenderComboBox_TextChanged);
+            this.InitialSenderComboBox.Click += new System.EventHandler(this.InitialSenderComboBox_Click);
             // 
             // label1
             // 

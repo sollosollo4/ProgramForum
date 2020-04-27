@@ -12,7 +12,7 @@ namespace ProgramForum
 {
     public partial class MainForm : Form
     {
-        public AccountSet Client;
+        public static AccountSet Client;
         public static LanguageSet Language;
 
         public List<LanguageSet> languageList;
@@ -20,7 +20,7 @@ namespace ProgramForum
         public MainForm(AccountSet Client)
         {
             InitializeComponent();
-            this.Client = Client;
+            MainForm.Client = Client;
 
             if(Client.AccountType == 0)
             {

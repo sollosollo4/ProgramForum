@@ -21,7 +21,7 @@ namespace ProgramForum.Forms.AdministrationForms
         
         public static Image SelectedImage;
 
-        private int Position;
+        private static int Position;
         
         Timer t1 = new Timer();
 
@@ -93,50 +93,9 @@ namespace ProgramForum.Forms.AdministrationForms
             TestTrainingPanel.Controls.Add(lesson);
             lesson.ContextMenuStrip = contextMenuStrip;
 
-            /*lesson.MouseDown += Lesson_MouseDown;
-            lesson.MouseMove += Lesson_MouseMove;
-            lesson.MouseUp += Lesson_MouseUp;
-
-            TestTrainingPanel.DragOver += TestTrainingPanel_DragOver;*/
-
             lesson.Click += Lesson_Click;
             lesson.SetOtherChildrenControlClick(Lesson_Click);
-        }
-
-        /*private void TestTrainingPanel_DragOver(object sender, DragEventArgs e)
-        {
-            if (!e.Data.GetDataPresent(typeof(LessonControl)))
-                return;
-
-            e.Effect = e.AllowedEffect;
-            var draggedButton = (LessonControl)e.Data.GetData(typeof(LessonControl));
-
-            var pt = TestTrainingPanel.PointToClient(new Point(e.X, e.Y));
-            var button = (LessonControl)TestTrainingPanel.GetChildAtPoint(pt);
-
-            if (button != null)
-            {
-                var pos = TestTrainingPanel.GetPositionFromControl(button);
-                TestTrainingPanel.Controls.Add(draggedButton, pos.Column, pos.Row);
-                draggedButton.Tag = null;
-            }
-        }*/
-
-        private void Lesson_MouseDown(object sender, MouseEventArgs e)
-        {
-            ((LessonControl)sender).Tag = new object();
-        }
-
-        private void Lesson_MouseMove(object sender, MouseEventArgs e)
-        {
-            var button = (LessonControl)sender;
-            if (button.Tag != null)
-                button.DoDragDrop(sender, DragDropEffects.Move);
-        }
-
-        private void Lesson_MouseUp(object sender, MouseEventArgs e)
-        {
-            ((LessonControl)sender).Tag = null;
+            lesson.Position++;
         }
 
         private void Lesson_Click(object sender, EventArgs e)
@@ -147,13 +106,23 @@ namespace ProgramForum.Forms.AdministrationForms
 
             StatusLessonControl.Location = new Point(0, 0);
             StatusLessonControl.ControlColor = SelectedElement.ControlColor;
+
             StatusLessonControl.LessName = SelectedElement.LessName;
             StatusLessonControl.Picture = SelectedElement.Picture;
+
+            StatusLessonControl.Theories = SelectedElement.Theories;
+            StatusLessonControl.Questions = SelectedElement.Questions;
+
+            LessonName.Text = SelectedElement.LessName;
 
             StatusElement = StatusLessonControl;
 
             SelectedElementPanel.Controls.Clear();
             SelectedElementPanel.Controls.Add(StatusLessonControl);
+
+            LessonConentLayoutPanel.Controls.Clear();
+            LessonConentLayoutPanel.Controls.AddRange(StatusLessonControl.Theories.ToArray());
+            LessonConentLayoutPanel.Controls.AddRange(StatusLessonControl.Questions.ToArray());
         }
 
         private void Element2_Click(object sender, EventArgs e)
@@ -170,18 +139,17 @@ namespace ProgramForum.Forms.AdministrationForms
             t1.Tick += new EventHandler(fadeOutAddTheory);
             t1.Interval = 100;
             t1.Start();
+            
+            Theory theory = new Theory();
+            StatusElement.AddTheory(theory);
+
+            LessonConentLayoutPanel.Controls.Add(theory);
         }
 
         void fadeOutAddTheory(object sender, EventArgs e)
         {
-            if (LessonConentLayoutPanel.BackColor.A <= 0)
-            {
+            if (LessonConentLayoutPanel.BackColor.A <= 0) {
                 t1.Stop();
-                // Добавление теории на форму
-                Theory theory = new Theory();
-                theory.Position = Position;
-                LessonConentLayoutPanel.Controls.Add(theory);
-                Position++;
             }
             else
             {
@@ -203,6 +171,11 @@ namespace ProgramForum.Forms.AdministrationForms
                 MessageBox.Show("Вы не выбрали урок!");
                 return;
             }
+
+            Question quest = new Question(Language);
+            StatusElement.AddQuest(quest);
+
+            LessonConentLayoutPanel.Controls.Add(quest);
         }
 
         private void ChangeElement_Click(object sender, EventArgs e)
@@ -247,24 +220,95 @@ namespace ProgramForum.Forms.AdministrationForms
             SelectedElement.ControlColor = StatusElement.ControlColor;
             SelectedElement.LessName = StatusElement.LessName;
             SelectedElement.Picture = StatusElement.Picture;
+            SelectedElement.Theories = StatusElement.Theories;
+            SelectedElement.Questions = StatusElement.Questions;
 
             LessonName.Text = string.Empty;
 
             SelectedElementPanel.Controls.Clear();
+            LessonConentLayoutPanel.Controls.Clear();
         }
 
         private void StripMenuItemDeleteElement_Click(object sender, EventArgs e)
         {
-            var StripMenu = (ToolStripMenuItem)sender;
-            var toolStrip = StripMenu.GetCurrentParent();
-            var lesson = toolStrip.Parent;
+            ToolStripMenuItem senderItem = (ToolStripMenuItem)sender;
+            var lesson = (LessonControl)senderItem.Owner.Tag;
 
             TestTrainingPanel.Controls.Remove(lesson);
         }
 
+        private void contextMenuStrip_Opening(object sender, CancelEventArgs e)
+        {
+            contextMenuStrip.Tag = ((ContextMenuStrip)sender).SourceControl;
+        }
+
         private void AddTrainingToDb_Click(object sender, EventArgs e)
         {
-            // не забыть добавить всем TheoryLessonSet -> LessonId
+            SaveTraining saveTraining = new SaveTraining();
+            saveTraining.ShowDialog();
+
+            if(saveTraining.TrainingName == "")
+            {
+                return;
+            }
+
+            using (ForumContainer container = new ForumContainer())
+            {
+                TrainingSet training = new TrainingSet()
+                {
+                    AuthorId = MainForm.Client.AccountId,
+                    TrainingName = saveTraining.TrainingName,
+                    TrainingDescrition = saveTraining.TrainingDescription              
+                };
+
+                container.TrainingSet.Add(training);
+                container.SaveChanges();
+
+                foreach(var Lesson in TestTrainingPanel.Controls)
+                {
+                    var CurrentLesson = (LessonControl)Lesson;
+                    LessonSet lesson = new LessonSet()
+                    {
+                        TrainingId = training.TrainingId,
+                        Color = ColorTranslator.ToOle(CurrentLesson.ControlColor),
+                        PictureId = -1111111,
+                        LessonName = CurrentLesson.LessName,
+                        LessonText = "??",
+                        Position = CurrentLesson.Position,
+                        Shape = 0,
+                    };
+                    container.LessonSet.Add(lesson);
+                    container.SaveChanges();
+
+                    foreach (var theory in CurrentLesson.Theories)
+                    {
+                        TheoryLessonSet theoryLesson = new TheoryLessonSet()
+                        {
+                            LessonId = lesson.LessonId,
+                            Position = theory.Position,
+                            TheoryText = theory.TheoryLessonSet.TheoryText,
+                            CodeId = theory.TheoryLessonSet.CodeId
+                        };
+
+                        container.TheoryLessonSet.Add(theoryLesson);
+                        container.SaveChanges();
+                    }
+
+                    foreach(var quest in CurrentLesson.Questions)
+                    {
+                        QuestionListLessonSet questionListLesson = new QuestionListLessonSet()
+                        {
+                            LessonId = lesson.LessonId,
+                            Position = quest.Position,
+                            QuestionId = quest.QuestionSet.QuestionId
+                        };
+
+                        container.QuestionListLessonSet.Add(questionListLesson);
+                        container.SaveChanges();
+                    }
+                    
+                }
+            }
         }
     }
 }

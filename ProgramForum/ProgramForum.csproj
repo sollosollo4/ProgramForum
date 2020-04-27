@@ -92,6 +92,12 @@
     <Compile Include="Content\Training\LessonControl.Designer.cs">
       <DependentUpon>LessonControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Content\Training\Question.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Content\Training\Question.Designer.cs">
+      <DependentUpon>Question.cs</DependentUpon>
+    </Compile>
     <Compile Include="Content\Training\Theory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +145,12 @@
     </Compile>
     <Compile Include="Forms\AdministrationForms\Redactor.Designer.cs">
       <DependentUpon>Redactor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdministrationForms\SaveTraining.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrationForms\SaveTraining.Designer.cs">
+      <DependentUpon>SaveTraining.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AuthForm.cs">
       <SubType>Form</SubType>
@@ -334,9 +346,6 @@
     <Compile Include="QuestionTypeSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
-    <Compile Include="Roles.cs">
-      <DependentUpon>Forum.tt</DependentUpon>
-    </Compile>
     <Compile Include="ThemeSet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
@@ -358,6 +367,9 @@
     <EmbeddedResource Include="Content\Training\LessonControl.resx">
       <DependentUpon>LessonControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Content\Training\Question.resx">
+      <DependentUpon>Question.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Content\Training\Theory.resx">
       <DependentUpon>Theory.cs</DependentUpon>
     </EmbeddedResource>
@@ -378,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdministrationForms\Redactor.resx">
       <DependentUpon>Redactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdministrationForms\SaveTraining.resx">
+      <DependentUpon>SaveTraining.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdministrationForms\ThemeRedactor.resx">
       <DependentUpon>ThemeRedactor.cs</DependentUpon>

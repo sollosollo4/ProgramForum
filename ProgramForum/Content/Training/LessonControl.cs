@@ -14,25 +14,16 @@ namespace ProgramForum.Content.Training
     {
         public LessonSet LessonSet;
 
+        public int Position { get; set; }
+        public List<Theory> Theories = new List<Theory>(); public void AddTheory(Theory theory) { Theories.Add(theory); theory.Position++; }
+        public List<Question> Questions = new List<Question>(); public void AddQuest(Question quest) { Questions.Add(quest); quest.Position++; }
+        
         EventHandler lesson_Click;
 
-        public LessonControl()
-        {
-            InitializeComponent();
-        }
-
+        public LessonControl() { InitializeComponent(); }
         public Image Picture { get { return this.LessonPicture.Image; } set { this.LessonPicture.Image = value; } }
         public string LessName { get { return this.LessonName.Text; } set { this.LessonName.Text = value; } }
         public Color ControlColor { get { return this.BackColor; } set { this.BackColor = value; } }
-
-        public void AddTheory(TheoryLessonSet theory)
-        {
-
-        }
-        public void AddQuestion()
-        {
-
-        }
 
         internal void SetOtherChildrenControlClick(EventHandler lesson_Click)
         {
@@ -52,5 +43,7 @@ namespace ProgramForum.Content.Training
             var picture = (PictureBox)sender;
             lesson_Click(picture.Parent, e);
         }
+
+        
     }
 }
