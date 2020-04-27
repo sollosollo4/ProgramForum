@@ -12,15 +12,12 @@ namespace ProgramForum
     using System;
     using System.Collections.Generic;
     
-    public partial class TheoryLessonSet
+    public partial class sysdiagrams
     {
-        public int TheoryId { get; set; }
-        public int LessonId { get; set; }
-        public string TheoryText { get; set; }
-        public int Position { get; set; }
-        public Nullable<int> CodeId { get; set; }
-    
-        public virtual CodeSet CodeSet { get; set; }
-        public virtual LessonSet LessonSet { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

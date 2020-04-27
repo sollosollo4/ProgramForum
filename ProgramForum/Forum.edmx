@@ -101,7 +101,7 @@
           <Key>
             <PropertyRef Name="LessonQuestionId" />
           </Key>
-          <Property Name="LessonQuestionId" Type="int" Nullable="false" />
+          <Property Name="LessonQuestionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="QuestionId" Type="int" Nullable="false" />
           <Property Name="Position" Type="int" Nullable="false" />
           <Property Name="LessonId" Type="int" Nullable="false" />
@@ -125,6 +125,16 @@
           <Property Name="QuestionTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="QuestionTypeText" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="ThemeSet">
           <Key>
             <PropertyRef Name="ThemeId" />
@@ -145,7 +155,7 @@
           <Property Name="LessonId" Type="int" Nullable="false" />
           <Property Name="TheoryText" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Position" Type="int" Nullable="false" />
-          <Property Name="CodeId" Type="int" Nullable="false" />
+          <Property Name="CodeId" Type="int" />
         </EntityType>
         <EntityType Name="TrainingProgressSet">
           <Key>
@@ -164,6 +174,7 @@
           <Property Name="TrainingName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="AuthorId" Type="int" Nullable="false" />
           <Property Name="TrainingDescrition" Type="nvarchar(max)" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_AccountQuestion">
           <End Role="AccountSet" Type="Self.AccountSet" Multiplicity="1" />
@@ -324,7 +335,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TheoryLessonSet_CodeSet">
-          <End Role="CodeSet" Type="Self.CodeSet" Multiplicity="1" />
+          <End Role="CodeSet" Type="Self.CodeSet" Multiplicity="0..1" />
           <End Role="TheoryLessonSet" Type="Self.TheoryLessonSet" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CodeSet">
@@ -395,6 +406,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TrainingSet_LanguageSet">
+          <End Role="LanguageSet" Type="Self.LanguageSet" Multiplicity="1" />
+          <End Role="TrainingSet" Type="Self.TrainingSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LanguageSet">
+              <PropertyRef Name="LanguageId" />
+            </Principal>
+            <Dependent Role="TrainingSet">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ForumStoreContainer">
           <EntitySet Name="AccountSet" EntityType="Self.AccountSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnswerSet" EntityType="Self.AnswerSet" Schema="dbo" store:Type="Tables" />
@@ -408,6 +431,7 @@
           <EntitySet Name="QuestionListLessonSet" EntityType="Self.QuestionListLessonSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuestionSet" EntityType="Self.QuestionSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuestionTypeSet" EntityType="Self.QuestionTypeSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThemeSet" EntityType="Self.ThemeSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TheoryLessonSet" EntityType="Self.TheoryLessonSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TrainingProgressSet" EntityType="Self.TrainingProgressSet" Schema="dbo" store:Type="Tables" />
@@ -488,6 +512,10 @@
             <End Role="AccountSet" EntitySet="AccountSet" />
             <End Role="TrainingSet" EntitySet="TrainingSet" />
           </AssociationSet>
+          <AssociationSet Name="FK_TrainingSet_LanguageSet" Association="Self.FK_TrainingSet_LanguageSet">
+            <End Role="LanguageSet" EntitySet="LanguageSet" />
+            <End Role="TrainingSet" EntitySet="TrainingSet" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -506,6 +534,7 @@
           <EntitySet Name="QuestionListLessonSet" EntityType="Forum.QuestionListLessonSet" />
           <EntitySet Name="QuestionSet" EntityType="Forum.QuestionSet" />
           <EntitySet Name="QuestionTypeSet" EntityType="Forum.QuestionTypeSet" />
+          <EntitySet Name="sysdiagrams" EntityType="Forum.sysdiagrams" />
           <EntitySet Name="ThemeSet" EntityType="Forum.ThemeSet" />
           <EntitySet Name="TheoryLessonSet" EntityType="Forum.TheoryLessonSet" />
           <EntitySet Name="TrainingProgressSet" EntityType="Forum.TrainingProgressSet" />
@@ -557,6 +586,10 @@
           <AssociationSet Name="FK_LanguageQuestion" Association="Forum.FK_LanguageQuestion">
             <End Role="LanguageSet" EntitySet="LanguageSet" />
             <End Role="QuestionSet" EntitySet="QuestionSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrainingSet_LanguageSet" Association="Forum.FK_TrainingSet_LanguageSet">
+            <End Role="LanguageSet" EntitySet="LanguageSet" />
+            <End Role="TrainingSet" EntitySet="TrainingSet" />
           </AssociationSet>
           <AssociationSet Name="FK_LessonSet_TrainingSet" Association="Forum.FK_LessonSet_TrainingSet">
             <End Role="TrainingSet" EntitySet="TrainingSet" />
@@ -662,6 +695,7 @@
           <Property Name="LanguageName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="LanguageDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="QuestionSet" Relationship="Forum.FK_LanguageQuestion" FromRole="LanguageSet" ToRole="QuestionSet" />
+          <NavigationProperty Name="TrainingSet" Relationship="Forum.FK_TrainingSet_LanguageSet" FromRole="LanguageSet" ToRole="TrainingSet" />
         </EntityType>
         <EntityType Name="LessonSet">
           <Key>
@@ -703,7 +737,7 @@
           <Key>
             <PropertyRef Name="LessonQuestionId" />
           </Key>
-          <Property Name="LessonQuestionId" Type="Int32" Nullable="false" />
+          <Property Name="LessonQuestionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="QuestionId" Type="Int32" Nullable="false" />
           <Property Name="Position" Type="Int32" Nullable="false" />
           <Property Name="LessonId" Type="Int32" Nullable="false" />
@@ -735,6 +769,16 @@
           <Property Name="QuestionTypeText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="QuestionSet" Relationship="Forum.FK_QuestionTypeQuestion" FromRole="QuestionTypeSet" ToRole="QuestionSet" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="ThemeSet">
           <Key>
             <PropertyRef Name="ThemeId" />
@@ -757,7 +801,7 @@
           <Property Name="LessonId" Type="Int32" Nullable="false" />
           <Property Name="TheoryText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Position" Type="Int32" Nullable="false" />
-          <Property Name="CodeId" Type="Int32" Nullable="false" />
+          <Property Name="CodeId" Type="Int32" />
           <NavigationProperty Name="CodeSet" Relationship="Forum.FK_TheoryLessonSet_CodeSet" FromRole="TheoryLessonSet" ToRole="CodeSet" />
           <NavigationProperty Name="LessonSet" Relationship="Forum.FK_TheoryLessonSet_LessonSet" FromRole="TheoryLessonSet" ToRole="LessonSet" />
         </EntityType>
@@ -781,7 +825,9 @@
           <Property Name="TrainingName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="AuthorId" Type="Int32" Nullable="false" />
           <Property Name="TrainingDescrition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="AccountSet" Relationship="Forum.FK_TrainingSet_AccountSet" FromRole="TrainingSet" ToRole="AccountSet" />
+          <NavigationProperty Name="LanguageSet" Relationship="Forum.FK_TrainingSet_LanguageSet" FromRole="TrainingSet" ToRole="LanguageSet" />
           <NavigationProperty Name="LessonSet" Relationship="Forum.FK_LessonSet_TrainingSet" FromRole="TrainingSet" ToRole="LessonSet" />
           <NavigationProperty Name="TrainingProgressSet" Relationship="Forum.FK_TrainingProgressSet_TrainingSet" FromRole="TrainingSet" ToRole="TrainingProgressSet" />
         </EntityType>
@@ -882,7 +928,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TheoryLessonSet_CodeSet">
-          <End Type="Forum.CodeSet" Role="CodeSet" Multiplicity="1" />
+          <End Type="Forum.CodeSet" Role="CodeSet" Multiplicity="0..1" />
           <End Type="Forum.TheoryLessonSet" Role="TheoryLessonSet" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CodeSet">
@@ -928,6 +974,18 @@
             </Principal>
             <Dependent Role="QuestionSet">
               <PropertyRef Name="LanguageLanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingSet_LanguageSet">
+          <End Type="Forum.LanguageSet" Role="LanguageSet" Multiplicity="1" />
+          <End Type="Forum.TrainingSet" Role="TrainingSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LanguageSet">
+              <PropertyRef Name="LanguageId" />
+            </Principal>
+            <Dependent Role="TrainingSet">
+              <PropertyRef Name="LanguageId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1153,6 +1211,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Forum.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ThemeSet">
             <EntityTypeMapping TypeName="Forum.ThemeSet">
               <MappingFragment StoreEntitySet="ThemeSet">
@@ -1190,6 +1259,7 @@
           <EntitySetMapping Name="TrainingSet">
             <EntityTypeMapping TypeName="Forum.TrainingSet">
               <MappingFragment StoreEntitySet="TrainingSet">
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
                 <ScalarProperty Name="TrainingDescrition" ColumnName="TrainingDescrition" />
                 <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
                 <ScalarProperty Name="TrainingName" ColumnName="TrainingName" />

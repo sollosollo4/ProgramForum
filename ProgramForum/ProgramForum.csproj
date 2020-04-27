@@ -332,6 +332,24 @@
     <Compile Include="Panels\SimpleTheme.Designer.cs">
       <DependentUpon>SimpleTheme.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\SimpleTraining.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\SimpleTraining.Designer.cs">
+      <DependentUpon>SimpleTraining.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Training\Training.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\Training\Training.Designer.cs">
+      <DependentUpon>Training.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Training\TrainingList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\Training\TrainingList.Designer.cs">
+      <DependentUpon>TrainingList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProgramForumConstants.cs">
       <DependentUpon>Forum.tt</DependentUpon>
@@ -344,6 +362,9 @@
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
     <Compile Include="QuestionTypeSet.cs">
+      <DependentUpon>Forum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
     <Compile Include="ThemeSet.cs">
@@ -468,6 +489,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\SimpleTheme.resx">
       <DependentUpon>SimpleTheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\SimpleTraining.resx">
+      <DependentUpon>SimpleTraining.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Training\Training.resx">
+      <DependentUpon>Training.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Training\TrainingList.resx">
+      <DependentUpon>TrainingList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

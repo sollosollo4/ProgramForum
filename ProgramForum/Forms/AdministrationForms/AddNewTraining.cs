@@ -95,7 +95,8 @@ namespace ProgramForum.Forms.AdministrationForms
 
             lesson.Click += Lesson_Click;
             lesson.SetOtherChildrenControlClick(Lesson_Click);
-            lesson.Position++;
+            lesson.Position = Position;
+            Position++;
         }
 
         private void Lesson_Click(object sender, EventArgs e)
@@ -258,7 +259,8 @@ namespace ProgramForum.Forms.AdministrationForms
                 {
                     AuthorId = MainForm.Client.AccountId,
                     TrainingName = saveTraining.TrainingName,
-                    TrainingDescrition = saveTraining.TrainingDescription              
+                    TrainingDescrition = saveTraining.TrainingDescription,
+                    LanguageId = Language.LanguageId
                 };
 
                 container.TrainingSet.Add(training);
@@ -286,6 +288,7 @@ namespace ProgramForum.Forms.AdministrationForms
                         {
                             LessonId = lesson.LessonId,
                             Position = theory.Position,
+                            TheoryId = theory.TheoryLessonSet.TheoryId,
                             TheoryText = theory.TheoryLessonSet.TheoryText,
                             CodeId = theory.TheoryLessonSet.CodeId
                         };

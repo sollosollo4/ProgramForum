@@ -552,7 +552,7 @@ namespace ProgramForum.Content.Training
 							TextBox tb = (TextBox)control;
 							TheoryLessonSet lessonSet = new TheoryLessonSet()
 							{
-								CodeId = CodeId == -1 ? -1 : CodeId,
+								CodeId = CodeId == -1 ? 1011 : CodeId,
 								TheoryText = tb.Text
 							};
 
@@ -597,7 +597,7 @@ namespace ProgramForum.Content.Training
 							TextBox tb = (TextBox)control;
 							TheoryLessonSet lessonSet = new TheoryLessonSet()
 							{
-								CodeId = CodeId == -1 ? -1 : CodeId,
+								CodeId = CodeId == -1 ? 1011 : CodeId,
 								TheoryText = tb.Text
 							};
 

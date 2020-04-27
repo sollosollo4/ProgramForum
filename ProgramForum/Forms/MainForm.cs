@@ -146,6 +146,14 @@ namespace ProgramForum
                 MessageBox.Show("Вы не выбрали язык! Пожалуйста, выберите язык на синей вкладке левой панели меню");
                 return;
             }
+            
+            AllContentHidden();
+
+            Panels.Training.TrainingList trainingList = new Panels.Training.TrainingList(){
+                Location = new Point(238, 92),
+                Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom
+            };;
+            Controls.Add(trainingList);
         }
 
         private void MyAccount_Click(object sender, EventArgs e)

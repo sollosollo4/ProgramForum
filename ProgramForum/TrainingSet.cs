@@ -25,8 +25,10 @@ namespace ProgramForum
         public string TrainingName { get; set; }
         public int AuthorId { get; set; }
         public string TrainingDescrition { get; set; }
+        public int LanguageId { get; set; }
     
         public virtual AccountSet AccountSet { get; set; }
+        public virtual LanguageSet LanguageSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LessonSet> LessonSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -37,6 +37,7 @@ namespace ProgramForum
         public virtual DbSet<QuestionListLessonSet> QuestionListLessonSet { get; set; }
         public virtual DbSet<QuestionSet> QuestionSet { get; set; }
         public virtual DbSet<QuestionTypeSet> QuestionTypeSet { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<ThemeSet> ThemeSet { get; set; }
         public virtual DbSet<TheoryLessonSet> TheoryLessonSet { get; set; }
         public virtual DbSet<TrainingProgressSet> TrainingProgressSet { get; set; }

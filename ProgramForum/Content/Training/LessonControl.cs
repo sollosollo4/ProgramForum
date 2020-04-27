@@ -13,10 +13,11 @@ namespace ProgramForum.Content.Training
     public partial class LessonControl : UserControl
     {
         public LessonSet LessonSet;
-
         public int Position { get; set; }
-        public List<Theory> Theories = new List<Theory>(); public void AddTheory(Theory theory) { Theories.Add(theory); theory.Position++; }
-        public List<Question> Questions = new List<Question>(); public void AddQuest(Question quest) { Questions.Add(quest); quest.Position++; }
+
+        public int TheoryQuestPosition { get; set; }
+        public List<Theory> Theories = new List<Theory>(); public void AddTheory(Theory theory) { Theories.Add(theory); theory.Position = TheoryQuestPosition; TheoryQuestPosition++; }
+        public List<Question> Questions = new List<Question>(); public void AddQuest(Question quest) { Questions.Add(quest); quest.Position = TheoryQuestPosition; TheoryQuestPosition++; }
         
         EventHandler lesson_Click;
 
