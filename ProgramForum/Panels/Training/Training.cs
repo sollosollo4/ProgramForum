@@ -130,6 +130,7 @@ namespace ProgramForum.Panels.Training
 
             TheoryControl theoryControl = new TheoryControl(smplControl.LessonSet, smplControl.Theories, smplControl.Questions) { Name ="theoryControl", Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right };
             Controls.Add(theoryControl);
+            theoryControl.Show();
         }
 
 

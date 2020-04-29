@@ -41,6 +41,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.QuestionPanel.Location = new System.Drawing.Point(4, 4);
+            this.QuestionPanel.MinimumSize = new System.Drawing.Size(443, 291);
             this.QuestionPanel.Name = "QuestionPanel";
             this.QuestionPanel.Size = new System.Drawing.Size(443, 291);
             this.QuestionPanel.TabIndex = 0;
@@ -51,18 +52,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelPanel.Location = new System.Drawing.Point(4, 4);
+            this.LabelPanel.MaximumSize = new System.Drawing.Size(0, 220);
+            this.LabelPanel.MinimumSize = new System.Drawing.Size(443, 99);
             this.LabelPanel.Name = "LabelPanel";
             this.LabelPanel.Size = new System.Drawing.Size(443, 99);
             this.LabelPanel.TabIndex = 0;
             // 
             // CodePanel
             // 
-            this.CodePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.CodePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CodePanel.Location = new System.Drawing.Point(4, 109);
+            this.CodePanel.Location = new System.Drawing.Point(4, 120);
+            this.CodePanel.MinimumSize = new System.Drawing.Size(443, 99);
             this.CodePanel.Name = "CodePanel";
-            this.CodePanel.Size = new System.Drawing.Size(443, 100);
+            this.CodePanel.Size = new System.Drawing.Size(443, 99);
             this.CodePanel.TabIndex = 0;
             // 
             // GoNext
@@ -115,6 +118,7 @@
             this.MinimumSize = new System.Drawing.Size(450, 348);
             this.Name = "TheoryControl";
             this.Size = new System.Drawing.Size(450, 348);
+            this.Resize += new System.EventHandler(this.TheoryControl_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -25,15 +25,23 @@ namespace ProgramForum.Panels
                 // ThemeLoading
                 if (container.ThemeSet.Count() > 0)
                 {
+                    int i = 0;
                     var TryThemeList = container.ThemeSet.Where(x => x.Visible == true).ToList();
+                     
                     foreach (ThemeSet theme in TryThemeList.OrderByDescending(t => t.CreateDate))
                     {
                         Content.Theme.SingleTheme singleTheme = new Content.Theme.SingleTheme(theme)
                         {
-                            Location = new Point(0, 0)
+                            Location = new Point(3, 3),
+                            Anchor = AnchorStyles.Left | AnchorStyles.Right
                         };
                         singleTheme.SetClick_ReadTheme(SetClick_ForSingleTheme);
-                        LastThemePanel.Controls.Add(singleTheme);
+
+                        LastThemePanel.RowStyles.Add(new RowStyle(SizeType.AutoSize, singleTheme.Height));
+                        LastThemePanel.RowCount++;
+
+                        LastThemePanel.Controls.Add(singleTheme, 0, i);
+                        i++;
                     }
                 }
             }
@@ -42,7 +50,8 @@ namespace ProgramForum.Panels
         private void SetClick_ForSingleTheme(object sender, EventArgs eventArgs)
         {
             var childButton = (Button)sender;
-            var theme = (Content.Theme.SingleTheme)childButton.Parent;
+            var panel = (Panel)childButton.Parent;
+            var theme = (Content.Theme.SingleTheme)panel.Parent;
             Content.ThemeControl newTheme = new Content.ThemeControl(theme.Theme) 
             { 
                 Name = "VisibleTheme",

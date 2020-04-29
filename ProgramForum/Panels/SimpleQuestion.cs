@@ -21,12 +21,12 @@ namespace ProgramForum.Panels
             QuestionSet = questionSet;
             QuestionLabel.Text = QuestionSet.QuestionText;
 
-
+            QuestionTypes.QuestionPanel = QuestionPanel;
             QuestType = QuestionTypes.GetQuestionType(QuestionSet);
             var question = QuestType.getUserControl();
             QuestionTypes.SetQuest(question, QuestionSet);
 
-            Controls.Add(question);
+            QuestionPanel.Controls.Add(question);
         }
 
         public SimpleQuestion(Size size, QuestionSet questionSet)
@@ -38,11 +38,12 @@ namespace ProgramForum.Panels
             QuestionSet = questionSet;
             QuestionLabel.Text = QuestionSet.QuestionText;
 
+            QuestionTypes.QuestionPanel = QuestionPanel;
             QuestType = QuestionTypes.GetQuestionType(QuestionSet);
             var question = QuestType.getUserControl();
             QuestionTypes.SetQuest(question, QuestionSet);
 
-            Controls.Add(question);
+            QuestionPanel.Controls.Add(question);
         }
     }
 }

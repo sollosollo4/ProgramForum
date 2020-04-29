@@ -33,8 +33,7 @@ namespace ProgramForum.Content.PrivateMessage
                     MessageSendForm messageForm = new MessageSendForm(Client, converstation.AccountSet_Sender);
                     messageForm.Show();
                 };
-
-                Chat.Chat newChat = new Chat.Chat(converstation.AccountSet_Sender.Login, handlerClickerChat); // с кем беседа
+                Chat.Chat newChat = new Chat.Chat(converstation.AccountSet_Sender.Login, handlerClickerChat);
                 pmFlowLoyoutPanel.Controls.Add(newChat);
             }
 
@@ -47,7 +46,8 @@ namespace ProgramForum.Content.PrivateMessage
                     messageForm.Show();
                 };
 
-                Chat.Chat newChat = new Chat.Chat(converstation.AccountSet_Recipient.Login, handlerClickerChat); // с кем беседа
+
+                Chat.Chat newChat = new Chat.Chat(converstation.AccountSet_Recipient.Login, handlerClickerChat); 
                 pmFlowLoyoutPanel.Controls.Add(newChat);
             }
         }

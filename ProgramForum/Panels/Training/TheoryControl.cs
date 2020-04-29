@@ -105,7 +105,7 @@ namespace ProgramForum.Panels.Training
 			{
 				var quest = Questions.FirstOrDefault(x => x.Position == CurrentPosition).QuestionSet;
 				var question = container.QuestionSet.FirstOrDefault(x => x.QuestionId == quest.QuestionId);
-				SimpleQuestion simpleQuestion = new SimpleQuestion(new Size(443, 291), question);
+				SimpleQuestion simpleQuestion = new SimpleQuestion(new Size(443, 291), question) { Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right };
 				QuestionPanel.Controls.Add(simpleQuestion);
 			}
 		}
@@ -115,7 +115,7 @@ namespace ProgramForum.Panels.Training
 
 			var needTheoryLesson = Theories.FirstOrDefault(x => x.Position == CurrentPosition);
 
-			Label theoryText = new Label() { Text = needTheoryLesson.TheoryLessonSet.TheoryText, AutoSize = true, Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right };
+			TextBox theoryText = new TextBox() { Text = needTheoryLesson.TheoryLessonSet.TheoryText, AutoSize = true, /* Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right, */ ReadOnly = true, Multiline = true, ScrollBars = ScrollBars.Vertical, WordWrap = true, Dock = DockStyle.Fill, BackColor = SystemColors.Window };
 			LabelPanel.Visible = true;
 			LabelPanel.Controls.Add(theoryText);
 
@@ -123,7 +123,7 @@ namespace ProgramForum.Panels.Training
             {
                 using (ForumContainer container = new ForumContainer())
                 {
-                    Scintilla newCodeBlock = new Scintilla() { Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right };
+                    Scintilla newCodeBlock = new Scintilla() { /* Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right, */ Dock = DockStyle.Fill};
 					TextArea = newCodeBlock;
 					LoadScintilla();
 					newCodeBlock.Click += Scintilla_Click;
@@ -559,6 +559,32 @@ namespace ProgramForum.Panels.Training
 			}
 		}
 
-		#endregion		
+		#endregion
+
+		private bool isSizeIncreasing;
+		private Size OldSize = new Size(443, 99);
+
+		private void TheoryControl_Resize(object sender, EventArgs e)
+		{
+			if (LabelPanel.Size.Height >= OldSize.Height)
+			{ // Если размер увеличивается
+				isSizeIncreasing = true;
+			}
+			else
+			{ // Если уменьшается
+				isSizeIncreasing = false;
+			}
+			OldSize = LabelPanel.Size;
+
+			if (isSizeIncreasing && LabelPanel.Size.Height == LabelPanel.MaximumSize.Height)
+			{ // Если мы увеличиваем форму, то держимся за низ формы
+				CodePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			}
+
+			if (!isSizeIncreasing)
+			{ // Если уменьшаем, то держимся за верхнюю панель
+				CodePanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			}
+		}
 	}
 }

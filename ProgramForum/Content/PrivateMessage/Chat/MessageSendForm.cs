@@ -81,7 +81,7 @@ namespace ProgramForum.Content.PrivateMessage.Chat
 
         public void AddNewMessageContainer(MessageSet Message)
         {
-            MessageContainer messageContainer = new MessageContainer();
+            MessageContainer messageContainer = new MessageContainer() {};
             if (Message.SenderId == Recipient.AccountId) // Left - сообщения отправителя
             {
                 messageContainer.SetMessage(Recipient, Message);

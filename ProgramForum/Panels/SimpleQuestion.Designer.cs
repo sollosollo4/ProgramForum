@@ -28,18 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.QuestionLabel = new System.Windows.Forms.Label();
+            this.QuestionPanel = new System.Windows.Forms.Panel();
+            this.QuestionLabel = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // QuestionPanel
+            // 
+            this.QuestionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.QuestionPanel.Location = new System.Drawing.Point(3, 95);
+            this.QuestionPanel.Name = "QuestionPanel";
+            this.QuestionPanel.Size = new System.Drawing.Size(446, 249);
+            this.QuestionPanel.TabIndex = 1;
             // 
             // QuestionLabel
             // 
-            this.QuestionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.QuestionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.QuestionLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.QuestionLabel.Location = new System.Drawing.Point(4, 4);
+            this.QuestionLabel.BackColor = System.Drawing.SystemColors.Window;
+            this.QuestionLabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.QuestionLabel.Location = new System.Drawing.Point(3, 4);
+            this.QuestionLabel.Multiline = true;
             this.QuestionLabel.Name = "QuestionLabel";
-            this.QuestionLabel.Size = new System.Drawing.Size(445, 87);
-            this.QuestionLabel.TabIndex = 0;
+            this.QuestionLabel.ReadOnly = true;
+            this.QuestionLabel.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.QuestionLabel.Size = new System.Drawing.Size(446, 85);
+            this.QuestionLabel.TabIndex = 2;
             // 
             // SimpleQuestion
             // 
@@ -47,14 +63,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.QuestionLabel);
+            this.Controls.Add(this.QuestionPanel);
             this.Name = "SimpleQuestion";
             this.Size = new System.Drawing.Size(452, 347);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label QuestionLabel;
+        private System.Windows.Forms.Panel QuestionPanel;
+        private System.Windows.Forms.TextBox QuestionLabel;
     }
 }

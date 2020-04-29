@@ -15,7 +15,7 @@ namespace ProgramForum.Panels
 
         public UserControl getUserControl()
         {
-            return new QuestionType0() { Location = new System.Drawing.Point(3, 140) };
+            return new QuestionType0() { Location = new System.Drawing.Point(0, 0) };
         }
 
         public void setRadioButton(int radId)
@@ -35,7 +35,7 @@ namespace ProgramForum.Panels
 
         public UserControl getUserControl()
         {
-            return new QuestionType1() { Location = new System.Drawing.Point(3, 140) };
+            return new QuestionType1() { Location = new System.Drawing.Point(0, 0) };
         }
     }
 
@@ -46,6 +46,8 @@ namespace ProgramForum.Panels
 
     public static  class QuestionTypes
     {
+        public static Panel QuestionPanel { get; internal set; }
+
         public static IQuestionType GetQuestionType(QuestionSet question)
         {
             switch(question.QuestionTypeSet.QuestionTypeId)
@@ -115,7 +117,7 @@ namespace ProgramForum.Panels
             {
                 case 1:
                 {
-                    var needControlQuestType0 = currentPanel.Controls.OfType<QuestionType0>().ToList().FirstOrDefault();
+                    var needControlQuestType0 = QuestionPanel.Controls.OfType<QuestionType0>().FirstOrDefault();
                     if (needControlQuestType0.questionType.RadioButtons[currentQuestion.CorrectOption])
                         return true;
                     else
@@ -123,7 +125,7 @@ namespace ProgramForum.Panels
                 }
                 case 2:
                 {
-                    var needControlQuestType1 = currentPanel.Controls.OfType<QuestionType1>().ToList().FirstOrDefault();
+                    var needControlQuestType1 = QuestionPanel.Controls.OfType<QuestionType1>().FirstOrDefault();
                     int sum = 0;
                     for(int i=0; i<needControlQuestType1.questionType.CheckBox.Length; i++)
                     {

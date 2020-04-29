@@ -175,7 +175,7 @@ namespace ProgramForum
             Content.PrivateMessage.PrivateMessageControl cpMessages = new Content.PrivateMessage.PrivateMessageControl()
             {
                 Location = new Point(238, 92),
-                Anchor = AnchorStyles.Left | AnchorStyles.Right
+                Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom
             };
             Controls.Add(cpMessages);
             cpMessages.LoadMessages(Client);

@@ -33,15 +33,18 @@
             this.ThemeStartText = new System.Windows.Forms.Label();
             this.ThemeAuthor = new System.Windows.Forms.Label();
             this.CommentoryCount = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ThemeName
             // 
-            this.ThemeName.AutoSize = true;
+            this.ThemeName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ThemeName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ThemeName.Location = new System.Drawing.Point(4, 4);
+            this.ThemeName.Location = new System.Drawing.Point(3, 0);
             this.ThemeName.Name = "ThemeName";
-            this.ThemeName.Size = new System.Drawing.Size(0, 22);
+            this.ThemeName.Size = new System.Drawing.Size(264, 30);
             this.ThemeName.TabIndex = 0;
             // 
             // ReadTheme
@@ -51,7 +54,7 @@
             this.ReadTheme.FlatAppearance.BorderSize = 0;
             this.ReadTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReadTheme.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ReadTheme.Location = new System.Drawing.Point(293, 75);
+            this.ReadTheme.Location = new System.Drawing.Point(291, 73);
             this.ReadTheme.Name = "ReadTheme";
             this.ReadTheme.Size = new System.Drawing.Size(123, 29);
             this.ReadTheme.TabIndex = 1;
@@ -60,43 +63,64 @@
             // 
             // ThemeStartText
             // 
+            this.ThemeStartText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ThemeStartText.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ThemeStartText.Location = new System.Drawing.Point(3, 26);
+            this.ThemeStartText.Location = new System.Drawing.Point(3, 30);
             this.ThemeStartText.Name = "ThemeStartText";
-            this.ThemeStartText.Size = new System.Drawing.Size(284, 63);
+            this.ThemeStartText.Size = new System.Drawing.Size(284, 60);
             this.ThemeStartText.TabIndex = 2;
             // 
             // ThemeAuthor
             // 
+            this.ThemeAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ThemeAuthor.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ThemeAuthor.Location = new System.Drawing.Point(326, 4);
+            this.ThemeAuthor.Location = new System.Drawing.Point(321, 0);
             this.ThemeAuthor.Name = "ThemeAuthor";
             this.ThemeAuthor.Size = new System.Drawing.Size(93, 68);
             this.ThemeAuthor.TabIndex = 3;
             // 
             // CommentoryCount
             // 
+            this.CommentoryCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CommentoryCount.AutoSize = true;
             this.CommentoryCount.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CommentoryCount.Location = new System.Drawing.Point(117, 89);
+            this.CommentoryCount.Location = new System.Drawing.Point(110, 90);
             this.CommentoryCount.Name = "CommentoryCount";
             this.CommentoryCount.Size = new System.Drawing.Size(157, 15);
             this.CommentoryCount.TabIndex = 4;
             this.CommentoryCount.Text = "Количество комментариев:";
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.ThemeName);
+            this.panel1.Controls.Add(this.ThemeAuthor);
+            this.panel1.Controls.Add(this.CommentoryCount);
+            this.panel1.Controls.Add(this.ReadTheme);
+            this.panel1.Controls.Add(this.ThemeStartText);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.MinimumSize = new System.Drawing.Size(417, 105);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(417, 105);
+            this.panel1.TabIndex = 5;
+            // 
             // SingleTheme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.CommentoryCount);
-            this.Controls.Add(this.ThemeAuthor);
-            this.Controls.Add(this.ThemeStartText);
-            this.Controls.Add(this.ReadTheme);
-            this.Controls.Add(this.ThemeName);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.panel1);
             this.Name = "SingleTheme";
-            this.Size = new System.Drawing.Size(419, 107);
+            this.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.Size = new System.Drawing.Size(417, 105);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -107,5 +131,6 @@
         private System.Windows.Forms.Label ThemeStartText;
         private System.Windows.Forms.Label ThemeAuthor;
         private System.Windows.Forms.Label CommentoryCount;
+        private System.Windows.Forms.Panel panel1;
     }
 }

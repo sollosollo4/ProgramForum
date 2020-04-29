@@ -16,7 +16,7 @@ namespace ProgramForum.Content.PrivateMessage.Chat
         {
             InitializeComponent();
             NickName.Text = Name;
-            Click += _handler;
+            panel1.Click += _handler;
         }
     }
 }

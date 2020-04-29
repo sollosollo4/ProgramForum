@@ -30,14 +30,21 @@
         {
             this.pmFlowLoyoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.NewMessage = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pmFlowLoyoutPanel
             // 
+            this.pmFlowLoyoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pmFlowLoyoutPanel.AutoScroll = true;
+            this.pmFlowLoyoutPanel.BackColor = System.Drawing.SystemColors.Window;
             this.pmFlowLoyoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pmFlowLoyoutPanel.Location = new System.Drawing.Point(0, 40);
+            this.pmFlowLoyoutPanel.Location = new System.Drawing.Point(3, 40);
             this.pmFlowLoyoutPanel.Name = "pmFlowLoyoutPanel";
-            this.pmFlowLoyoutPanel.Size = new System.Drawing.Size(452, 307);
+            this.pmFlowLoyoutPanel.Size = new System.Drawing.Size(446, 304);
             this.pmFlowLoyoutPanel.TabIndex = 0;
             // 
             // NewMessage
@@ -55,15 +62,29 @@
             this.NewMessage.UseVisualStyleBackColor = false;
             this.NewMessage.Click += new System.EventHandler(this.NewMessage_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.Controls.Add(this.NewMessage);
+            this.panel1.Controls.Add(this.pmFlowLoyoutPanel);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(452, 347);
+            this.panel1.TabIndex = 3;
+            // 
             // PrivateMessageControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.NewMessage);
-            this.Controls.Add(this.pmFlowLoyoutPanel);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(452, 347);
             this.Name = "PrivateMessageControl";
             this.Size = new System.Drawing.Size(452, 347);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -72,5 +93,6 @@
 
         private System.Windows.Forms.FlowLayoutPanel pmFlowLoyoutPanel;
         private System.Windows.Forms.Button NewMessage;
+        private System.Windows.Forms.Panel panel1;
     }
 }

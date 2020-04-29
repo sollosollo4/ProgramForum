@@ -74,7 +74,7 @@ namespace ProgramForum.Content
         }
 
         private bool isSizeIncreasing;
-        private Size OldSize = new Size(232, 105);
+        private Size OldSize = new Size(233, 106);
 
         private void MyAccountPanel_Resize(object sender, EventArgs e)
         {
