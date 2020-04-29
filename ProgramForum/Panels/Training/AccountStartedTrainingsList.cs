@@ -52,7 +52,7 @@ namespace ProgramForum.Panels.Training
             var panelControl = (Panel)buttonControl.Parent;
             var smplTrain = (SimpleTraining)panelControl.Parent;
 
-            Training training = new Training(smplTrain.Training);
+            Training training = new Training(smplTrain.Training) { Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right };
 
             Parent.Controls.Add(training);
 

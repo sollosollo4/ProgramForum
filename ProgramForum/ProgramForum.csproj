@@ -345,6 +345,12 @@
     <Compile Include="Panels\Training\AccountStartedTrainingsList.Designer.cs">
       <DependentUpon>AccountStartedTrainingsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\Training\TheoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\Training\TheoryControl.Designer.cs">
+      <DependentUpon>TheoryControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\Training\Training.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -499,6 +505,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\Training\AccountStartedTrainingsList.resx">
       <DependentUpon>AccountStartedTrainingsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Training\TheoryControl.resx">
+      <DependentUpon>TheoryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\Training\Training.resx">
       <DependentUpon>Training.cs</DependentUpon>

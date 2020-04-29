@@ -51,7 +51,7 @@
             this.TrainingLayoutPanel.ColumnCount = 1;
             this.TrainingLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TrainingLayoutPanel.Location = new System.Drawing.Point(13, 42);
-            this.TrainingLayoutPanel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.TrainingLayoutPanel.Margin = new System.Windows.Forms.Padding(5);
             this.TrainingLayoutPanel.Name = "TrainingLayoutPanel";
             this.TrainingLayoutPanel.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.TrainingLayoutPanel.RowCount = 1;

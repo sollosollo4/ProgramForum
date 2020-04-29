@@ -28,5 +28,21 @@ namespace ProgramForum.Panels
 
             Controls.Add(question);
         }
+
+        public SimpleQuestion(Size size, QuestionSet questionSet)
+        {
+            InitializeComponent();
+
+            this.Size = size;
+
+            QuestionSet = questionSet;
+            QuestionLabel.Text = QuestionSet.QuestionText;
+
+            QuestType = QuestionTypes.GetQuestionType(QuestionSet);
+            var question = QuestType.getUserControl();
+            QuestionTypes.SetQuest(question, QuestionSet);
+
+            Controls.Add(question);
+        }
     }
 }

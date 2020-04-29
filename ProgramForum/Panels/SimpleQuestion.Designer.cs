@@ -33,6 +33,8 @@
             // 
             // QuestionLabel
             // 
+            this.QuestionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.QuestionLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.QuestionLabel.Location = new System.Drawing.Point(4, 4);
             this.QuestionLabel.Name = "QuestionLabel";
@@ -43,6 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.QuestionLabel);
             this.Name = "SimpleQuestion";
             this.Size = new System.Drawing.Size(452, 347);

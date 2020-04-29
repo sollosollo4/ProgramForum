@@ -36,17 +36,16 @@
             this.LessonsLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LessonsLayoutPanel.AutoScroll = true;
+            this.LessonsLayoutPanel.BackColor = System.Drawing.SystemColors.Window;
             this.LessonsLayoutPanel.Location = new System.Drawing.Point(16, 3);
-            this.LessonsLayoutPanel.MaximumSize = new System.Drawing.Size(412, 837);
-            this.LessonsLayoutPanel.MinimumSize = new System.Drawing.Size(412, 837);
             this.LessonsLayoutPanel.Name = "LessonsLayoutPanel";
-            this.LessonsLayoutPanel.Size = new System.Drawing.Size(412, 837);
+            this.LessonsLayoutPanel.Size = new System.Drawing.Size(412, 342);
             this.LessonsLayoutPanel.TabIndex = 0;
             // 
             // Training
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.LessonsLayoutPanel);
             this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

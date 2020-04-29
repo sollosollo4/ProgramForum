@@ -1,103 +1,217 @@
-﻿using ScintillaNET;
-using ScintillaNET.Demo.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Globalization;
-using System.IO;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ScintillaNET.Demo.Utils;
+using System.IO;
+using ScintillaNET;
 
-namespace ProgramForum.Content.Training
+namespace ProgramForum.Panels.Training
 {
-    public partial class TheoryRedactor : Form
+    public partial class TheoryControl : UserControl
     {
-        private int labelId;
-        private int codeId;
+        private const int NullCodeId = 1011;
 
-		private int CodeId = -1;
+        public int CurrentPosition;
+
+        LessonSet Lesson;
+        List<Content.Training.Theory> Theories;
+        List<Content.Training.Question> Questions;
 
         private Scintilla TextArea;
 
-		private Theory TheoryControl;
-
-		private bool UpdateState;
-		private int updateCodeId;
-
-        public TheoryRedactor(Theory control)
+        public TheoryControl(LessonSet lessonSet, List<Content.Training.Theory> theories, List<Content.Training.Question> questions)
         {
-			TheoryControl = control;
-			InitializeComponent();
+            Lesson = lessonSet;
+            Theories = theories;
+            Questions = questions;
 
-			if(TheoryControl.TheoryLessonSet != null)
-			{
-				if (TheoryControl.TheoryLessonSet.TheoryText.Length != 0)
-				{
-					TextBox prtb = new TextBox() { Name = "TheoryLabel" /*+ labelId*/, Width = 410, Multiline = true, Text = TheoryControl.TheoryLessonSet.TheoryText };
-					labelId++;
+            InitializeComponent();
+            CurrentPosition = 0;
 
-					VisibleTheory.Controls.Add(prtb);
-					prtb.TextChanged += new EventHandler(prtb_TextChanged);
-				}
+            LoadTheoryControl();
+        }
 
-				if(TheoryControl.TheoryLessonSet.CodeId != -1)
-				{
-					Scintilla Scintilla = new Scintilla() { Name = "CodeLabel" /*+ codeId*/, Width = 410 };
-					codeId++;
+        private void LoadTheoryControl()
+        {
+			ClearPanels();
 
-					using (ForumContainer container = new ForumContainer())
+			var isNowTheory = Theories.FirstOrDefault(x => x.Position == CurrentPosition);
+            if(isNowTheory == null) {
+                var isNowQuestion = Questions.FirstOrDefault(x => x.Position == CurrentPosition);
+
+                if(isNowQuestion == null) {
+					// Пользователь завершил урок. Возвращаем его на панель Training!
+					// В бд отмечаем, что последний урок который он прошел, следующий по Position от этого LessonSet
+					using(ForumContainer container = new ForumContainer())
 					{
-						var code = container.CodeSet.First(x => x.CodeId == TheoryControl.TheoryLessonSet.CodeId);
-						updateCodeId = code.CodeId;
-						Scintilla.Text = Encoding.UTF8.GetString(code.BinaryFileData);
+						int NextPosition = Lesson.Position + 1;
+						// Получаем следующий урок
+						var nextLesson = container.LessonSet.FirstOrDefault(x => x.TrainingId == Lesson.TrainingId && x.Position == NextPosition);
+						if(nextLesson == null)
+						{
+							var training = container.TrainingProgressSet.FirstOrDefault(x => x.TrainingId == Lesson.TrainingId);
+							container.TrainingProgressSet.Remove(training);
+							MessageBox.Show("Вы успешно прошли данное обучение!");
+							container.SaveChanges();
+
+							var tPlane = (Training)Parent;
+							tPlane.Completed();
+							Dispose();
+							return;
+						}
+						// Обновляем строку в LessonProgress
+						var nextProgress = container.TrainingProgressSet.FirstOrDefault(x => x.LessonId == Lesson.LessonId);
+						nextProgress.LessonId = nextLesson.LessonId;
+						container.SaveChanges();
 					}
-
-					VisibleTheory.Controls.Add(Scintilla);
-
-					Scintilla.Click += Scintilla_Click;
-					Scintilla.TextChanged += Scintilla_TextChanged;
-
-					TextArea = Scintilla;
-					LoadScintilla();
+					
+					var TrainingPanel = (Training)Parent;
+					TrainingPanel.UpdateTrainingPanel();
+					Dispose();
 				}
+                else {
+                    LoadQuestion();
+                }
+            }
+            else {
+                LoadTheory();
+            }
 
-				UpdateState = true;
+        }
+
+		private void ClearPanels()
+		{
+			LabelPanel.Visible = false;
+			CodePanel.Visible = false;
+			QuestionPanel.Visible = false;
+
+			LabelPanel.Controls.Clear();
+			CodePanel.Controls.Clear();
+			QuestionPanel.Controls.Clear();
+		}
+
+		private void LoadQuestion() {
+			TryAnswer.Visible = true;
+			GoNext.Visible = false;
+
+			QuestionPanel.Visible = true;
+			using (ForumContainer container = new ForumContainer())
+			{
+				var quest = Questions.FirstOrDefault(x => x.Position == CurrentPosition).QuestionSet;
+				var question = container.QuestionSet.FirstOrDefault(x => x.QuestionId == quest.QuestionId);
+				SimpleQuestion simpleQuestion = new SimpleQuestion(new Size(443, 291), question);
+				QuestionPanel.Controls.Add(simpleQuestion);
 			}
+		}
+
+        private void LoadTheory() {
+			GoNext.Visible = true;
+
+			var needTheoryLesson = Theories.FirstOrDefault(x => x.Position == CurrentPosition);
+
+			Label theoryText = new Label() { Text = needTheoryLesson.TheoryLessonSet.TheoryText, AutoSize = true, Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right };
+			LabelPanel.Visible = true;
+			LabelPanel.Controls.Add(theoryText);
+
+            if(Theories.FirstOrDefault(x => x.Position == CurrentPosition).TheoryLessonSet.CodeId != NullCodeId)
+            {
+                using (ForumContainer container = new ForumContainer())
+                {
+                    Scintilla newCodeBlock = new Scintilla() { Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right };
+					TextArea = newCodeBlock;
+					LoadScintilla();
+					newCodeBlock.Click += Scintilla_Click;
+                    newCodeBlock.TextChanged += Scintilla_TextChanged;
+
+                    var codeElementFromDb = container.CodeSet.FirstOrDefault(x => x.CodeId == needTheoryLesson.TheoryLessonSet.CodeId);
+					newCodeBlock.Text = Encoding.UTF8.GetString(codeElementFromDb.BinaryFileData.Where(x => x != 0).ToArray());
+
+					newCodeBlock.Height = TextRenderer.MeasureText(newCodeBlock.Text, new Font("Consolas", 10.0f,FontStyle.Bold)).Height;
+					newCodeBlock.Width = TextRenderer.MeasureText(newCodeBlock.Text, new Font("Consolas", 10.0f, FontStyle.Bold)).Width;
+
+					CodePanel.Visible = true;
+					CodePanel.Controls.Add(newCodeBlock);                    
+                }
+            }
         }
 
-        private void LoadScintilla()
+		private void GoNext_Click(object sender, EventArgs e)
         {
-            // BASIC CONFIG
-            //TextArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            CurrentPosition++;
 
-
-            // INITIAL VIEW CONFIG
-            TextArea.WrapMode = WrapMode.None;
-            TextArea.IndentationGuides = IndentView.LookBoth;
-
-            // STYLING
-            InitColors();
-            InitSyntaxColoring();
-
-            // NUMBER MARGIN
-            InitNumberMargin();
-
-            // BOOKMARK MARGIN
-            InitBookmarkMargin();
-
-            // CODE FOLDING MARGIN
-            InitCodeFolding();
-
-            // DRAG DROP
-            InitDragDropFile();
-
-            // INIT HOTKEYS
-            InitHotkeys();
+            LoadTheoryControl();
         }
+
+		private void TryAnswer_Click(object sender, EventArgs e)
+		{
+			using (ForumContainer container = new ForumContainer())
+			{
+				var quest = Questions.FirstOrDefault(x => x.Position == CurrentPosition).QuestionSet;
+				var question = container.QuestionSet.FirstOrDefault(x => x.QuestionId == quest.QuestionId);
+
+				var boolean = QuestionTypes.TryToAnswer((SimpleQuestion)QuestionPanel.Controls[0], question);
+				
+				if (boolean)
+				{
+					MessageBox.Show("Правильно");
+					CurrentPosition++;
+					LoadTheoryControl();
+				}
+				else
+				{
+					MessageBox.Show("Не правильно");
+					return;
+				}
+			}
+		}
+
+		private void Scintilla_TextChanged(object sender, EventArgs e)
+		{
+			Scintilla tb = sender as Scintilla;
+			tb.Height = TextRenderer.MeasureText(tb.Text, tb.Font).Height + 14;
+		}
+
+		private void Scintilla_Click(object sender, EventArgs e)
+		{
+			var Scintilla = (Scintilla)sender;
+			TextArea = Scintilla;
+		}
+
+		private void LoadScintilla()
+		{
+			// BASIC CONFIG
+			//TextArea.Dock = System.Windows.Forms.DockStyle.Fill;
+
+
+			// INITIAL VIEW CONFIG
+			TextArea.WrapMode = WrapMode.None;
+			TextArea.IndentationGuides = IndentView.LookBoth;
+
+			// STYLING
+			InitColors();
+			InitSyntaxColoring();
+
+			// NUMBER MARGIN
+			InitNumberMargin();
+
+			// BOOKMARK MARGIN
+			InitBookmarkMargin();
+
+			// CODE FOLDING MARGIN
+			InitCodeFolding();
+
+			// DRAG DROP
+			InitDragDropFile();
+
+			// INIT HOTKEYS
+			InitHotkeys();
+		}
 
 		private void InitColors()
 		{
@@ -108,14 +222,14 @@ namespace ProgramForum.Content.Training
 		{
 
 			// register the hotkeys with the form
-			HotKeyManager.AddHotKey(this, OpenFindDialog, Keys.F, true, false, true);
-			HotKeyManager.AddHotKey(this, OpenReplaceDialog, Keys.R, true);
-			HotKeyManager.AddHotKey(this, OpenReplaceDialog, Keys.H, true);
-			HotKeyManager.AddHotKey(this, Uppercase, Keys.U, true);
-			HotKeyManager.AddHotKey(this, Lowercase, Keys.L, true);
-			HotKeyManager.AddHotKey(this, ZoomIn, Keys.Oemplus, true);
-			HotKeyManager.AddHotKey(this, ZoomOut, Keys.OemMinus, true);
-			HotKeyManager.AddHotKey(this, ZoomDefault, Keys.D0, true);
+			HotKeyManager.AddHotKey(MainForm.ActiveForm, OpenFindDialog, Keys.F, true, false, true);
+			HotKeyManager.AddHotKey(MainForm.ActiveForm, OpenReplaceDialog, Keys.R, true);
+			HotKeyManager.AddHotKey(MainForm.ActiveForm, OpenReplaceDialog, Keys.H, true);
+			HotKeyManager.AddHotKey(MainForm.ActiveForm, Uppercase, Keys.U, true);
+			HotKeyManager.AddHotKey(MainForm.ActiveForm, Lowercase, Keys.L, true);
+			HotKeyManager.AddHotKey(MainForm.ActiveForm, ZoomIn, Keys.Oemplus, true);
+			HotKeyManager.AddHotKey(MainForm.ActiveForm, ZoomOut, Keys.OemMinus, true);
+			HotKeyManager.AddHotKey(MainForm.ActiveForm, ZoomDefault, Keys.D0, true);
 
 			// remove conflicting hotkeys from scintilla
 			TextArea.ClearCmdKey(Keys.Control | Keys.F);
@@ -161,6 +275,7 @@ namespace ProgramForum.Content.Training
 			TextArea.SetKeywords(1, "void Null ArgumentError arguments Array Boolean Class Date DefinitionError Error EvalError Function int Math Namespace Number Object RangeError ReferenceError RegExp SecurityError String SyntaxError TypeError uint XML XMLList Boolean Byte Char DateTime Decimal Double Int16 Int32 Int64 IntPtr SByte Single UInt16 UInt32 UInt64 UIntPtr Void Path File System Windows Forms ScintillaNET");
 
 		}
+
 
 		#region Numbers, Bookmarks, Code Folding
 
@@ -444,174 +559,6 @@ namespace ProgramForum.Content.Training
 			}
 		}
 
-		#endregion
-
-		private void Element1_Click(object sender, EventArgs e)
-        {
-			if(labelId != 0)
-			{
-				MessageBox.Show("Вы не можете добавить больше одного элемента этого типа.");
-				return;
-			}
-
-			TextBox prtb = new TextBox() { Name = "TheoryLabel" /*+ labelId*/, Width = 410, Multiline = true };
-			labelId++;
-
-			VisibleTheory.Controls.Add(prtb);
-			prtb.TextChanged += new EventHandler(prtb_TextChanged);
-
-		}
-
-		private void prtb_TextChanged(object sender, EventArgs e)
-		{
-			TextBox tb = sender as TextBox;
-			tb.Height = TextRenderer.MeasureText(tb.Text, tb.Font).Height + 14;
-		}
-
-		private void Element2_Click(object sender, EventArgs e)
-        {
-			if (codeId != 0)
-			{
-				MessageBox.Show("Вы не можете добавить больше одного элемента этого типа.");
-				return;
-			}
-
-			Scintilla Scintilla = new Scintilla() { Name = "CodeLabel" /*+ codeId*/, Width = 410 };
-			codeId++;
-
-			VisibleTheory.Controls.Add(Scintilla);
-			Scintilla.Click += Scintilla_Click;
-			Scintilla.TextChanged += Scintilla_TextChanged;
-			TextArea = Scintilla;
-            LoadScintilla();
-        }
-
-		private void Scintilla_TextChanged(object sender, EventArgs e)
-		{
-			Scintilla tb = sender as Scintilla;
-			tb.Height = TextRenderer.MeasureText(tb.Text, tb.Font).Height + 14;
-		}
-
-		private void Scintilla_Click(object sender, EventArgs e)
-		{
-			var Scintilla = (Scintilla)sender;
-			TextArea = Scintilla;
-		}
-
-		private void SaveChanges_Click(object sender, EventArgs e)
-		{
-			List<Control> controlsList = new List<Control>();
-			controlsList.Add(new Control());
-			controlsList.Add(new Control());
-
-
-			foreach (Control ctrl in VisibleTheory.Controls)
-			{
-				if (ctrl is Scintilla)
-					controlsList[0] = ctrl;
-				else if (ctrl is TextBox)
-					controlsList[1] = ctrl;
-				else 
-					continue;
-			}
-
-			if (UpdateState)
-			{
-				using (ForumContainer container = new ForumContainer())
-				{
-					foreach (var control in controlsList)
-					{
-						if (control is Scintilla)
-						{
-							Scintilla sc = (Scintilla)control;
-
-							if (sc.Text.Length == 0)
-							{
-								MessageBox.Show("Вы добавили элемент \"Код\", но не ввели никаких данных.");
-								return;
-							}
-
-							byte[] result = Encoding.UTF8.GetBytes(sc.Text);
-							var code = container.CodeSet.First(x => x.CodeId == updateCodeId);
-
-							code.CodeFileName = sc.Name + getIdObject();
-							code.BinaryFileData = result;
-							container.SaveChanges();
-
-							CodeId = code.CodeId;
-						}
-						else if (control is TextBox)
-						{
-							TextBox tb = (TextBox)control;
-							TheoryLessonSet lessonSet = new TheoryLessonSet()
-							{
-								CodeId = CodeId == -1 ? 1011 : CodeId,
-								TheoryText = tb.Text
-							};
-
-							TheoryControl.TheoryLessonSet = lessonSet;
-							Close();
-						}
-						else
-							continue;
-					}
-				}
-			}
-			else
-			{
-				using (ForumContainer container = new ForumContainer())
-				{
-					foreach (var control in controlsList)
-					{
-						if (control is Scintilla)
-						{
-							Scintilla sc = (Scintilla)control;
-
-							if (sc.Text.Length == 0)
-							{
-								MessageBox.Show("Вы добавили элемент \"Код\", но не ввели никаких данных.");
-								return;
-							}
-
-							byte[] result = Encoding.UTF8.GetBytes(sc.Text);
-
-							CodeSet code = new CodeSet()
-							{
-								CodeFileName = sc.Name + getIdObject(),
-								BinaryFileData = result
-							};
-
-							container.CodeSet.Add(code);
-							container.SaveChanges();
-							CodeId = code.CodeId;
-						}
-						else if (control is TextBox)
-						{
-							TextBox tb = (TextBox)control;
-							TheoryLessonSet lessonSet = new TheoryLessonSet()
-							{
-								CodeId = CodeId == -1 ? 1011 : CodeId,
-								TheoryText = tb.Text
-							};
-
-							TheoryControl.TheoryLessonSet = lessonSet;
-							Close();
-						}
-						else
-							continue;
-					}
-				}
-			}
-		}
-
-		private long getIdObject()
-		{
-			DateTime dt = TimeZoneInfo.ConvertTimeToUtc(DateTime.Now);
-			DateTime dt1970 = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-			TimeSpan tsInterval = dt.Subtract(dt1970);
-			Int32 iSeconds = Convert.ToInt32(tsInterval.TotalSeconds);
-			Int64 iMilliseconds = Convert.ToInt64(tsInterval.TotalMilliseconds);
-			return iMilliseconds;
-		}
+		#endregion		
 	}
 }
