@@ -57,9 +57,9 @@
             // 
             // AccountPanel
             // 
+            this.AccountPanel.Controls.Add(this.SaveAllChanges);
             this.AccountPanel.Controls.Add(this.panel2);
             this.AccountPanel.Controls.Add(this.panel1);
-            this.AccountPanel.Controls.Add(this.SaveAllChanges);
             this.AccountPanel.Controls.Add(this.SaveChanges);
             this.AccountPanel.Controls.Add(this.NewPassword);
             this.AccountPanel.Controls.Add(this.OldPassword);
@@ -79,16 +79,20 @@
             this.AccountPanel.Name = "AccountPanel";
             this.AccountPanel.Size = new System.Drawing.Size(452, 347);
             this.AccountPanel.TabIndex = 6;
+            this.AccountPanel.Resize += new System.EventHandler(this.MyAccountPanel_Resize);
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.SystemColors.Info;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.MyThemesflowLayoutPanel);
-            this.panel2.Location = new System.Drawing.Point(216, 210);
+            this.panel2.Location = new System.Drawing.Point(216, 207);
+            this.panel2.MaximumSize = new System.Drawing.Size(0, 375);
+            this.panel2.MinimumSize = new System.Drawing.Size(233, 106);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(233, 103);
+            this.panel2.Size = new System.Drawing.Size(233, 106);
             this.panel2.TabIndex = 23;
             // 
             // label1
@@ -107,21 +111,25 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MyThemesflowLayoutPanel.AutoScroll = true;
-            this.MyThemesflowLayoutPanel.Location = new System.Drawing.Point(3, 19);
+            this.MyThemesflowLayoutPanel.BackColor = System.Drawing.SystemColors.Window;
+            this.MyThemesflowLayoutPanel.Location = new System.Drawing.Point(3, 25);
             this.MyThemesflowLayoutPanel.Name = "MyThemesflowLayoutPanel";
-            this.MyThemesflowLayoutPanel.Size = new System.Drawing.Size(227, 81);
-            this.MyThemesflowLayoutPanel.TabIndex = 21;
+            this.MyThemesflowLayoutPanel.Size = new System.Drawing.Size(227, 78);
+            this.MyThemesflowLayoutPanel.TabIndex = 5;
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel1.Controls.Add(this.QuestionListInfoLabel);
             this.panel1.Controls.Add(this.MyQuestionflowLayoutPanel);
             this.panel1.Location = new System.Drawing.Point(216, 88);
+            this.panel1.MaximumSize = new System.Drawing.Size(0, 375);
+            this.panel1.MinimumSize = new System.Drawing.Size(233, 106);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(233, 119);
+            this.panel1.Size = new System.Drawing.Size(233, 106);
             this.panel1.TabIndex = 22;
             // 
             // QuestionListInfoLabel
@@ -140,10 +148,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MyQuestionflowLayoutPanel.AutoScroll = true;
+            this.MyQuestionflowLayoutPanel.BackColor = System.Drawing.SystemColors.Window;
             this.MyQuestionflowLayoutPanel.Location = new System.Drawing.Point(3, 31);
             this.MyQuestionflowLayoutPanel.Name = "MyQuestionflowLayoutPanel";
-            this.MyQuestionflowLayoutPanel.Size = new System.Drawing.Size(215, 86);
-            this.MyQuestionflowLayoutPanel.TabIndex = 21;
+            this.MyQuestionflowLayoutPanel.Size = new System.Drawing.Size(215, 73);
+            this.MyQuestionflowLayoutPanel.TabIndex = 4;
             // 
             // SaveAllChanges
             // 
@@ -152,10 +161,12 @@
             this.SaveAllChanges.FlatAppearance.BorderSize = 0;
             this.SaveAllChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveAllChanges.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveAllChanges.Location = new System.Drawing.Point(270, 316);
+            this.SaveAllChanges.Location = new System.Drawing.Point(270, 315);
+            this.SaveAllChanges.MaximumSize = new System.Drawing.Size(179, 29);
+            this.SaveAllChanges.MinimumSize = new System.Drawing.Size(179, 29);
             this.SaveAllChanges.Name = "SaveAllChanges";
             this.SaveAllChanges.Size = new System.Drawing.Size(179, 29);
-            this.SaveAllChanges.TabIndex = 20;
+            this.SaveAllChanges.TabIndex = 7;
             this.SaveAllChanges.Text = "Сохранить изменения";
             this.SaveAllChanges.UseVisualStyleBackColor = false;
             // 
@@ -166,9 +177,11 @@
             this.SaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveChanges.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SaveChanges.Location = new System.Drawing.Point(99, 317);
+            this.SaveChanges.MaximumSize = new System.Drawing.Size(111, 28);
+            this.SaveChanges.MinimumSize = new System.Drawing.Size(111, 28);
             this.SaveChanges.Name = "SaveChanges";
             this.SaveChanges.Size = new System.Drawing.Size(111, 28);
-            this.SaveChanges.TabIndex = 19;
+            this.SaveChanges.TabIndex = 6;
             this.SaveChanges.Text = "Сохранить";
             this.SaveChanges.UseVisualStyleBackColor = false;
             // 
@@ -269,7 +282,7 @@
             this.NewPasswordTextBox.Name = "NewPasswordTextBox";
             this.NewPasswordTextBox.PasswordChar = '*';
             this.NewPasswordTextBox.Size = new System.Drawing.Size(192, 29);
-            this.NewPasswordTextBox.TabIndex = 18;
+            this.NewPasswordTextBox.TabIndex = 3;
             // 
             // OldPasswordTextBox
             // 
@@ -278,7 +291,7 @@
             this.OldPasswordTextBox.Name = "OldPasswordTextBox";
             this.OldPasswordTextBox.PasswordChar = '*';
             this.OldPasswordTextBox.Size = new System.Drawing.Size(192, 29);
-            this.OldPasswordTextBox.TabIndex = 17;
+            this.OldPasswordTextBox.TabIndex = 2;
             // 
             // EmailTextBox
             // 
@@ -286,7 +299,7 @@
             this.EmailTextBox.Location = new System.Drawing.Point(5, 77);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(192, 29);
-            this.EmailTextBox.TabIndex = 16;
+            this.EmailTextBox.TabIndex = 1;
             // 
             // LoginTextBox
             // 
@@ -295,7 +308,7 @@
             this.LoginTextBox.Name = "LoginTextBox";
             this.LoginTextBox.ReadOnly = true;
             this.LoginTextBox.Size = new System.Drawing.Size(192, 29);
-            this.LoginTextBox.TabIndex = 6;
+            this.LoginTextBox.TabIndex = 0;
             // 
             // MyAccount
             // 

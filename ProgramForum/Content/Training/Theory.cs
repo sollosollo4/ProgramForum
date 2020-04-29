@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 namespace ProgramForum.Content.Training
 {
-    public partial class Theory : UserControl
+    public partial class Theory : UserControl, Utils.Lesson
     {
         public TheoryLessonSet TheoryLessonSet;
-        public int Position;
+        public int Position { get; set; }
+
         public int LessonSetId;
         public Theory()
         {

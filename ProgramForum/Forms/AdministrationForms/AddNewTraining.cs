@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -273,7 +274,7 @@ namespace ProgramForum.Forms.AdministrationForms
                     {
                         TrainingId = training.TrainingId,
                         Color = ColorTranslator.ToOle(CurrentLesson.ControlColor),
-                        PictureId = -1111111,
+                        Picture = ImageToByteArray(CurrentLesson.Picture),
                         LessonName = CurrentLesson.LessName,
                         LessonText = "??",
                         Position = CurrentLesson.Position,
@@ -311,6 +312,15 @@ namespace ProgramForum.Forms.AdministrationForms
                     }
                     
                 }
+            }
+        }
+
+        private byte[] ImageToByteArray(Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
             }
         }
     }

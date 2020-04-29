@@ -72,5 +72,26 @@ namespace ProgramForum.Content
                 container.SaveChanges();
             }
         }
+
+        private bool isSizeIncreasing;
+        private Size OldSize = new Size(232, 105);
+
+        private void MyAccountPanel_Resize(object sender, EventArgs e)
+        {
+            if(panel1.Size.Height >= OldSize.Height) { // Если размер увеличивается
+                isSizeIncreasing = true;
+            } else { // Если уменьшается
+                isSizeIncreasing = false;
+            }
+            OldSize = panel1.Size;
+
+            if (isSizeIncreasing && panel1.Size.Height == panel1.MaximumSize.Height) { // Если мы увеличиваем форму, то держимся за низ формы
+                panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            }
+
+            if (!isSizeIncreasing) { // Если уменьшаем, то держимся за верхнюю панель
+                panel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            }
+        }
     }
 }

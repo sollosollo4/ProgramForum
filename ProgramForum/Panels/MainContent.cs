@@ -46,10 +46,10 @@ namespace ProgramForum.Panels
             Content.ThemeControl newTheme = new Content.ThemeControl(theme.Theme) 
             { 
                 Name = "VisibleTheme",
-                //Anchor = AnchorStyles.Top | AnchorStyles.Right 
                 Dock = DockStyle.Fill 
             };
             MainPanel.Visible = false;
+            TrainingPanel.Visible = false;
             ThemePanel.Controls.Add(newTheme);
         }
 
@@ -57,6 +57,13 @@ namespace ProgramForum.Panels
         {
             var visibleTheme = MainPanel.Controls.Find("VisibleTheme", false).First();
             MainPanel.Controls.Remove(visibleTheme);
+        }
+
+        private void ContinueTraining_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = false;
+            ThemePanel.Visible = false;
+            TrainingPanel.Controls.Add(new Training.AccountStartedTrainingsList() { Name = "VisibleTraining", Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right });
         }
     }
 }

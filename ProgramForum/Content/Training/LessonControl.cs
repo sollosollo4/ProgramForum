@@ -18,7 +18,16 @@ namespace ProgramForum.Content.Training
         public int TheoryQuestPosition { get; set; }
         public List<Theory> Theories = new List<Theory>(); public void AddTheory(Theory theory) { Theories.Add(theory); theory.Position = TheoryQuestPosition; TheoryQuestPosition++; }
         public List<Question> Questions = new List<Question>(); public void AddQuest(Question quest) { Questions.Add(quest); quest.Position = TheoryQuestPosition; TheoryQuestPosition++; }
-        
+
+        public List<Utils.Lesson> LessonContent = new List<Utils.Lesson>();
+
+        public void LessonContentEnter()
+        {
+            LessonContent.AddRange(Theories);
+            LessonContent.AddRange(Questions);
+            LessonContent = LessonContent.OrderBy(x => x.Position).ToList();
+        }
+
         EventHandler lesson_Click;
 
         public LessonControl() { InitializeComponent(); }
@@ -44,7 +53,5 @@ namespace ProgramForum.Content.Training
             var picture = (PictureBox)sender;
             lesson_Click(picture.Parent, e);
         }
-
-        
     }
 }

@@ -75,7 +75,7 @@
           <Property Name="Position" Type="int" Nullable="false" />
           <Property Name="LessonName" Type="nvarchar" MaxLength="55" Nullable="false" />
           <Property Name="LessonText" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="PictureId" Type="int" />
+          <Property Name="Picture" Type="varbinary(max)" />
           <Property Name="Shape" Type="int" />
           <Property Name="Color" Type="int" />
         </EntityType>
@@ -124,16 +124,6 @@
           </Key>
           <Property Name="QuestionTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="QuestionTypeText" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="ThemeSet">
           <Key>
@@ -431,7 +421,6 @@
           <EntitySet Name="QuestionListLessonSet" EntityType="Self.QuestionListLessonSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuestionSet" EntityType="Self.QuestionSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuestionTypeSet" EntityType="Self.QuestionTypeSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThemeSet" EntityType="Self.ThemeSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TheoryLessonSet" EntityType="Self.TheoryLessonSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TrainingProgressSet" EntityType="Self.TrainingProgressSet" Schema="dbo" store:Type="Tables" />
@@ -534,7 +523,6 @@
           <EntitySet Name="QuestionListLessonSet" EntityType="Forum.QuestionListLessonSet" />
           <EntitySet Name="QuestionSet" EntityType="Forum.QuestionSet" />
           <EntitySet Name="QuestionTypeSet" EntityType="Forum.QuestionTypeSet" />
-          <EntitySet Name="sysdiagrams" EntityType="Forum.sysdiagrams" />
           <EntitySet Name="ThemeSet" EntityType="Forum.ThemeSet" />
           <EntitySet Name="TheoryLessonSet" EntityType="Forum.TheoryLessonSet" />
           <EntitySet Name="TrainingProgressSet" EntityType="Forum.TrainingProgressSet" />
@@ -706,7 +694,7 @@
           <Property Name="Position" Type="Int32" Nullable="false" />
           <Property Name="LessonName" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="true" />
           <Property Name="LessonText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PictureId" Type="Int32" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Shape" Type="Int32" />
           <Property Name="Color" Type="Int32" />
           <NavigationProperty Name="TrainingSet" Relationship="Forum.FK_LessonSet_TrainingSet" FromRole="LessonSet" ToRole="TrainingSet" />
@@ -768,16 +756,6 @@
           <Property Name="QuestionTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="QuestionTypeText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="QuestionSet" Relationship="Forum.FK_QuestionTypeQuestion" FromRole="QuestionTypeSet" ToRole="QuestionSet" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="ThemeSet">
           <Key>
@@ -1151,7 +1129,7 @@
               <MappingFragment StoreEntitySet="LessonSet">
                 <ScalarProperty Name="Color" ColumnName="Color" />
                 <ScalarProperty Name="Shape" ColumnName="Shape" />
-                <ScalarProperty Name="PictureId" ColumnName="PictureId" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
                 <ScalarProperty Name="LessonText" ColumnName="LessonText" />
                 <ScalarProperty Name="LessonName" ColumnName="LessonName" />
                 <ScalarProperty Name="Position" ColumnName="Position" />
@@ -1208,17 +1186,6 @@
               <MappingFragment StoreEntitySet="QuestionTypeSet">
                 <ScalarProperty Name="QuestionTypeText" ColumnName="QuestionTypeText" />
                 <ScalarProperty Name="QuestionTypeId" ColumnName="QuestionTypeId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="Forum.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

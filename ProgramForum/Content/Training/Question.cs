@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ProgramForum.Content.Training
 {
-    public partial class Question : UserControl
+    public partial class Question : UserControl, Utils.Lesson
     {
         public LanguageSet language;
         public QuestionSet QuestionSet;

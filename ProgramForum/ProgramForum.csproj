@@ -111,6 +111,7 @@
       <DependentUpon>TheoryRedactor.cs</DependentUpon>
     </Compile>
     <Compile Include="Content\Training\Utils\HotKeyManager.cs" />
+    <Compile Include="Content\Training\Utils\Lesson.cs" />
     <Compile Include="Content\Training\Utils\SearchManager.cs" />
     <Compile Include="CopyHelper.cs" />
     <Compile Include="Forms\AdministrationForms\AccountRedactor.cs">
@@ -338,6 +339,12 @@
     <Compile Include="Panels\SimpleTraining.Designer.cs">
       <DependentUpon>SimpleTraining.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\Training\AccountStartedTrainingsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\Training\AccountStartedTrainingsList.Designer.cs">
+      <DependentUpon>AccountStartedTrainingsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\Training\Training.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -362,9 +369,6 @@
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
     <Compile Include="QuestionTypeSet.cs">
-      <DependentUpon>Forum.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
     <Compile Include="ThemeSet.cs">
@@ -492,6 +496,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\SimpleTraining.resx">
       <DependentUpon>SimpleTraining.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Training\AccountStartedTrainingsList.resx">
+      <DependentUpon>AccountStartedTrainingsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\Training\Training.resx">
       <DependentUpon>Training.cs</DependentUpon>

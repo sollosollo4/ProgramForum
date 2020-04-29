@@ -19,9 +19,19 @@ namespace ProgramForum.Panels.Training
             using(ForumContainer container = new ForumContainer())
             {
                 var trainings = container.TrainingSet.Where(x => x.LanguageId == MainForm.Language.LanguageId);
+                int i = 0;
                 foreach(var train in trainings) {
-                    SimpleTraining simpleTraining = new SimpleTraining(train);
-                    TrainingLayoutPanel.Controls.Add(simpleTraining);
+                    SimpleTraining simpleTraining = new SimpleTraining(train)
+                    {
+                        Location = new Point(3, 3),
+                        Anchor = AnchorStyles.Left | AnchorStyles.Right
+                    };
+
+                    TrainingLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize, simpleTraining.Height));
+                    TrainingLayoutPanel.RowCount++;
+
+                    TrainingLayoutPanel.Controls.Add(simpleTraining, 0, i);
+                    i++;
                 }
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace ProgramForum.Panels.Training
 {
-    partial class TrainingList
+    partial class AccountStartedTrainingsList
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,34 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TrainingListPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.TrainingLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.TrainingListPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // TrainingListPanel
-            // 
-            this.TrainingListPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TrainingListPanel.BackColor = System.Drawing.SystemColors.Window;
-            this.TrainingListPanel.Controls.Add(this.TrainingLayoutPanel);
-            this.TrainingListPanel.Controls.Add(this.label1);
-            this.TrainingListPanel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TrainingListPanel.Location = new System.Drawing.Point(0, 0);
-            this.TrainingListPanel.Name = "TrainingListPanel";
-            this.TrainingListPanel.Size = new System.Drawing.Size(450, 348);
-            this.TrainingListPanel.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 17);
+            this.label1.Location = new System.Drawing.Point(9, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Список всех обучений:";
+            this.label1.Size = new System.Drawing.Size(314, 21);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Список обучений которые вы начали:\r\n";
             // 
             // TrainingLayoutPanel
             // 
@@ -66,31 +51,33 @@
             this.TrainingLayoutPanel.ColumnCount = 1;
             this.TrainingLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TrainingLayoutPanel.Location = new System.Drawing.Point(13, 42);
+            this.TrainingLayoutPanel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.TrainingLayoutPanel.Name = "TrainingLayoutPanel";
-            this.TrainingLayoutPanel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.TrainingLayoutPanel.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.TrainingLayoutPanel.RowCount = 1;
             this.TrainingLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.TrainingLayoutPanel.Size = new System.Drawing.Size(434, 304);
-            this.TrainingLayoutPanel.TabIndex = 2;
+            this.TrainingLayoutPanel.TabIndex = 5;
             // 
-            // TrainingList
+            // AccountStartedTrainingsList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.TrainingListPanel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TrainingLayoutPanel);
+            this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.MinimumSize = new System.Drawing.Size(450, 348);
-            this.Name = "TrainingList";
+            this.Name = "AccountStartedTrainingsList";
             this.Size = new System.Drawing.Size(450, 348);
-            this.TrainingListPanel.ResumeLayout(false);
-            this.TrainingListPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel TrainingListPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel TrainingLayoutPanel;
     }

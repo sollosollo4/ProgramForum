@@ -27,7 +27,7 @@ namespace ProgramForum
         public int Position { get; set; }
         public string LessonName { get; set; }
         public string LessonText { get; set; }
-        public Nullable<int> PictureId { get; set; }
+        public byte[] Picture { get; set; }
         public Nullable<int> Shape { get; set; }
         public Nullable<int> Color { get; set; }
     

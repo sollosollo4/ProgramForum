@@ -12,13 +12,21 @@ namespace ProgramForum.Panels
 {
     public partial class SimpleTraining : UserControl
     {
-        TrainingSet Training;
+        public TrainingSet Training;
         public SimpleTraining(TrainingSet training)
         {
             Training = training;
             InitializeComponent();
             TrainingName.Text = Training.TrainingName;
             TrainingDescription.Text = Training.TrainingDescrition;
+        }
+
+        public void ContinueTraining(EventHandler click)
+        {
+            StartTraining.Text = "Продолжить обучение";
+            StartTraining.Click -= StartTraining_Click; // Уничтожаем ссылку на клик как по кнопке "Начать обучение";
+
+            StartTraining.Click += click;
         }
 
         private void StartTraining_Click(object sender, EventArgs e)
