@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace ProgramForum.Panels
 {
@@ -75,7 +76,7 @@ namespace ProgramForum.Panels
                         Login = Login.Text,
                         PhoneNumber = TelephoneNumber.Text,
                         Email = EmailTextBox.Text,
-                        Password = Password.Text,
+                        Password = HashPassword(Password.Text),
                         Name = UserName.Text,
                         UserName = UserName.Text,
                         AccountType = 0,
@@ -93,6 +94,25 @@ namespace ProgramForum.Panels
                     return;
                 }
             }
+        }
+
+        static string HashPassword(string password)
+        {
+            byte[] salt;
+            byte[] buffer2;
+            if (password == null)
+            {
+                throw new ArgumentNullException("password");
+            }
+            using (Rfc2898DeriveBytes bytes = new Rfc2898DeriveBytes(password, 0x10, 0x3e8))
+            {
+                salt = bytes.Salt;
+                buffer2 = bytes.GetBytes(0x20);
+            }
+            byte[] dst = new byte[0x31];
+            Buffer.BlockCopy(salt, 0, dst, 1, 0x10);
+            Buffer.BlockCopy(buffer2, 0, dst, 0x11, 0x20);
+            return Convert.ToBase64String(dst);
         }
 
         private void MyAccount_Click(object sender, EventArgs e)
