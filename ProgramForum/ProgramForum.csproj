@@ -180,12 +180,6 @@
     <Compile Include="CommentorySet.cs">
       <DependentUpon>Forum.tt</DependentUpon>
     </Compile>
-    <Compile Include="Content\EveryDayTest.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Content\EveryDayTest.Designer.cs">
-      <DependentUpon>EveryDayTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Content\PrivateMessage\NewPrivateMessage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -442,9 +436,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Content\PrivateMessage\Chat\MessageContainer.resx">
       <DependentUpon>MessageContainer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Content\EveryDayTest.resx">
-      <DependentUpon>EveryDayTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Content\MyAccount.resx">
       <DependentUpon>MyAccount.cs</DependentUpon>

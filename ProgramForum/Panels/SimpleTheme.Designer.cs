@@ -50,6 +50,7 @@
             this.OpenForRedaction.FlatAppearance.BorderSize = 0;
             this.OpenForRedaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenForRedaction.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.OpenForRedaction.ForeColor = System.Drawing.Color.White;
             this.OpenForRedaction.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.OpenForRedaction.Location = new System.Drawing.Point(295, 47);
             this.OpenForRedaction.Name = "OpenForRedaction";

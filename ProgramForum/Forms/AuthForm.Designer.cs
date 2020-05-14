@@ -84,10 +84,12 @@
             // AuthorizationButton
             // 
             this.AuthorizationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AuthorizationButton.AutoSize = true;
             this.AuthorizationButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.AuthorizationButton.FlatAppearance.BorderSize = 0;
             this.AuthorizationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AuthorizationButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AuthorizationButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AuthorizationButton.ForeColor = System.Drawing.Color.White;
             this.AuthorizationButton.Location = new System.Drawing.Point(10, 265);
             this.AuthorizationButton.Name = "AuthorizationButton";
             this.AuthorizationButton.Size = new System.Drawing.Size(200, 40);
@@ -120,13 +122,15 @@
             // RegistrationButton
             // 
             this.RegistrationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.RegistrationButton.AutoSize = true;
             this.RegistrationButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.RegistrationButton.FlatAppearance.BorderSize = 0;
             this.RegistrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegistrationButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RegistrationButton.Location = new System.Drawing.Point(330, 265);
+            this.RegistrationButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RegistrationButton.ForeColor = System.Drawing.Color.White;
+            this.RegistrationButton.Location = new System.Drawing.Point(329, 261);
             this.RegistrationButton.Name = "RegistrationButton";
-            this.RegistrationButton.Size = new System.Drawing.Size(225, 40);
+            this.RegistrationButton.Size = new System.Drawing.Size(226, 44);
             this.RegistrationButton.TabIndex = 4;
             this.RegistrationButton.Text = "Регистрация на форуме";
             this.RegistrationButton.UseVisualStyleBackColor = false;

@@ -136,7 +136,7 @@
     <value>Times New Roman, 15.75pt, style=Bold</value>
   </data>
   <data name="MainFormToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 40</value>
+    <value>200, 55</value>
   </data>
   <data name="MainFormToolStripMenuItem.Text" xml:space="preserve">
     <value>Главная</value>
@@ -160,7 +160,7 @@
     <value>Times New Roman, 15.75pt, style=Bold</value>
   </data>
   <data name="RandomQuestionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 40</value>
+    <value>200, 55</value>
   </data>
   <data name="RandomQuestionToolStripMenuItem.Text" xml:space="preserve">
     <value>Случайный вопрос</value>
@@ -172,7 +172,7 @@
     <value>Times New Roman, 15.75pt, style=Bold</value>
   </data>
   <data name="GetTrainingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 40</value>
+    <value>200, 55</value>
   </data>
   <data name="GetTrainingToolStripMenuItem.Text" xml:space="preserve">
     <value>Пройти обучение</value>
@@ -184,7 +184,7 @@
     <value>Times New Roman, 15.75pt, style=Bold</value>
   </data>
   <data name="MessagesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 40</value>
+    <value>200, 55</value>
   </data>
   <data name="MessagesToolStripMenuItem.Text" xml:space="preserve">
     <value>Личные сообщения</value>
@@ -283,7 +283,7 @@
     <value>0, 0</value>
   </data>
   <data name="newQuestionLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 74</value>
+    <value>155, 74</value>
   </data>
   <data name="newQuestionLink.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -306,6 +306,9 @@
   <data name="&gt;&gt;newQuestionLink.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="MainForumMenu.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
   <data name="AccountsGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -319,7 +322,7 @@
     <value>0, 205</value>
   </data>
   <data name="AccountsGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 53</value>
+    <value>155, 53</value>
   </data>
   <data name="AccountsGrid.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -355,7 +358,7 @@
     <value>0, 153</value>
   </data>
   <data name="ForumNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 52</value>
+    <value>155, 52</value>
   </data>
   <data name="ForumNews.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -391,7 +394,7 @@
     <value>0, 74</value>
   </data>
   <data name="NewAccountsRegistred.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 79</value>
+    <value>155, 79</value>
   </data>
   <data name="NewAccountsRegistred.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -414,17 +417,14 @@
   <data name="&gt;&gt;NewAccountsRegistred.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="MainForumMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
   <data name="MainForumMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>702, 0</value>
+    <value>688, 0</value>
   </data>
   <data name="MainForumMenu.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>128, 348</value>
   </data>
   <data name="MainForumMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 459</value>
+    <value>156, 459</value>
   </data>
   <data name="MainForumMenu.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -473,6 +473,9 @@
   </data>
   <data name="&gt;&gt;AdminPanelButton.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="MainMenuPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
   <data name="MainMenuPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 88</value>

@@ -64,6 +64,7 @@
             this.StartTraining.FlatAppearance.BorderSize = 0;
             this.StartTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartTraining.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.StartTraining.ForeColor = System.Drawing.Color.White;
             this.StartTraining.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.StartTraining.Location = new System.Drawing.Point(249, 3);
             this.StartTraining.Name = "StartTraining";

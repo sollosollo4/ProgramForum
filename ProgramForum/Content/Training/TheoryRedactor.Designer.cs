@@ -66,10 +66,11 @@
             this.Element1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.Element1.FlatAppearance.BorderSize = 0;
             this.Element1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Element1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Element1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Element1.ForeColor = System.Drawing.Color.White;
             this.Element1.Location = new System.Drawing.Point(441, 36);
             this.Element1.Name = "Element1";
-            this.Element1.Size = new System.Drawing.Size(175, 31);
+            this.Element1.Size = new System.Drawing.Size(175, 32);
             this.Element1.TabIndex = 25;
             this.Element1.Text = "Добавить текст";
             this.Element1.UseVisualStyleBackColor = false;
@@ -81,10 +82,11 @@
             this.Element2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.Element2.FlatAppearance.BorderSize = 0;
             this.Element2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Element2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Element2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Element2.ForeColor = System.Drawing.Color.White;
             this.Element2.Location = new System.Drawing.Point(441, 73);
             this.Element2.Name = "Element2";
-            this.Element2.Size = new System.Drawing.Size(175, 31);
+            this.Element2.Size = new System.Drawing.Size(175, 32);
             this.Element2.TabIndex = 25;
             this.Element2.Text = "Добавить код";
             this.Element2.UseVisualStyleBackColor = false;

@@ -49,10 +49,11 @@
             // 
             // NewMessage
             // 
-            this.NewMessage.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.NewMessage.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.NewMessage.FlatAppearance.BorderSize = 0;
             this.NewMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NewMessage.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.NewMessage.ForeColor = System.Drawing.Color.White;
             this.NewMessage.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.NewMessage.Location = new System.Drawing.Point(3, 3);
             this.NewMessage.Name = "NewMessage";

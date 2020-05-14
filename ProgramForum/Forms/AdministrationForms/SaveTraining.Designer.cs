@@ -78,6 +78,7 @@
             this.AddTrainingToDb.FlatAppearance.BorderSize = 0;
             this.AddTrainingToDb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddTrainingToDb.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddTrainingToDb.ForeColor = System.Drawing.Color.White;
             this.AddTrainingToDb.Location = new System.Drawing.Point(14, 268);
             this.AddTrainingToDb.Name = "AddTrainingToDb";
             this.AddTrainingToDb.Size = new System.Drawing.Size(466, 31);

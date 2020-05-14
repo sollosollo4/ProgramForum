@@ -43,6 +43,7 @@
             // 
             // ThemeText
             // 
+            this.ThemeText.BackColor = System.Drawing.Color.White;
             this.ThemeText.Location = new System.Drawing.Point(0, 36);
             this.ThemeText.Name = "ThemeText";
             this.ThemeText.Size = new System.Drawing.Size(452, 311);
@@ -52,6 +53,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.ThemeText);
             this.Controls.Add(this.ThemeName);
             this.MinimumSize = new System.Drawing.Size(452, 347);

@@ -75,7 +75,7 @@
             resources.ApplyResources(this.MainFormToolStripMenuItem, "MainFormToolStripMenuItem");
             this.MainFormToolStripMenuItem.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.MainFormToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
-            this.MainFormToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.MainFormToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
             this.MainFormToolStripMenuItem.MergeIndex = 0;
             this.MainFormToolStripMenuItem.Name = "MainFormToolStripMenuItem";
             this.MainFormToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
@@ -87,7 +87,7 @@
             this.ChooseLanguageStrip.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ChooseLanguageStrip.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ChooseLanguageStrip.ForeColor = System.Drawing.SystemColors.Window;
-            this.ChooseLanguageStrip.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.ChooseLanguageStrip.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.ChooseLanguageStrip.MergeIndex = 0;
             this.ChooseLanguageStrip.Name = "ChooseLanguageStrip";
             this.ChooseLanguageStrip.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
@@ -98,7 +98,7 @@
             resources.ApplyResources(this.RandomQuestionToolStripMenuItem, "RandomQuestionToolStripMenuItem");
             this.RandomQuestionToolStripMenuItem.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.RandomQuestionToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
-            this.RandomQuestionToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.RandomQuestionToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.RandomQuestionToolStripMenuItem.MergeIndex = 0;
             this.RandomQuestionToolStripMenuItem.Name = "RandomQuestionToolStripMenuItem";
             this.RandomQuestionToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
@@ -109,7 +109,7 @@
             resources.ApplyResources(this.GetTrainingToolStripMenuItem, "GetTrainingToolStripMenuItem");
             this.GetTrainingToolStripMenuItem.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.GetTrainingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
-            this.GetTrainingToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.GetTrainingToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.GetTrainingToolStripMenuItem.MergeIndex = 0;
             this.GetTrainingToolStripMenuItem.Name = "GetTrainingToolStripMenuItem";
             this.GetTrainingToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
@@ -120,7 +120,7 @@
             resources.ApplyResources(this.MessagesToolStripMenuItem, "MessagesToolStripMenuItem");
             this.MessagesToolStripMenuItem.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.MessagesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
-            this.MessagesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.MessagesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.MessagesToolStripMenuItem.MergeIndex = 0;
             this.MessagesToolStripMenuItem.Name = "MessagesToolStripMenuItem";
             this.MessagesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
@@ -131,6 +131,7 @@
             this.MyAccount.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.MyAccount.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.MyAccount, "MyAccount");
+            this.MyAccount.ForeColor = System.Drawing.Color.White;
             this.MyAccount.Name = "MyAccount";
             this.MyAccount.UseVisualStyleBackColor = false;
             this.MyAccount.Click += new System.EventHandler(this.MyAccount_Click);
@@ -152,12 +153,12 @@
             // 
             // MainForumMenu
             // 
+            resources.ApplyResources(this.MainForumMenu, "MainForumMenu");
             this.MainForumMenu.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.MainForumMenu.Controls.Add(this.AccountsGrid);
             this.MainForumMenu.Controls.Add(this.ForumNews);
             this.MainForumMenu.Controls.Add(this.NewAccountsRegistred);
             this.MainForumMenu.Controls.Add(this.newQuestionLink);
-            resources.ApplyResources(this.MainForumMenu, "MainForumMenu");
             this.MainForumMenu.Name = "MainForumMenu";
             // 
             // AccountsGrid
@@ -195,14 +196,15 @@
             this.AdminPanelButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.AdminPanelButton.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.AdminPanelButton, "AdminPanelButton");
+            this.AdminPanelButton.ForeColor = System.Drawing.Color.White;
             this.AdminPanelButton.Name = "AdminPanelButton";
             this.AdminPanelButton.UseVisualStyleBackColor = false;
             this.AdminPanelButton.Click += new System.EventHandler(this.AdminPanelButton_Click);
             // 
             // MainMenuPanel
             // 
-            this.MainMenuPanel.Controls.Add(this.MainMenu);
             resources.ApplyResources(this.MainMenuPanel, "MainMenuPanel");
+            this.MainMenuPanel.Controls.Add(this.MainMenu);
             this.MainMenuPanel.Name = "MainMenuPanel";
             // 
             // pictureBox1

@@ -54,6 +54,7 @@
             this.ReadTheme.FlatAppearance.BorderSize = 0;
             this.ReadTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReadTheme.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ReadTheme.ForeColor = System.Drawing.Color.White;
             this.ReadTheme.Location = new System.Drawing.Point(291, 73);
             this.ReadTheme.Name = "ReadTheme";
             this.ReadTheme.Size = new System.Drawing.Size(123, 29);

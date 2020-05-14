@@ -31,7 +31,19 @@ namespace ProgramForum
             var login = Login.Text;
             var password = Password.Text;
 
-            using(ForumContainer container = new ForumContainer())
+            if(string.IsNullOrEmpty(login))
+            {
+                MessageBox.Show("Вы не ввели логин!");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Вы не ввели пароль!");
+                return;
+            }
+
+            using (ForumContainer container = new ForumContainer())
             {
                 var tryLogin = container.AccountSet.SingleOrDefault(x => x.Login == login);
 

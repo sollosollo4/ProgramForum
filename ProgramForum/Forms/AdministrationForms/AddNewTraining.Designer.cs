@@ -112,6 +112,7 @@
             this.AddTrainingToDb.FlatAppearance.BorderSize = 0;
             this.AddTrainingToDb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddTrainingToDb.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddTrainingToDb.ForeColor = System.Drawing.Color.White;
             this.AddTrainingToDb.Location = new System.Drawing.Point(957, 10);
             this.AddTrainingToDb.Name = "AddTrainingToDb";
             this.AddTrainingToDb.Size = new System.Drawing.Size(295, 31);
@@ -248,6 +249,7 @@
             // 
             // SelectedElementPanel
             // 
+            this.SelectedElementPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SelectedElementPanel.Location = new System.Drawing.Point(379, 91);
             this.SelectedElementPanel.Name = "SelectedElementPanel";
             this.SelectedElementPanel.Size = new System.Drawing.Size(150, 150);
@@ -289,6 +291,7 @@
             this.Element3.FlatAppearance.BorderSize = 0;
             this.Element3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Element3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Element3.ForeColor = System.Drawing.Color.White;
             this.Element3.Location = new System.Drawing.Point(7, 193);
             this.Element3.Name = "Element3";
             this.Element3.Size = new System.Drawing.Size(175, 31);
@@ -313,6 +316,7 @@
             this.AddElementPicture.FlatAppearance.BorderSize = 0;
             this.AddElementPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddElementPicture.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddElementPicture.ForeColor = System.Drawing.Color.White;
             this.AddElementPicture.Location = new System.Drawing.Point(198, 193);
             this.AddElementPicture.Name = "AddElementPicture";
             this.AddElementPicture.Size = new System.Drawing.Size(176, 31);
@@ -328,6 +332,7 @@
             this.ChangeElementColor.FlatAppearance.BorderSize = 0;
             this.ChangeElementColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChangeElementColor.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangeElementColor.ForeColor = System.Drawing.Color.White;
             this.ChangeElementColor.Location = new System.Drawing.Point(198, 156);
             this.ChangeElementColor.Name = "ChangeElementColor";
             this.ChangeElementColor.Size = new System.Drawing.Size(176, 31);
@@ -343,6 +348,7 @@
             this.ChangeElement.FlatAppearance.BorderSize = 0;
             this.ChangeElement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChangeElement.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangeElement.ForeColor = System.Drawing.Color.White;
             this.ChangeElement.Location = new System.Drawing.Point(198, 118);
             this.ChangeElement.Name = "ChangeElement";
             this.ChangeElement.Size = new System.Drawing.Size(176, 31);
@@ -358,6 +364,7 @@
             this.Element2.FlatAppearance.BorderSize = 0;
             this.Element2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Element2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Element2.ForeColor = System.Drawing.Color.White;
             this.Element2.Location = new System.Drawing.Point(7, 156);
             this.Element2.Name = "Element2";
             this.Element2.Size = new System.Drawing.Size(175, 31);
@@ -373,6 +380,7 @@
             this.Element1.FlatAppearance.BorderSize = 0;
             this.Element1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Element1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Element1.ForeColor = System.Drawing.Color.White;
             this.Element1.Location = new System.Drawing.Point(7, 119);
             this.Element1.Name = "Element1";
             this.Element1.Size = new System.Drawing.Size(175, 31);
@@ -425,13 +433,13 @@
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StripMenuItemDeleteElement});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip.Size = new System.Drawing.Size(119, 26);
             this.contextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip_Opening);
             // 
             // StripMenuItemDeleteElement
             // 
             this.StripMenuItemDeleteElement.Name = "StripMenuItemDeleteElement";
-            this.StripMenuItemDeleteElement.Size = new System.Drawing.Size(180, 22);
+            this.StripMenuItemDeleteElement.Size = new System.Drawing.Size(118, 22);
             this.StripMenuItemDeleteElement.Text = "Удалить";
             this.StripMenuItemDeleteElement.Click += new System.EventHandler(this.StripMenuItemDeleteElement_Click);
             // 

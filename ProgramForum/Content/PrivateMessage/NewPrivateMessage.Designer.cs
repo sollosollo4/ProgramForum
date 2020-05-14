@@ -37,10 +37,11 @@
             // 
             // SendMessageButton
             // 
-            this.SendMessageButton.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.SendMessageButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.SendMessageButton.FlatAppearance.BorderSize = 0;
             this.SendMessageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SendMessageButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SendMessageButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SendMessageButton.ForeColor = System.Drawing.Color.White;
             this.SendMessageButton.Location = new System.Drawing.Point(16, 221);
             this.SendMessageButton.Name = "SendMessageButton";
             this.SendMessageButton.Size = new System.Drawing.Size(296, 28);

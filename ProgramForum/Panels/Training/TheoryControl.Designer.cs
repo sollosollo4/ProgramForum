@@ -60,7 +60,8 @@
             // 
             // CodePanel
             // 
-            this.CodePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.CodePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CodePanel.Location = new System.Drawing.Point(4, 120);
             this.CodePanel.MinimumSize = new System.Drawing.Size(443, 99);
@@ -76,6 +77,7 @@
             this.GoNext.FlatAppearance.BorderSize = 0;
             this.GoNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GoNext.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.GoNext.ForeColor = System.Drawing.Color.White;
             this.GoNext.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.GoNext.Location = new System.Drawing.Point(341, 301);
             this.GoNext.Name = "GoNext";
@@ -93,6 +95,7 @@
             this.TryAnswer.FlatAppearance.BorderSize = 0;
             this.TryAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TryAnswer.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.TryAnswer.ForeColor = System.Drawing.Color.White;
             this.TryAnswer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.TryAnswer.Location = new System.Drawing.Point(358, 301);
             this.TryAnswer.Name = "TryAnswer";
@@ -114,7 +117,7 @@
             this.Controls.Add(this.LabelPanel);
             this.Controls.Add(this.QuestionPanel);
             this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(450, 348);
             this.Name = "TheoryControl";
             this.Size = new System.Drawing.Size(450, 348);

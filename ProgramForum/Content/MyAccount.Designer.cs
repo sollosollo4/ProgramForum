@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.AccountPanel = new System.Windows.Forms.Panel();
+            this.SaveAllChanges = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.MyThemesflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.QuestionListInfoLabel = new System.Windows.Forms.Label();
             this.MyQuestionflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.SaveAllChanges = new System.Windows.Forms.Button();
             this.SaveChanges = new System.Windows.Forms.Button();
             this.NewPassword = new System.Windows.Forms.Label();
             this.OldPassword = new System.Windows.Forms.Label();
@@ -80,6 +80,23 @@
             this.AccountPanel.Size = new System.Drawing.Size(452, 347);
             this.AccountPanel.TabIndex = 6;
             this.AccountPanel.Resize += new System.EventHandler(this.MyAccountPanel_Resize);
+            // 
+            // SaveAllChanges
+            // 
+            this.SaveAllChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveAllChanges.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.SaveAllChanges.FlatAppearance.BorderSize = 0;
+            this.SaveAllChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveAllChanges.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SaveAllChanges.ForeColor = System.Drawing.Color.White;
+            this.SaveAllChanges.Location = new System.Drawing.Point(270, 315);
+            this.SaveAllChanges.MaximumSize = new System.Drawing.Size(179, 29);
+            this.SaveAllChanges.MinimumSize = new System.Drawing.Size(179, 29);
+            this.SaveAllChanges.Name = "SaveAllChanges";
+            this.SaveAllChanges.Size = new System.Drawing.Size(179, 29);
+            this.SaveAllChanges.TabIndex = 7;
+            this.SaveAllChanges.Text = "Сохранить изменения";
+            this.SaveAllChanges.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -154,28 +171,13 @@
             this.MyQuestionflowLayoutPanel.Size = new System.Drawing.Size(215, 73);
             this.MyQuestionflowLayoutPanel.TabIndex = 4;
             // 
-            // SaveAllChanges
-            // 
-            this.SaveAllChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaveAllChanges.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.SaveAllChanges.FlatAppearance.BorderSize = 0;
-            this.SaveAllChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveAllChanges.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveAllChanges.Location = new System.Drawing.Point(270, 315);
-            this.SaveAllChanges.MaximumSize = new System.Drawing.Size(179, 29);
-            this.SaveAllChanges.MinimumSize = new System.Drawing.Size(179, 29);
-            this.SaveAllChanges.Name = "SaveAllChanges";
-            this.SaveAllChanges.Size = new System.Drawing.Size(179, 29);
-            this.SaveAllChanges.TabIndex = 7;
-            this.SaveAllChanges.Text = "Сохранить изменения";
-            this.SaveAllChanges.UseVisualStyleBackColor = false;
-            // 
             // SaveChanges
             // 
             this.SaveChanges.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.SaveChanges.FlatAppearance.BorderSize = 0;
             this.SaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveChanges.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SaveChanges.ForeColor = System.Drawing.Color.White;
             this.SaveChanges.Location = new System.Drawing.Point(99, 317);
             this.SaveChanges.MaximumSize = new System.Drawing.Size(111, 28);
             this.SaveChanges.MinimumSize = new System.Drawing.Size(111, 28);

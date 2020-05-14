@@ -57,7 +57,8 @@
             this.SendOnDatebase.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.SendOnDatebase.FlatAppearance.BorderSize = 0;
             this.SendOnDatebase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SendOnDatebase.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SendOnDatebase.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SendOnDatebase.ForeColor = System.Drawing.Color.White;
             this.SendOnDatebase.Location = new System.Drawing.Point(3, 320);
             this.SendOnDatebase.Name = "SendOnDatebase";
             this.SendOnDatebase.Size = new System.Drawing.Size(444, 25);

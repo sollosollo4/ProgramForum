@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e507b72c031d4b54a803a4731e7ef777" Name="Diagram1" ZoomLevel="121" >
-        <EntityTypeShape EntityType="Forum.AccountSet" Width="1.5" PointX="0.75" PointY="11.125" />
-        <EntityTypeShape EntityType="Forum.AnswerSet" Width="1.5" PointX="8.25" PointY="15.625" />
-        <EntityTypeShape EntityType="Forum.CodeSet" Width="1.5" PointX="5.25" PointY="0.75" />
-        <EntityTypeShape EntityType="Forum.CommentorySet" Width="1.5" PointX="5.25" PointY="18.375" />
-        <EntityTypeShape EntityType="Forum.ConversationSet" Width="1.5" PointX="3" PointY="28.75" />
-        <EntityTypeShape EntityType="Forum.LanguageSet" Width="1.5" PointX="3.75" PointY="3.5" />
-        <EntityTypeShape EntityType="Forum.LessonSet" Width="1.5" PointX="5.25" PointY="7" />
-        <EntityTypeShape EntityType="Forum.MessageSet" Width="1.5" PointX="5.25" PointY="28.75" />
+      <Diagram DiagramId="e507b72c031d4b54a803a4731e7ef777" Name="Diagram1" ZoomLevel="82" >
+        <EntityTypeShape EntityType="Forum.AccountSet" Width="1.5" PointX="12.625" PointY="14" />
+        <EntityTypeShape EntityType="Forum.AnswerSet" Width="1.5" PointX="16" PointY="9.25" />
+        <EntityTypeShape EntityType="Forum.CodeSet" Width="1.5" PointX="6.875" PointY="8.375" />
+        <EntityTypeShape EntityType="Forum.CommentorySet" Width="1.5" PointX="16.75" PointY="15.625" />
+        <EntityTypeShape EntityType="Forum.ConversationSet" Width="1.5" PointX="10.25" PointY="16" />
+        <EntityTypeShape EntityType="Forum.LanguageSet" Width="1.5" PointX="10.5" PointY="9.375" />
+        <EntityTypeShape EntityType="Forum.LessonSet" Width="1.5" PointX="5.875" PointY="11.25" />
+        <EntityTypeShape EntityType="Forum.MessageSet" Width="1.5" PointX="6.75" PointY="15.375" />
         <EntityTypeShape EntityType="Forum.ProgramForumConstants" Width="1.5" PointX="0.75" PointY="1.75" />
-        <EntityTypeShape EntityType="Forum.QuestionListLessonSet" Width="1.5" PointX="8.25" PointY="9" />
-        <EntityTypeShape EntityType="Forum.QuestionSet" Width="1.5" PointX="6" PointY="12" />
-        <EntityTypeShape EntityType="Forum.QuestionTypeSet" Width="1.5" PointX="3.75" PointY="22.25" />
-        <EntityTypeShape EntityType="Forum.ThemeSet" Width="1.5" PointX="3" PointY="25.25" />
-        <EntityTypeShape EntityType="Forum.TheoryLessonSet" Width="1.5" PointX="7.5" PointY="5.5" />
-        <EntityTypeShape EntityType="Forum.TrainingProgressSet" Width="1.5" PointX="8.25" PointY="12.5" />
-        <EntityTypeShape EntityType="Forum.TrainingSet" Width="1.5" PointX="3" PointY="12.25" />
+        <EntityTypeShape EntityType="Forum.QuestionListLessonSet" Width="1.5" PointX="12.25" PointY="7.875" />
+        <EntityTypeShape EntityType="Forum.QuestionSet" Width="1.5" PointX="13.875" PointY="10.375" />
+        <EntityTypeShape EntityType="Forum.QuestionTypeSet" Width="1.5" PointX="16.25" PointY="12.375" />
+        <EntityTypeShape EntityType="Forum.ThemeSet" Width="1.5" PointX="14.75" PointY="14.125" />
+        <EntityTypeShape EntityType="Forum.TheoryLessonSet" Width="1.5" PointX="8.5" PointY="10" />
+        <EntityTypeShape EntityType="Forum.TrainingProgressSet" Width="1.5" PointX="8.5" PointY="13.25" />
+        <EntityTypeShape EntityType="Forum.TrainingSet" Width="1.5" PointX="10.875" PointY="11.875" />
         <AssociationConnector Association="Forum.FK_AccountQuestion" />
         <AssociationConnector Association="Forum.FK_CommentorySet_AccountSet" />
         <AssociationConnector Association="Forum.FK_ConversationSet_AccountSet_Recipient" />
@@ -38,7 +38,8 @@
         <AssociationConnector Association="Forum.FK_QuestionListLessonSet_LessonSet" />
         <AssociationConnector Association="Forum.FK_TheoryLessonSet_LessonSet" />
         <AssociationConnector Association="Forum.FK_TrainingProgressSet_LessonSet" />
-        <AssociationConnector Association="Forum.FK_QuestionListLessonSet_QuestionSet" />
+        <AssociationConnector Association="Forum.FK_QuestionListLessonSet_QuestionSet" ManuallyRouted="false" >
+        </AssociationConnector>
         <AssociationConnector Association="Forum.FK_QuestionTypeQuestion" />
         <AssociationConnector Association="Forum.FK_TrainingProgressSet_TrainingSet" />
       </Diagram>

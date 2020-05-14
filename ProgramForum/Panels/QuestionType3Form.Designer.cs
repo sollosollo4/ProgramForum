@@ -82,6 +82,7 @@
             this.AddNewWord.FlatAppearance.BorderSize = 0;
             this.AddNewWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewWord.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddNewWord.ForeColor = System.Drawing.Color.White;
             this.AddNewWord.Location = new System.Drawing.Point(0, 0);
             this.AddNewWord.Name = "AddNewWord";
             this.AddNewWord.Size = new System.Drawing.Size(612, 29);
@@ -152,6 +153,7 @@
             this.EndWorkWithKeysWord.FlatAppearance.BorderSize = 0;
             this.EndWorkWithKeysWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EndWorkWithKeysWord.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EndWorkWithKeysWord.ForeColor = System.Drawing.Color.White;
             this.EndWorkWithKeysWord.Location = new System.Drawing.Point(421, 13);
             this.EndWorkWithKeysWord.Name = "EndWorkWithKeysWord";
             this.EndWorkWithKeysWord.Size = new System.Drawing.Size(202, 62);

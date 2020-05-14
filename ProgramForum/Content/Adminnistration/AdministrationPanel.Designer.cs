@@ -67,6 +67,7 @@
             this.RedactorUsers.FlatAppearance.BorderSize = 0;
             this.RedactorUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RedactorUsers.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RedactorUsers.ForeColor = System.Drawing.Color.White;
             this.RedactorUsers.Location = new System.Drawing.Point(3, 73);
             this.RedactorUsers.Name = "RedactorUsers";
             this.RedactorUsers.Size = new System.Drawing.Size(222, 44);
@@ -82,6 +83,7 @@
             this.RedactorQuestion.FlatAppearance.BorderSize = 0;
             this.RedactorQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RedactorQuestion.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RedactorQuestion.ForeColor = System.Drawing.Color.White;
             this.RedactorQuestion.Location = new System.Drawing.Point(231, 24);
             this.RedactorQuestion.Name = "RedactorQuestion";
             this.RedactorQuestion.Size = new System.Drawing.Size(218, 44);
@@ -97,6 +99,7 @@
             this.RedactorTheme.FlatAppearance.BorderSize = 0;
             this.RedactorTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RedactorTheme.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RedactorTheme.ForeColor = System.Drawing.Color.White;
             this.RedactorTheme.Location = new System.Drawing.Point(231, 73);
             this.RedactorTheme.Name = "RedactorTheme";
             this.RedactorTheme.Size = new System.Drawing.Size(218, 45);
@@ -122,6 +125,7 @@
             this.AddNewNews.FlatAppearance.BorderSize = 0;
             this.AddNewNews.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewNews.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddNewNews.ForeColor = System.Drawing.Color.White;
             this.AddNewNews.Location = new System.Drawing.Point(231, 174);
             this.AddNewNews.Name = "AddNewNews";
             this.AddNewNews.Size = new System.Drawing.Size(218, 45);
@@ -137,6 +141,7 @@
             this.ShowThemeList.FlatAppearance.BorderSize = 0;
             this.ShowThemeList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShowThemeList.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ShowThemeList.ForeColor = System.Drawing.Color.White;
             this.ShowThemeList.Location = new System.Drawing.Point(231, 123);
             this.ShowThemeList.Name = "ShowThemeList";
             this.ShowThemeList.Size = new System.Drawing.Size(218, 45);
@@ -152,6 +157,7 @@
             this.AddNewTraining.FlatAppearance.BorderSize = 0;
             this.AddNewTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewTraining.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddNewTraining.ForeColor = System.Drawing.Color.White;
             this.AddNewTraining.Location = new System.Drawing.Point(3, 175);
             this.AddNewTraining.Name = "AddNewTraining";
             this.AddNewTraining.Size = new System.Drawing.Size(222, 45);
@@ -167,6 +173,7 @@
             this.AddNewTest.FlatAppearance.BorderSize = 0;
             this.AddNewTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewTest.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddNewTest.ForeColor = System.Drawing.Color.White;
             this.AddNewTest.Location = new System.Drawing.Point(3, 123);
             this.AddNewTest.Name = "AddNewTest";
             this.AddNewTest.Size = new System.Drawing.Size(222, 46);
@@ -182,6 +189,7 @@
             this.AddNewQuestion.FlatAppearance.BorderSize = 0;
             this.AddNewQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewQuestion.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddNewQuestion.ForeColor = System.Drawing.Color.White;
             this.AddNewQuestion.Location = new System.Drawing.Point(3, 24);
             this.AddNewQuestion.Name = "AddNewQuestion";
             this.AddNewQuestion.Size = new System.Drawing.Size(222, 44);

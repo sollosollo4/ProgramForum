@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.LastThemePanel = new System.Windows.Forms.TableLayoutPanel();
             this.ContinueTraining = new System.Windows.Forms.Button();
             this.AddNewTheme = new System.Windows.Forms.Button();
             this.LastThemesLabel = new System.Windows.Forms.Label();
             this.HelloLabel = new System.Windows.Forms.Label();
             this.ThemePanel = new System.Windows.Forms.Panel();
             this.TrainingPanel = new System.Windows.Forms.Panel();
-            this.LastThemePanel = new System.Windows.Forms.TableLayoutPanel();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,23 @@
             this.MainPanel.Size = new System.Drawing.Size(450, 348);
             this.MainPanel.TabIndex = 0;
             // 
+            // LastThemePanel
+            // 
+            this.LastThemePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LastThemePanel.AutoScroll = true;
+            this.LastThemePanel.ColumnCount = 1;
+            this.LastThemePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.LastThemePanel.Location = new System.Drawing.Point(0, 135);
+            this.LastThemePanel.MinimumSize = new System.Drawing.Size(450, 213);
+            this.LastThemePanel.Name = "LastThemePanel";
+            this.LastThemePanel.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.LastThemePanel.RowCount = 1;
+            this.LastThemePanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.LastThemePanel.Size = new System.Drawing.Size(450, 213);
+            this.LastThemePanel.TabIndex = 10;
+            // 
             // ContinueTraining
             // 
             this.ContinueTraining.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -64,6 +81,7 @@
             this.ContinueTraining.FlatAppearance.BorderSize = 0;
             this.ContinueTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ContinueTraining.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.ContinueTraining.ForeColor = System.Drawing.Color.White;
             this.ContinueTraining.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ContinueTraining.Location = new System.Drawing.Point(268, 96);
             this.ContinueTraining.Name = "ContinueTraining";
@@ -81,6 +99,7 @@
             this.AddNewTheme.FlatAppearance.BorderSize = 0;
             this.AddNewTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewTheme.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.AddNewTheme.ForeColor = System.Drawing.Color.White;
             this.AddNewTheme.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.AddNewTheme.Location = new System.Drawing.Point(343, 59);
             this.AddNewTheme.Name = "AddNewTheme";
@@ -133,23 +152,6 @@
             this.TrainingPanel.Name = "TrainingPanel";
             this.TrainingPanel.Size = new System.Drawing.Size(450, 348);
             this.TrainingPanel.TabIndex = 10;
-            // 
-            // LastThemePanel
-            // 
-            this.LastThemePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LastThemePanel.AutoScroll = true;
-            this.LastThemePanel.ColumnCount = 1;
-            this.LastThemePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.LastThemePanel.Location = new System.Drawing.Point(0, 135);
-            this.LastThemePanel.MinimumSize = new System.Drawing.Size(450, 213);
-            this.LastThemePanel.Name = "LastThemePanel";
-            this.LastThemePanel.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
-            this.LastThemePanel.RowCount = 1;
-            this.LastThemePanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.LastThemePanel.Size = new System.Drawing.Size(450, 213);
-            this.LastThemePanel.TabIndex = 10;
             // 
             // MainContent
             // 

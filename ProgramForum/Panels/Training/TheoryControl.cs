@@ -105,7 +105,7 @@ namespace ProgramForum.Panels.Training
 			{
 				var quest = Questions.FirstOrDefault(x => x.Position == CurrentPosition).QuestionSet;
 				var question = container.QuestionSet.FirstOrDefault(x => x.QuestionId == quest.QuestionId);
-				SimpleQuestion simpleQuestion = new SimpleQuestion(new Size(443, 291), question) { Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right };
+				SimpleQuestion simpleQuestion = new SimpleQuestion(new Size(443, 291), question) { Dock = DockStyle.Fill };
 				QuestionPanel.Controls.Add(simpleQuestion);
 			}
 		}
@@ -115,7 +115,17 @@ namespace ProgramForum.Panels.Training
 
 			var needTheoryLesson = Theories.FirstOrDefault(x => x.Position == CurrentPosition);
 
-			TextBox theoryText = new TextBox() { Text = needTheoryLesson.TheoryLessonSet.TheoryText, AutoSize = true, /* Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right, */ ReadOnly = true, Multiline = true, ScrollBars = ScrollBars.Vertical, WordWrap = true, Dock = DockStyle.Fill, BackColor = SystemColors.Window };
+			TextBox theoryText = new TextBox() { 
+				Text = needTheoryLesson.TheoryLessonSet.TheoryText, 
+				AutoSize = true, 
+				/* Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right, */ 
+				ReadOnly = true, 
+				Multiline = true, 
+				ScrollBars = ScrollBars.Vertical, 
+				WordWrap = true, 
+				Dock = DockStyle.Fill, 
+				BackColor = SystemColors.Window 
+			};
 			LabelPanel.Visible = true;
 			LabelPanel.Controls.Add(theoryText);
 

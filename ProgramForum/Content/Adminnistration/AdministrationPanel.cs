@@ -27,7 +27,7 @@ namespace ProgramForum.Content.Adminnistration
                 }
                 else 
                 { 
-                    RedactorTheme.BackColor = Color.MediumSpringGreen;
+                    RedactorTheme.BackColor = SystemColors.AppWorkspace;
                     RedactorTheme.Text = "Редактор тем";
                 }
             }
