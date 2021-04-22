@@ -14,12 +14,16 @@
 
 Интерфейс добавления курса
 ![alt text](screenshots/1-интерфейс.png "Интерфейс добавления курса")
+
 Интерфейс добавления вопроса
 ![alt text](screenshots/screen1.png "Интерфейс добавления вопроса")
+
 EntityFramework диаграмма бд
 ![alt text](screenshots/EntityDesignerDiagram.png "EntityFramework диаграмма бд")
+
 ER-диаграмма
 ![alt text](screenshots/erd.png "ER-диаграмма")
+
 Связи бд
 ![alt text](screenshots/ssms-edm.png "Связи бд")
 
